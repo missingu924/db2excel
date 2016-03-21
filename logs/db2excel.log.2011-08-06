@@ -1,0 +1,67 @@
+[2011-08-06 16:47:51][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-param_gsm_ericsson.xml:=====Excel文件../excel/TEMPLET/20110806/GSM-ERICSSON-PARAM-20110806_164751.xls开始创建=====
+[2011-08-06 16:47:52][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----统计 生成开始-----
+[2011-08-06 16:47:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:统计 sql: select 'GSM' 制式,'ERICSSON' 厂商,平台对应类型 分类,count(*) 参数数量 from(
+select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name group by t1.table_related,upper(t0.colname) order by upper(t0.colname)
+)
+group by 平台对应类型
+order by 1,2,3
+[2011-08-06 16:47:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:统计 共保存了9条记录
+[2011-08-06 16:47:52][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----统计 生成完成-----
+[2011-08-06 16:47:52][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----BSC 生成开始-----
+[2011-08-06 16:47:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:BSC sql: select t0.id 规范中所在行,replace(t1.table_related,'CM.G_E_C_','') 网元类型,upper(t0.colname) 中文名,replace(t1.table_related,'CM.G_E_C_','') 平台对应类型,t1.param_name 平台对应字段,replace(t1.table_related,'CM.G_E_C_','') 厂家对应表名,t1.param_name 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_BSC' order by table_related,param_name
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-param_gsm_ericsson.xml:BSC 保存了101条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:BSC 共保存了110条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----BSC 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----CHANNEL_GROUP 生成开始-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:CHANNEL_GROUP sql: select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_CHANNEL_GROUP' group by upper(t0.colname) order by upper(t0.colname)
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:CHANNEL_GROUP 共保存了15条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----CHANNEL_GROUP 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----EXTERNAL_CELL 生成开始-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:EXTERNAL_CELL sql: select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_EXTERNAL_CELL' group by upper(t0.colname) order by upper(t0.colname)
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:EXTERNAL_CELL 共保存了26条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----EXTERNAL_CELL 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----INTERNAL_CELL 生成开始-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:INTERNAL_CELL sql: select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_INTERNAL_CELL' group by upper(t0.colname) order by upper(t0.colname)
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-param_gsm_ericsson.xml:INTERNAL_CELL 保存了101条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:INTERNAL_CELL 共保存了144条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----INTERNAL_CELL 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----MSC 生成开始-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:MSC sql: select t0.id 规范中所在行,t0.netype 网元类型,upper(t0.colname) 中文名,replace(t1.table_related,'CM.G_E_C_','') 平台对应类型,t1.param_name 平台对应字段,replace(t1.table_related,'CM.G_E_C_','') 厂家对应表名,t1.param_name 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_MSC' order by table_related,param_name
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:MSC 共保存了1条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----MSC 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----NREL 生成开始-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:NREL sql: select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_NREL' group by upper(t0.colname) order by upper(t0.colname)
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:NREL 共保存了12条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----NREL 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----OVERLAID_SUBCELL 生成开始-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:OVERLAID_SUBCELL sql: select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_OVERLAID_SUBCELL' group by upper(t0.colname) order by upper(t0.colname)
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:OVERLAID_SUBCELL 共保存了42条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----OVERLAID_SUBCELL 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----PRIORITY_PROFILE 生成开始-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:PRIORITY_PROFILE sql: select t0.id 规范中所在行,replace(t1.table_related,'CM.G_E_C_','') 网元类型,upper(t0.colname) 中文名,replace(t1.table_related,'CM.G_E_C_','') 平台对应类型,t1.param_name 平台对应字段,replace(t1.table_related,'CM.G_E_C_','') 厂家对应表名,t1.param_name 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_PRIORITY_PROFILE' order by table_related,param_name
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:PRIORITY_PROFILE 共保存了32条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----PRIORITY_PROFILE 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----UTRAN_EXTERNAL_CELL 生成开始-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:UTRAN_EXTERNAL_CELL sql: select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_UTRAN_EXTERNAL_CELL' group by upper(t0.colname) order by upper(t0.colname)
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:UTRAN_EXTERNAL_CELL 共保存了8条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----UTRAN_EXTERNAL_CELL 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----拆分参数 生成开始-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:拆分参数 sql: select id 规范中所在行,netype 网元类型,cnname 规范参数名,upper(colname) 拆分参数  from wuyg_param_gsm_ericsson where id in (select id from wuyg_param_gsm_ericsson group by id having count(*)>1) order by id
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-param_gsm_ericsson.xml:拆分参数 保存了101条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:拆分参数 共保存了106条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----拆分参数 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-param_gsm_ericsson.xml:-----厂家不支持 生成开始-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-param_gsm_ericsson.xml:厂家不支持 sql: select id 规范中所在行,netype 网元类型,upper(cnname) 参数名,colname 厂家不支持原因 from wuyg_param_gsm_ericsson where colname like '%无%'
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-param_gsm_ericsson.xml:厂家不支持 共保存了53条记录
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-param_gsm_ericsson.xml:-----厂家不支持 生成完成-----
+[2011-08-06 16:47:53][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-param_gsm_ericsson.xml:=====Excel文件../excel/TEMPLET/20110806/GSM-ERICSSON-PARAM-20110806_164751.xls保存完成=====

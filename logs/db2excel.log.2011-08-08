@@ -1,0 +1,282 @@
+[2011-08-08 13:56:27][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-td_h_kpi_check.xml:=====Excel文件../excel/指标完备性检查//TD小时粒度性能指标完备性-20110808_135627.xls开始创建=====
+[2011-08-08 13:56:29][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-td_h_kpi_check.xml:-----RNC 生成开始-----
+[2011-08-08 13:56:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-td_h_kpi_check.xml:RNC sql: select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='RNCFUNCTION'
+		and 
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='RNC' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-td_h_kpi_check.xml:RNC 共保存了0条记录
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-td_h_kpi_check.xml:-----RNC 生成完成-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-td_h_kpi_check.xml:-----UTRANCELL 生成开始-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-td_h_kpi_check.xml:UTRANCELL sql: select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where
+		upper(kongjianlidu)='UTRANCELL'
+		and 
+		zhongwenming is not null 
+		and
+		trim(replace(zhongwenming,'.','。')) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='UTRANCELL' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-td_h_kpi_check.xml:UTRANCELL 共保存了5条记录
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-td_h_kpi_check.xml:-----UTRANCELL 生成完成-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-td_h_kpi_check.xml:-----CARRIER 生成开始-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-td_h_kpi_check.xml:CARRIER sql: select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='CARRIER'
+		and
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='CARRIER' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-td_h_kpi_check.xml:CARRIER 共保存了0条记录
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-td_h_kpi_check.xml:-----CARRIER 生成完成-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-td_h_kpi_check.xml:-----IUCSLINKRNC 生成开始-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-td_h_kpi_check.xml:IUCSLINKRNC sql: select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='IUCSLINKRNC'
+		and
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='IUCSLINKRNC' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-td_h_kpi_check.xml:IUCSLINKRNC 共保存了0条记录
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-td_h_kpi_check.xml:-----IUCSLINKRNC 生成完成-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-td_h_kpi_check.xml:-----IUPSLINKRNC 生成开始-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-td_h_kpi_check.xml:IUPSLINKRNC sql: select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='IUPSLINKRNC'
+		and
+		zhongwenming is not null
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='IUPSLINKRNC' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-td_h_kpi_check.xml:IUPSLINKRNC 共保存了0条记录
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-td_h_kpi_check.xml:-----IUPSLINKRNC 生成完成-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-td_h_kpi_check.xml:-----IUBLINK 生成开始-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-td_h_kpi_check.xml:IUBLINK sql: select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='IUBLINK'
+		and
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='IUBLINK' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-td_h_kpi_check.xml:IUBLINK 共保存了0条记录
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-td_h_kpi_check.xml:-----IUBLINK 生成完成-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-td_h_kpi_check.xml:-----UTRANRELATION 生成开始-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-td_h_kpi_check.xml:UTRANRELATION sql: select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='UTRANRELATION'
+		and
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='UTRANRELATION' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-td_h_kpi_check.xml:UTRANRELATION 共保存了0条记录
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-td_h_kpi_check.xml:-----UTRANRELATION 生成完成-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-td_h_kpi_check.xml:-----GSMRELATION 生成开始-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-td_h_kpi_check.xml:GSMRELATION sql: select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='GSMRELATION'
+		and
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='GSMRELATION' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-td_h_kpi_check.xml:GSMRELATION 共保存了0条记录
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-td_h_kpi_check.xml:-----GSMRELATION 生成完成-----
+[2011-08-08 13:56:30][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-td_h_kpi_check.xml:=====Excel文件../excel/指标完备性检查//TD小时粒度性能指标完备性-20110808_135627.xls保存完成=====

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="dbstat" dir="dbstat" subDirType="" name="数据库表统计">
+	<Db2Excel name="表大小统计">
+		<sql><![CDATA[
+		select 
+		t0.owner "账号",
+		t0.table_name "表名",
+		round(t2.size_M/1024) "表大小(G)",
+		t0.num_rows "数据条数",
+		t4.saved_days "存储时长(天)",
+		t0.partitioned "是否分区表"
+		from 
+		(
+		    select * 
+		    from sys.dba_tables
+		) t0
+		left join 
+		(
+		    select 
+		    owner,segment_name,segment_type,sum(bytes)/1024/1024 size_M 
+		    from sys.dba_segments 
+		    group by owner,segment_name,segment_type
+		) t2 on t0.owner=t2.owner and t0.table_name=t2.segment_name
+		left join
+		(
+		    select owner,table_name,saved_days from om.om_tables
+		    union
+		    select owner,table_name,saved_days from om.om_par_tables
+		)
+		t4 on t0.owner=t4.owner and t4.table_name=t0.table_name
+		where t0.owner in('CM','PM','PARAM','NWOM')
+		order by 3 desc nulls last
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="索引大小统计">
+		<sql><![CDATA[
+		select 
+		t0.owner "账号",
+		t1.index_name "索引名",
+		round(t3.size_M/1024) "索引大小(G)",
+		t1.partitioned "是否分区索引",
+		t4.saved_days "存储时长(天)",
+		t0.table_name "表名",
+		round(t2.size_M/1024) "表大小(G)",
+		t0.partitioned "是否分区表"
+		from 
+		(
+		    select * 
+		    from sys.dba_tables
+		) t0
+		left join 
+		(
+		   select * from sys.dba_indexes
+		) t1 on t0.owner=t1.table_owner and t0.table_name=t1.table_name
+		left join 
+		(
+		    select 
+		    owner,segment_name,segment_type,sum(bytes)/1024/1024 size_M 
+		    from sys.dba_segments 
+		    group by owner,segment_name,segment_type
+		) t2 on t0.owner=t2.owner and t0.table_name=t2.segment_name
+		left join 
+		(
+		    select 
+		    owner,segment_name,segment_type,sum(bytes)/1024/1024 size_M 
+		    from sys.dba_segments 
+		    group by owner,segment_name,segment_type
+		) t3 on t1.owner=t3.owner and t1.index_name=t3.segment_name
+		left join
+		(
+		    select owner,table_name,saved_days from om.om_tables
+		    union
+		    select owner,table_name,saved_days from om.om_par_tables
+		)
+		t4 on t0.owner=t4.owner and t4.table_name=t0.table_name
+		where t0.owner in('CM','PM','PARAM','NWOM') and t1.index_name is not null
+		order by 3 desc nulls last
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

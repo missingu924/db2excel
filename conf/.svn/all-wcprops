@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf
+END
+cm_stat_all.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/cm_stat_all.xml
+END
+pm_stat_alcatel_bsc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/pm_stat_alcatel_bsc.xml
+END
+param_gsm_ericsson_new.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/param_gsm_ericsson_new.xml
+END
+gsm_kpi_check.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/gsm_kpi_check.xml
+END
+afos.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/afos.xml
+END
+param_td_huawei.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/param_td_huawei.xml
+END
+td_15m_kpi_check.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/td_15m_kpi_check.xml
+END
+cm_stat_huawei.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/cm_stat_huawei.xml
+END
+pm_stat_alcatel.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/pm_stat_alcatel.xml
+END
+dailyReport.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/dailyReport.xml
+END
+cm_stat_ericsson.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/cm_stat_ericsson.xml
+END
+pm_stat_huawei_bsc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/pm_stat_huawei_bsc.xml
+END
+param.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/param.xml
+END
+pm_stat_ztev2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/pm_stat_ztev2.xml
+END
+pm_stat_ztev3.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/pm_stat_ztev3.xml
+END
+pm_stat_ericsson_bsc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/pm_stat_ericsson_bsc.xml
+END
+pm_531.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/pm_531.xml
+END
+param_td_datang.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/param_td_datang.xml
+END
+param_gsm_huawei.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/param_gsm_huawei.xml
+END
+pm_stat_huawei.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/pm_stat_huawei.xml
+END
+param_td_zte.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/param_td_zte.xml
+END
+DbConfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/DbConfig.xml
+END
+param_gsm_ericsson.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/param_gsm_ericsson.xml
+END
+cm_stat_zte.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/cm_stat_zte.xml
+END
+pm_stat_ericsson.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/pm_stat_ericsson.xml
+END
+pm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/pm.xml
+END
+td_h_kpi_check.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/td_h_kpi_check.xml
+END
+cm_stat_alcatel.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/cm_stat_alcatel.xml
+END
+log4j.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/log4j.xml
+END
+test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/develop/iNOS/!svn/ver/30111/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/conf/test.xml
+END

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="sdyd" dir="指标完备性检查" subDirType="" name="GSM性能指标完备性">
+	<Db2Excel name="BSC">
+		<sql><![CDATA[ 
+		select 
+			zhiBiaoBianMa 指标编码,
+			zhiBiaoMingCheng 指标名称,
+			zhiBiaoShuoMing 指标说明,
+			zhongYaoDu 重要度,
+			shuJuLeiXing 数据类型,
+			danWei 单位,
+			kongJianLiDu 空间粒度,
+			shiJianLiDu 时间粒度,
+			shangBaoZhouQi 上报周期,
+			shiYan 时延,
+			canKaoBianMa 参考编码,
+			beiZhu 备注 
+		from wuyg_gsm_kpi 
+		where kongjianlidu='BSC' 
+		and zhibiaomingcheng not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='BSC' 
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_business_type not like '质量指标集%' 
+		and pm_business_type not like '自定义%')
+		order by zhibiaobianma       
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="PCU">
+		<sql><![CDATA[
+		select 
+			zhiBiaoBianMa 指标编码,
+			zhiBiaoMingCheng 指标名称,
+			zhiBiaoShuoMing 指标说明,
+			zhongYaoDu 重要度,
+			shuJuLeiXing 数据类型,
+			danWei 单位,
+			kongJianLiDu 空间粒度,
+			shiJianLiDu 时间粒度,
+			shangBaoZhouQi 上报周期,
+			shiYan 时延,
+			canKaoBianMa 参考编码,
+			beiZhu 备注 
+		from wuyg_gsm_kpi 
+		where kongjianlidu='PCU' 
+		and zhibiaomingcheng not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='PUC' 
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_business_type not like '质量指标集%' 
+		and pm_business_type not like '自定义%')
+		order by zhibiaobianma     
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="BTS">
+		<sql><![CDATA[    
+		select 
+			zhiBiaoBianMa 指标编码,
+			zhiBiaoMingCheng 指标名称,
+			zhiBiaoShuoMing 指标说明,
+			zhongYaoDu 重要度,
+			shuJuLeiXing 数据类型,
+			danWei 单位,
+			kongJianLiDu 空间粒度,
+			shiJianLiDu 时间粒度,
+			shangBaoZhouQi 上报周期,
+			shiYan 时延,
+			canKaoBianMa 参考编码,
+			beiZhu 备注 
+		from wuyg_gsm_kpi 
+		where kongjianlidu='SITE' 
+		and zhibiaomingcheng not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='BTS' 
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_business_type not like '质量指标集%' 
+		and pm_business_type not like '自定义%')
+		order by zhibiaobianma    
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CELL">
+		<sql><![CDATA[    
+		select 
+			zhiBiaoBianMa 指标编码,
+			zhiBiaoMingCheng 指标名称,
+			zhiBiaoShuoMing 指标说明,
+			zhongYaoDu 重要度,
+			shuJuLeiXing 数据类型,
+			danWei 单位,
+			kongJianLiDu 空间粒度,
+			shiJianLiDu 时间粒度,
+			shangBaoZhouQi 上报周期,
+			shiYan 时延,
+			canKaoBianMa 参考编码,
+			beiZhu 备注 
+		from wuyg_gsm_kpi 
+		where kongjianlidu='CELL' 
+		and zhibiaomingcheng not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='CELL' 
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_business_type not like '质量指标集%' 
+		and pm_business_type not like '自定义%')
+		order by zhibiaobianma    
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CELL-CELL">
+		<sql><![CDATA[  
+		select 
+			zhiBiaoBianMa 指标编码,
+			zhiBiaoMingCheng 指标名称,
+			zhiBiaoShuoMing 指标说明,
+			zhongYaoDu 重要度,
+			shuJuLeiXing 数据类型,
+			danWei 单位,
+			kongJianLiDu 空间粒度,
+			shiJianLiDu 时间粒度,
+			shangBaoZhouQi 上报周期,
+			shiYan 时延,
+			canKaoBianMa 参考编码,
+			beiZhu 备注  
+		from wuyg_gsm_kpi 
+		where kongjianlidu='CELL-CELL' 
+		and zhibiaomingcheng not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='CELL-CELL' 
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_business_type not like '质量指标集%' 
+		and pm_business_type not like '自定义%')
+		order by zhibiaobianma      
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

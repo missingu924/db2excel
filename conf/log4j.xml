@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- 标准输出即控制台输出 -->
+	<appender name="stdoutAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}][%l][%p]-%m%n"/>
+		</layout>
+	</appender>
+	<!-- 记录流水日志，每天产生一个文件 -->
+	<appender name="fileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<!-- 这里需根据实际情况修改 -->
+		<param name="File" value="../logs/db2excel.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}][%l][%p][%t]-%m%n"/>
+		</layout>
+	</appender>
+	<!-- 记录错误日志，每天产生一个文件-->
+	<appender name="errorFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<!-- 这里需根据实际情况修改 -->
+		<param name="File" value="../logs/db2excel_error.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}][%l][%p]-%m%n"/>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="ERROR"/>
+		</filter>
+	</appender>
+	<!-- 设置域名限制，即com.inspur域及以下的日志均输出到下面对应的通道中 -->
+	<!-- 如果要增加新的logger，请依据下面的例子编写 -->
+	<logger name="com.inspur">
+		<!-- 设置输出的日志级别 -->
+		<level value="DEBUG"/>
+		<!-- 与前面appender name相对应 -->
+		<appender-ref ref="fileAppender"/>
+		<appender-ref ref="errorFileAppender"/>
+	</logger>
+	<root>
+		<level value="DEBUG"/>
+		<appender-ref ref="stdoutAppender"/>
+	</root>
+</log4j:configuration>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="sdyd" dir="TEMPLET" subDirType="DAY" name="TD-HUAWEI-PARAM">
+	<Db2Excel name="统计">
+		<sql><![CDATA[select  'TD' 制式,'HUAWEI' 厂商,网元类型 分类,count(*) 参数数量 from(
+select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_H_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_H_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_H_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名  from wuyg_param_td_HUAWEI t0,dataset_info t1 where
+cnname is not null and netype is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD' and upper(enname) =param_name group by enname order by 5)
+group by 网元类型
+order by 3]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANRELATION">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANRELATION' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="ANTENNAFUNCTION">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='ANTENNAFUNCTION' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='CARRIER' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER_CELLEAGCH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='CARRIER_CELLEAGCH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER_CELLEHICH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='CARRIER_CELLEHICH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER_CELLEPUCH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='CARRIER_CELLEPUCH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER_HSCONTROLCHAN">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='CARRIER_HSCONTROLCHAN' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER_HSPDSCH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='CARRIER_HSPDSCH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="NRNC_NRNCCELL">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='NRNC_NRNCCELL' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="PRACHASC_PRACHPERSI">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='PRACHASC_PRACHPERSI' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNC">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNC' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCCNDOMAIN">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCCNDOMAIN' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCMBMSCCTRCHTDM">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCMBMSCCTRCHTDM' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCPRACHPERS">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCPRACHPERS' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCTRAFFICEBI0">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCTRAFFICEBI0' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCTYPRABBASIC">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCTYPRABBASIC' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCTYPRABBLER">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCTYPRABBLER' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCTYPRABDCCCMC">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCTYPRABDCCCMC' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCTYPRABHSPA">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCTYPRABHSPA' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCTYPRABOLPC">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCTYPRABOLPC' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCTYPSRBHSPA">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCTYPSRBHSPA' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNCTYPSRBOLPC">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='RNCTYPSRBOLPC' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_CCHCCTRCH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_CCHCCTRCH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_CELLERUCCH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_CELLERUCCH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_CELLRLPWR">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_CELLRLPWR' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_FACH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_FACH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_FPACH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_FPACH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_GSMCELL">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_GSMCELL' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_GSMNCELL">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_GSMNCELL' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_MBMSMICH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_MBMSMICH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_NCELL">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_NCELL' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_PCH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_PCH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_PICH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_PICH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_PRACH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_PRACH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_WCDMANCEL">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_H_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_H_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_HUAWEI t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='HUAWEI' and datatype='参数' and ne_mode='TD'and replace(table_related,'CM.O_T_H_','')='UTRANCELL_WCDMANCEL' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="待处理">
+		<sql><![CDATA[select id 规范中所在行,netype 网元类型, cnname 中文名,enname 英文名 from wuyg_param_td_HUAWEI 
+where
+upper(enname)
+not in
+(
+select param_name from dataset_info where vendor='HUAWEI' and datatype='参数' and ne_mode='TD'
+)
+and cnname is not null and netype is not null]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

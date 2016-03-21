@@ -1,0 +1,2 @@
+#数据质量日报生成，脚本所在的目录需根据项目实际情况修改
+15 4 * * * /export/home/nwom/db2excel/bin/dailyReport.sh >/dev/null

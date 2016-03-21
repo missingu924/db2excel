@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="gsyd_pm" dir="pm" subDirType="DAY" name="短信测试">
+	<Db2Excel name="短信测试" sendSms="true">
+		<sql><![CDATA[
+        select
+        to_char(start_time,'HH')||'点' 时间,
+        vendor_name 厂商,
+        count(*) 数据条数
+        from pm.f_g_c_cell_hour
+        where start_time=trunc(sysdate-5/24,'HH')
+        group by vendor_name,start_time
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

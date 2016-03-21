@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="wydb_gspm" dir="pm_stat" subDirType="DAY" name="华为-性能-完整性">
+	<Db2Excel name="BSC缺失">
+		<sql><![CDATA[
+		select  
+		'甘肃' 省份,
+		to_char(sysdate-3/24,'yyyy-mm-dd hh24') start_time,
+		user_label BSC
+		from 
+		gsrms.bsc where vendor_name='华为'
+		and 
+		(
+			 select count(*) from pm_omc_huawei t2 where bsc.user_label=t2.ne and t2.start_time=to_date(to_char(sysdate-3/24,'yyyy-mm-dd hh24'),'yyyy-mm-dd hh24:mi:ss')
+		)=0
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="全省性能数据完整性统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) cell数
+		from pm_omc_huawei 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分地市性能数据完整性统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) 小区数
+			from pm_omc_huawei 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分BSC性能数据完整性统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			ne BSC,
+			start_time 时间,
+			count(*) CELL数
+		from pm_omc_huawei where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,ne,start_time
+		order by city_name,ne
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

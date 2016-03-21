@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="sdyd" dir="AFOS" subDirType="DAY" name="AFOS导入数据">
+	<Db2Excel name="2g小区">
+		<sql><![CDATA[
+		select 
+		unique_key UUID,
+		user_label 小区名称,
+		alias 小区中文名,
+		cgi CGI,
+		bts_uk BTS名称,
+		bsc_uk BSC名称,
+		msc MSC名称,
+		bts_uk BTS唯一标识,
+		bsc_uk BSC唯一标识,
+		msc MSC唯一标识,
+		city_id city唯一标识,
+		city_name city名称,
+		longitude 经度,
+		latitude 纬度,
+		direction 小区方位角,
+		--高度
+		--机械下倾角
+		--标注小区是否是室内小区 
+		--小区BCCH发射功率
+		--天线挂高
+		BSIC,
+		BCCH,
+		LAC,
+		CI,
+		tch TCH频点列表,
+		RAC,
+		1 是否激活,
+		sysdate 数据采集时间,
+		'' 馈线损耗,
+		'' cdu损耗
+		from cm.f_g_c_cell where city_id=531 
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="3g小区">
+		<sql><![CDATA[
+		select 
+		unique_key UUID,
+		user_label 小区名称,
+		user_label 小区中文名,
+		nodeb_name nodeb名称,
+		rnc_name rnc名称,
+		msc msc名称,
+		nodeb_uk nodeb唯一标识,
+		rnc_uk rnc唯一标识,
+		msc msc唯一标识,
+		city_id city唯一标识,
+		city_name city名称,
+		CGI,
+		LAC,
+		cell_id CID,
+		longitude 经度,
+		latitude 纬度,
+		direction 小区方位角,
+		--高度
+		--机械下倾角
+		--天线挂高
+		--标注小区是否是室内小区 
+		pccpch_pow "小区P-CCPCH发射功率",
+		uarfcn 小区频点,
+		cellparam_id 小区扰码,
+		RAC,
+		1 是否激活,
+		'' 副频点列表,
+		sysdate 数据采集时间,
+		'' 馈线损耗,
+		'' cdu损耗
+		from cm.f_t_c_utrancell where city_id=531
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="直放站">
+		<sql><![CDATA[
+		select
+t0.unique_key UUID,
+t0.maincell_uk 施主小区唯一标识,
+t0.maincell_zhlabel 施主小区名称,
+t0.user_label 直放站名称,
+t0.city_id 所属城市唯一标识,
+t0.city_name 所属地市名称,
+t0.longitude 安装地点经度,
+t0.latitude 安装地点纬度,
+t1.lac 施主小区的LAC,
+t1.ci 施主小区CI,
+ant_heigh 天线高度,
+t0.pow 发射功率,
+ant_angel 天线方向,
+ant_downangel 天线倾角,
+ant_count 天线数量,
+'' 天线增益,
+'' 馈线长度,
+t1.bcch 频点信息,
+'GSM' 制式,
+sysdate 数据采集时间
+from cm.f_g_c_repeater t0,cm.f_g_c_cell t1
+where
+t0.maincell_uk=t1.unique_key
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="2g邻区">
+		<sql><![CDATA[
+		select 
+--'' 邻区关系唯一标识,
+cgi 主小区唯一标识,
+nbr_cgi_01 邻区唯一标识,
+0 邻区方向,
+sysdate 数据采集时间
+ from (
+select 
+cgi,
+nbr_cgi_01
+from cm.f_g_c_gg_relationh where nbr_cgi_01 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531) 
+union
+select 
+cgi,
+nbr_cgi_02
+from cm.f_g_c_gg_relationh where nbr_cgi_02 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_03
+from cm.f_g_c_gg_relationh where nbr_cgi_03 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_04
+from cm.f_g_c_gg_relationh where nbr_cgi_04 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_05
+from cm.f_g_c_gg_relationh where nbr_cgi_05 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_06
+from cm.f_g_c_gg_relationh where nbr_cgi_06 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_07
+from cm.f_g_c_gg_relationh where nbr_cgi_07 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_08
+from cm.f_g_c_gg_relationh where nbr_cgi_08 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_09
+from cm.f_g_c_gg_relationh where nbr_cgi_09 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_10
+from cm.f_g_c_gg_relationh where nbr_cgi_10 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_11
+from cm.f_g_c_gg_relationh where nbr_cgi_11 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_12
+from cm.f_g_c_gg_relationh where nbr_cgi_12 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_13
+from cm.f_g_c_gg_relationh where nbr_cgi_13 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_14
+from cm.f_g_c_gg_relationh where nbr_cgi_14 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_15
+from cm.f_g_c_gg_relationh where nbr_cgi_15 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_16
+from cm.f_g_c_gg_relationh where nbr_cgi_16 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_17
+from cm.f_g_c_gg_relationh where nbr_cgi_17 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_18
+from cm.f_g_c_gg_relationh where nbr_cgi_18 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_19
+from cm.f_g_c_gg_relationh where nbr_cgi_19 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_20
+from cm.f_g_c_gg_relationh where nbr_cgi_20 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_21
+from cm.f_g_c_gg_relationh where nbr_cgi_21 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_22
+from cm.f_g_c_gg_relationh where nbr_cgi_22 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_23
+from cm.f_g_c_gg_relationh where nbr_cgi_23 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_24
+from cm.f_g_c_gg_relationh where nbr_cgi_24 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_25
+from cm.f_g_c_gg_relationh where nbr_cgi_25 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_26
+from cm.f_g_c_gg_relationh where nbr_cgi_26 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_27
+from cm.f_g_c_gg_relationh where nbr_cgi_27 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_28
+from cm.f_g_c_gg_relationh where nbr_cgi_28 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_29
+from cm.f_g_c_gg_relationh where nbr_cgi_29 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_30
+from cm.f_g_c_gg_relationh where nbr_cgi_30 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_31
+from cm.f_g_c_gg_relationh where nbr_cgi_31 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_32
+from cm.f_g_c_gg_relationh where nbr_cgi_32 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+) 
+where rownum<10000
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="3g邻区">
+		<sql><![CDATA[
+		select 
+--'' 邻区关系唯一标识,
+unique_key 主小区唯一标识,
+nbr_cgi_01 邻区唯一标识,
+0 邻区方向,
+sysdate 数据采集时间
+ from (
+select 
+unique_key,
+nbr_cgi_01
+from cm.f_t_c_tt_relationh where nbr_cgi_01 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531) 
+union
+select 
+unique_key,
+nbr_cgi_02
+from cm.f_t_c_tt_relationh where nbr_cgi_02 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_03
+from cm.f_t_c_tt_relationh where nbr_cgi_03 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_04
+from cm.f_t_c_tt_relationh where nbr_cgi_04 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_05
+from cm.f_t_c_tt_relationh where nbr_cgi_05 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_06
+from cm.f_t_c_tt_relationh where nbr_cgi_06 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_07
+from cm.f_t_c_tt_relationh where nbr_cgi_07 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_08
+from cm.f_t_c_tt_relationh where nbr_cgi_08 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_09
+from cm.f_t_c_tt_relationh where nbr_cgi_09 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_10
+from cm.f_t_c_tt_relationh where nbr_cgi_10 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_11
+from cm.f_t_c_tt_relationh where nbr_cgi_11 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_12
+from cm.f_t_c_tt_relationh where nbr_cgi_12 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_13
+from cm.f_t_c_tt_relationh where nbr_cgi_13 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_14
+from cm.f_t_c_tt_relationh where nbr_cgi_14 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_15
+from cm.f_t_c_tt_relationh where nbr_cgi_15 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_16
+from cm.f_t_c_tt_relationh where nbr_cgi_16 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_17
+from cm.f_t_c_tt_relationh where nbr_cgi_17 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_18
+from cm.f_t_c_tt_relationh where nbr_cgi_18 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_19
+from cm.f_t_c_tt_relationh where nbr_cgi_19 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_20
+from cm.f_t_c_tt_relationh where nbr_cgi_20 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_21
+from cm.f_t_c_tt_relationh where nbr_cgi_21 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_22
+from cm.f_t_c_tt_relationh where nbr_cgi_22 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_23
+from cm.f_t_c_tt_relationh where nbr_cgi_23 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_24
+from cm.f_t_c_tt_relationh where nbr_cgi_24 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_25
+from cm.f_t_c_tt_relationh where nbr_cgi_25 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_26
+from cm.f_t_c_tt_relationh where nbr_cgi_26 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_27
+from cm.f_t_c_tt_relationh where nbr_cgi_27 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_28
+from cm.f_t_c_tt_relationh where nbr_cgi_28 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_29
+from cm.f_t_c_tt_relationh where nbr_cgi_29 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_30
+from cm.f_t_c_tt_relationh where nbr_cgi_30 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_31
+from cm.f_t_c_tt_relationh where nbr_cgi_31 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_32
+from cm.f_t_c_tt_relationh where nbr_cgi_32 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+) 
+where rownum<10000
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="msc">
+		<sql><![CDATA[
+		select distinct 
+msc UUID,
+msc msc名称,
+'' msc局号,
+vendor_name msc设备厂家名称,
+city_id 网元所属城市唯一标识,
+city_name city名称,
+sysdate 数据采集时间 
+from cm.f_g_c_bsc
+where city_id=531
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="bsc">
+		<sql><![CDATA[
+		select  
+unique_key UUID,
+unique_key bsc名称,
+msc mss唯一标识,
+msc mss名称,
+city_id 所属城市唯一标识,
+city_name 网元所属城市名称,
+vendor_name 设备厂家名称,
+sysdate 数据采集时间 
+from cm.f_g_c_bsc
+where city_id=531
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="bts">
+		<sql><![CDATA[
+		select
+unique_key UUID,
+alias bts名称,
+bsc_uk 所属bsc唯一标识,
+bsc_name 所属bsc名称,
+msc 所属msc唯一标识,
+msc 所属msc名称,
+city_id 所属city唯一标识,
+city_name 所属city名称,
+vendor_name 设备厂家名称,
+longitude 纬度,
+latitude 经度,
+sysdate 数据采集时间,
+freq_band 频段
+from cm.f_g_c_bts
+where city_id=531
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="nodeb">
+		<sql><![CDATA[
+		select 
+unique_key UUID,
+user_label NodeB名称,
+rnc_uk 所属rnc唯一标识,
+rnc_name 所属rnc名称,
+'' 所属msc唯一标识,
+'' 所属msc名称,
+city_id 所属city唯一标识,
+city_name 所属city名称,
+vendor_name 厂家名称,
+sysdate 数据采集时间,
+longitude 纬度,
+latitude 经度
+from cm.f_t_c_nodeb
+where city_id=531
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="rnc">
+		<sql><![CDATA[
+		select 
+unique_key UUID,
+user_label rnc名称 ,
+msc 所属msc唯一标识,
+msc 所属msc名称,
+city_id 所属城市唯一标识,
+city_name 网元所属城市名称,
+vendor_name 设备厂家名称,
+sysdate 数据采集时间
+from cm.f_t_c_rnc
+where city_id=531
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="city">
+		<sql><![CDATA[
+		select 
+city_id UUID,
+city_name 城市名称 ,
+city_id region_uuid,
+city_name 区域名称 
+from cm.city where city_id<634
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="sdyd" dir="TEMPLET" subDirType="DAY" name="TD-ZTE-PARAM">
+	<Db2Excel name="统计">
+		<sql><![CDATA[select  'TD' 制式,'ZTE' 厂商,网元类型 分类,count(*) 参数数量 from(
+select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_Z_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_Z_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_Z_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名  from wuyg_param_td_ZTE t0,dataset_info t1 where
+cnname is not null and netype is not null and vendor='ZTE' and datatype='参数'and upper(enname) =param_name group by enname order by 5)
+group by 网元类型
+order by 3]]></sql>
+	</Db2Excel>
+	<Db2Excel name="ANTENNAFUNCTION">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='ANTENNAFUNCTION' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='CARRIER' and upper(netype)='CARRIER' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER_FPACH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='CARRIER_FPACH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER_HSDPPA">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='CARRIER_HSDPPA' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER_HSDPPB">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='CARRIER_HSDPPB' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER_HSSCCHCPC">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='CARRIER_HSSCCHCPC' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER_PRACH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='CARRIER_PRACH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="EXTERNALGSMCELLS">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='EXTERNALGSMCELLS' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="EXTERNALUTRANCELLS">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='EXTERNALUTRANCELLS' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GSMRELATION">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='GSMRELATION' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNC">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='RNC' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNC_SUBSRV">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='RNC_SUBSRV' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='UTRANCELL' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_CCTRCH">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='UTRANCELL_CCTRCH' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_CELLMEAS">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='UTRANCELL_CELLMEAS' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_CMEASEVT">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='UTRANCELL_CMEASEVT' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_RATCMEASEVT">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='UTRANCELL_RATCMEASEVT' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_SRVCAC">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='UTRANCELL_SRVCAC' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_TRFPC">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='UTRANCELL_TRFPC' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANRELATION">
+		<sql><![CDATA[select t1.id 规范中所在行,replace(table_related,'CM.O_T_Z_','') 网元类型,upper(cnname) 中文名,replace(table_related,'CM.O_T_Z_','') 平台对应类型,param_name 平台对应字段,'' 厂家对应表名,'' 厂家对应字段名 from dataset_info t0 left join wuyg_param_td_zte t1 on t0.param_name=upper(t1.enname) where enname is not null and vendor='ZTE' and datatype='参数' and replace(table_related,'CM.O_T_Z_','')='UTRANRELATION' order by param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="待处理">
+		<sql><![CDATA[select id 规范中所在行,netype 网元类型, cnname 中文名,enname 英文名 from wuyg_param_td_ZTE 
+where
+upper(enname)
+not in
+(
+select param_name from dataset_info where vendor='ZTE' and datatype='参数'
+)
+and cnname is not null and netype is not null]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

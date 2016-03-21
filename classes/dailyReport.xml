@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="sdyd" dir="DataQuality" subDirType="" name="数据质量日报">
+	<Db2Excel name="资源配置报表">
+		<sql><![CDATA[
+		select 
+		trunc(sysdate-1) 日期,
+		t0.city_name 地市,
+		t0.bsc_count BSC数量,
+		t1.cell_count 当前激活小区数量,
+		nvl(t2.notactive_cell_count,0) 其他状态小区数量,
+		t1.cell_count+nvl(t2.notactive_cell_count,0) 小区总数
+		from 
+		(
+		select 
+		grouping_id(city_name) sort_id,
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) bsc_count
+		from cm.f_g_c_bsc group by rollup(city_name)
+		) t0
+		left join
+		(
+		select 
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) cell_count
+		from cm.f_g_c_cell where state='入网在用' group by rollup(city_name)
+		) t1
+		on t0.city_name=t1.city_name
+		left join
+		(
+		select 
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) notactive_cell_count
+		from cm.f_g_c_cell where state<>'入网在用' group by rollup(city_name)
+		) t2
+		on t0.city_name=t2.city_name
+		order by t0.sort_id,t0.city_name
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分地市KPI采集完整率">
+		<sql><![CDATA[
+		select 
+		trunc(sysdate-1) 日期,
+		t0.city_name 地市,
+		t0.bsc_count BSC数量,
+		t1.cell_count 当前激活小区数量,
+		nvl(t2.notactive_cell_count,0) 其他状态小区数量,
+		t1.cell_count+nvl(t2.notactive_cell_count,0) 小区总数,
+		t4.hours 计数器采集小时数,
+		t1.cell_count*t4.hours 期望采集计数器记录数,
+		nvl(t4.record_count,0)+nvl(t5.record_count,0)+nvl(t6.record_count,0) 实际采集计数器记录数,
+		round(((nvl(t4.record_count,0)+nvl(t5.record_count,0)+nvl(t6.record_count,0))/t1.cell_count/t4.hours*100),2) 分地市计数器采集完备率,
+		t3.hours KPI采集小时数,
+		t1.cell_count*t3.hours 期望采集KPI计录数,
+		t3.record_count 实际采集KPI记录数,
+		round((t3.record_count/t1.cell_count/t3.hours*100),2) 分地市KPI采集完备率
+		from 
+		(
+		select 
+		grouping_id(city_name) sort_id,
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) bsc_count
+		from cm.f_g_c_bsc group by rollup(city_name)
+		) t0
+		left join
+		(
+		select 
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) cell_count
+		from cm.f_g_c_cell where state='入网在用' group by rollup(city_name)
+		) t1
+		on t0.city_name=t1.city_name
+		left join
+		(
+		select 
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) notactive_cell_count
+		from cm.f_g_c_cell where state<>'入网在用' group by rollup(city_name)
+		) t2
+		on t0.city_name=t2.city_name
+		left join
+		(
+		select
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) record_count,
+		count(distinct start_time) hours
+		from pm.f_g_c_cell_hour 
+		where start_time>=trunc(sysdate-1) and start_time<trunc(sysdate) and bsche00 is not null
+		group by rollup(city_name)
+		) t3
+		on t0.city_name=t3.city_name
+		left join
+		(
+		select
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) record_count,
+		count(distinct start_time) hours
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=trunc(sysdate-1) and start_time<trunc(sysdate)
+		group by rollup(city_name)
+		) t4
+		on t0.city_name=t4.city_name
+		left join
+		(
+		select
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) record_count,
+		count(distinct start_time) hours
+		from pm.O_G_H_R11_1275071420_3 
+		where start_time>=trunc(sysdate-1) and start_time<trunc(sysdate)
+		group by rollup(city_name)
+		) t5
+		on t0.city_name=t5.city_name
+		left join
+		(
+		select
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) record_count,
+		count(distinct start_time) hours
+		from pm.o_g_n_s14_h_traffic 
+		where start_time>=trunc(sysdate-1) and start_time<trunc(sysdate)
+		group by rollup(city_name)
+		) t6
+		on t0.city_name=t6.city_name
+		order by t0.sort_id,t0.city_name
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分BSC KPI采集完整率">
+		<sql><![CDATA[
+		select 
+		trunc(sysdate) 日期,
+		t1.city_name 地市,
+		t1.bsc_uk BSC名称,
+		t1.vendor_name 厂商名称,
+		t1.cell_count 当前激活小区数量,
+		nvl(t2.notactive_cell_count,0) 其他状态小区数量,
+		t1.cell_count+nvl(t2.notactive_cell_count,0) 小区总数,
+		t4.hours 计数器采集小时数,
+		t1.cell_count*t4.hours 期望采集计数器记录数,
+		nvl(t4.record_count,0)+nvl(t5.record_count,0)+nvl(t6.record_count,0) 实际采集计数器记录数,
+		round(((nvl(t4.record_count,0)+nvl(t5.record_count,0)+nvl(t6.record_count,0))/t1.cell_count/t4.hours*100),2) 分BSC计数器采集完备率,
+		t3.hours KPI采集小时数,
+		t1.cell_count*t3.hours 期望采集KPI计录数,
+		t3.record_count 实际采集KPI记录数,
+		round((t3.record_count/t1.cell_count/t3.hours*100),2) 分BSCKPI采集完备率
+		from 
+		(
+		select 
+		city_name,bsc_uk,vendor_name,count(*) cell_count
+		from cm.f_g_c_cell where state='入网在用' group by city_name,bsc_uk,vendor_name
+		) t1
+		left join
+		(
+		select 
+		city_name,bsc_uk,vendor_name,count(*) notactive_cell_count
+		from cm.f_g_c_cell where state<>'入网在用' group by city_name,bsc_uk,vendor_name
+		) t2
+		on t1.vendor_name=t2.vendor_name and t1.bsc_uk=t2.bsc_uk and t1.city_name=t2.city_name
+		left join
+		(
+		select
+		city_name,bsc_uk,vendor_name,
+		count(*) record_count,
+		count(distinct start_time) hours
+		from pm.f_g_c_cell_hour 
+		where start_time>=trunc(sysdate-1) and start_time<trunc(sysdate) and bsche00 is not null
+		group by city_name,bsc_uk,vendor_name
+		) t3
+		on t1.vendor_name=t3.vendor_name and t1.bsc_uk=t3.bsc_uk and t1.city_name=t3.city_name
+		left join
+		(
+		select
+		city_name,bsc_uk,'爱立信' vendor_name,
+		count(*) record_count,
+		count(distinct start_time) hours
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=trunc(sysdate-1) and start_time<trunc(sysdate)
+		group by city_name,bsc_uk
+		) t4
+		on t1.vendor_name=t4.vendor_name and t1.bsc_uk=t4.bsc_uk and t1.city_name=t4.city_name
+		left join
+		(
+		select
+		city_name,bsc_uk,'华为' vendor_name,
+		count(*) record_count,
+		count(distinct start_time) hours
+		from pm.O_G_H_R11_1275071420_3 
+		where start_time>=trunc(sysdate-1) and start_time<trunc(sysdate)
+		group by city_name,bsc_uk
+		) t5
+		on t1.vendor_name=t5.vendor_name and t1.bsc_uk=t5.bsc_uk and t1.city_name=t5.city_name
+		left join
+		(
+		select
+		city_name,bsc_uk,'诺基亚' vendor_name,
+		count(*) record_count,
+		count(distinct start_time) hours
+		from pm.o_g_n_s14_h_traffic 
+		where start_time>=trunc(sysdate-1) and start_time<trunc(sysdate)
+		group by city_name,bsc_uk
+		) t6
+		on t1.vendor_name=t6.vendor_name and t1.bsc_uk=t6.bsc_uk and t1.city_name=t6.city_name
+		order by t1.vendor_name,t1.bsc_uk
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分地市MRR采集情况">
+		<sql><![CDATA[
+		select 
+		trunc(sysdate) 日期,
+		t0.city_name 地市,
+		t0.bsc_count BSC数量,
+		t1.cell_count 当前激活小区数量,
+		nvl(t2.notactive_cell_count,0) 其他状态小区数量,
+		t1.cell_count+nvl(t2.notactive_cell_count,0) 小区总数,
+		t3.hours MR采集小时数,
+		t1.cell_count*t3.hours 期望采集MR计录数,
+		t3.record_count 实际采集MR记录数,
+		nvl(round((t3.record_count/t1.cell_count/t3.hours*100),2),0) 分地市MR采集完备率
+		from 
+		(
+		select
+		grouping_id(city_name) sort_id,
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) bsc_count
+		from cm.f_g_c_bsc 
+		group by rollup(city_name)
+		) t0
+		left join
+		(
+		select 
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) cell_count
+		from cm.f_g_c_cell where state='入网在用' group by rollup(city_name)
+		) t1
+		on t0.city_name=t1.city_name
+		left join
+		(
+		select 
+		decode(grouping_id(city_name),0,city_name,'全省') city_name,
+		count(*) notactive_cell_count
+		from cm.f_g_c_cell where state<>'入网在用' group by rollup(city_name)
+		) t2
+		on t0.city_name=t2.city_name
+		left join
+		(
+		select
+		decode(grouping_id(regionname),0,regionname,'全省') regionname,
+		count(*) record_count,
+		count(distinct starttime) hours
+		from sdpm.cell_mr_h 
+		where starttime>=trunc(sysdate-1) and starttime<trunc(sysdate) 
+		group by rollup(regionname)
+		) t3
+		on t0.city_name=t3.regionname
+		order by t0.sort_id,t0.city_name
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分BSC的MRR采集完备情况">
+		<sql><![CDATA[
+		select 
+		trunc(sysdate) 日期,
+		t1.city_name 地市,
+		t1.bsc_uk BSC名称,
+		t1.cell_count 当前激活小区数量,
+		nvl(t2.notactive_cell_count,0) 其他状态小区数量,
+		t1.cell_count+nvl(t2.notactive_cell_count,0) 小区总数,
+		t3.hours MR采集小时数,
+		t1.cell_count*t3.hours 期望采集MR计录数,
+		t3.record_count 实际采集MR记录数,
+		nvl(round((t3.record_count/t1.cell_count/t3.hours*100),2),0) 分BSCMR采集完备率
+		from 
+		(
+		select 
+		city_name,bsc_uk,
+		count(*) cell_count
+		from cm.f_g_c_cell where state='入网在用' group by city_name,bsc_uk
+		) t1
+		left join
+		(
+		select 
+		city_name,bsc_uk,
+		count(*) notactive_cell_count
+		from cm.f_g_c_cell where state<>'入网在用' group by city_name,bsc_uk
+		) t2
+		on t1.bsc_uk=t2.bsc_uk and t1.city_name=t2.city_name
+		left join
+		(
+		select
+		regionname,
+		bscid,
+		count(*) record_count,
+		count(distinct starttime) hours
+		from sdpm.cell_mr_h 
+		where starttime>=trunc(sysdate-1) and starttime<trunc(sysdate) 
+		group by regionname,bscid
+		) t3
+		on t1.bsc_uk=t3.bscid and t1.city_name=t3.regionname
+		order by t1.city_name
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

@@ -1,0 +1,1 @@
+db2excel cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;

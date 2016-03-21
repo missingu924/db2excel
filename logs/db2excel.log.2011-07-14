@@ -1,0 +1,2879 @@
+[2011-07-14 15:09:02][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_150902.xls开始创建=====
+[2011-07-14 15:09:15][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_150915.xls开始创建=====
+[2011-07-14 15:09:17][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----BSC缺失 生成开始-----
+[2011-07-14 15:09:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 sql: select  
+		'山东' 省份,
+		to_char(sysdate-8/24,'yyyy-mm-dd hh24') start_time,
+		unique_key BSC
+		from 
+		cm.f_g_c_bsc where vendor_name='爱立信'
+		and 
+		unique_key not in
+		(
+			 select distinct(bsc_uk) from pm.o_g_e_r12_h_celtchf where start_time=to_date(to_char(sysdate-8/24,'yyyy-mm-dd hh24'),'yyyy-mm-dd hh24:mi:ss')
+		)
+[2011-07-14 15:09:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 保存了101条记录
+[2011-07-14 15:09:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 保存了201条记录
+[2011-07-14 15:09:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 保存了301条记录
+[2011-07-14 15:09:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 共保存了376条记录
+[2011-07-14 15:09:52][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----BSC缺失 生成完成-----
+[2011-07-14 15:09:52][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----全省性能数据完整性统计 生成开始-----
+[2011-07-14 15:09:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:全省性能数据完整性统计 sql: select 
+			'山东' 省份,
+			start_time 时间,
+			count(distinct bsc_uk) bsc数,
+			count(*) cell数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2011-07-14 15:10:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:全省性能数据完整性统计 共保存了9条记录
+[2011-07-14 15:10:44][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----全省性能数据完整性统计 生成完成-----
+[2011-07-14 15:10:44][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----分BSC性能数据完整性统计 生成开始-----
+[2011-07-14 15:10:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 sql: select 
+			'山东' 省份,
+			bsc_uk BSC
+			start_time 时间,
+			count(*) CELL数
+		from pm.o_g_e_r12_h_celtchf  start_time>=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by bsc_uk,start_time
+		order by bsc_uk
+[2011-07-14 15:11:28][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_151128.xls开始创建=====
+[2011-07-14 15:11:29][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----BSC缺失 生成开始-----
+[2011-07-14 15:11:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 sql: select  
+		'山东' 省份,
+		to_char(sysdate-8/24,'yyyy-mm-dd hh24') start_time,
+		unique_key BSC
+		from 
+		cm.f_g_c_bsc where vendor_name='爱立信'
+		and 
+		unique_key not in
+		(
+			 select distinct(bsc_uk) from pm.o_g_e_r12_h_celtchf where start_time=to_date(to_char(sysdate-8/24,'yyyy-mm-dd hh24'),'yyyy-mm-dd hh24:mi:ss')
+		)
+[2011-07-14 15:11:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 保存了101条记录
+[2011-07-14 15:12:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 保存了201条记录
+[2011-07-14 15:12:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 保存了301条记录
+[2011-07-14 15:12:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 共保存了376条记录
+[2011-07-14 15:12:39][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----BSC缺失 生成完成-----
+[2011-07-14 15:12:39][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----全省性能数据完整性统计 生成开始-----
+[2011-07-14 15:12:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:全省性能数据完整性统计 sql: select 
+			'山东' 省份,
+			start_time 时间,
+			count(distinct bsc_uk) bsc数,
+			count(*) cell数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2011-07-14 15:12:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:全省性能数据完整性统计 共保存了9条记录
+[2011-07-14 15:12:48][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----全省性能数据完整性统计 生成完成-----
+[2011-07-14 15:12:48][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----分BSC性能数据完整性统计 生成开始-----
+[2011-07-14 15:12:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 sql: select 
+			'山东' 省份,
+			bsc_uk BSC
+			start_time 时间,
+			count(*) CELL数
+		from pm.o_g_e_r12_h_celtchf  
+		where start_time>=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by bsc_uk,start_time
+		order by bsc_uk
+[2011-07-14 15:13:09][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_151309.xls开始创建=====
+[2011-07-14 15:13:10][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----BSC缺失 生成开始-----
+[2011-07-14 15:13:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 sql: select  
+		'山东' 省份,
+		to_char(sysdate-8/24,'yyyy-mm-dd hh24') start_time,
+		unique_key BSC
+		from 
+		cm.f_g_c_bsc where vendor_name='爱立信'
+		and 
+		unique_key not in
+		(
+			 select distinct(bsc_uk) from pm.o_g_e_r12_h_celtchf where start_time=to_date(to_char(sysdate-8/24,'yyyy-mm-dd hh24'),'yyyy-mm-dd hh24:mi:ss')
+		)
+[2011-07-14 15:13:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 保存了101条记录
+[2011-07-14 15:13:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 保存了201条记录
+[2011-07-14 15:13:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 保存了301条记录
+[2011-07-14 15:13:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 共保存了376条记录
+[2011-07-14 15:13:44][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----BSC缺失 生成完成-----
+[2011-07-14 15:13:44][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----全省性能数据完整性统计 生成开始-----
+[2011-07-14 15:13:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:全省性能数据完整性统计 sql: select 
+			'山东' 省份,
+			start_time 时间,
+			count(distinct bsc_uk) bsc数,
+			count(*) cell数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2011-07-14 15:13:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:全省性能数据完整性统计 共保存了9条记录
+[2011-07-14 15:13:51][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----全省性能数据完整性统计 生成完成-----
+[2011-07-14 15:13:51][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----分BSC性能数据完整性统计 生成开始-----
+[2011-07-14 15:13:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 sql: select 
+			'山东' 省份,
+			bsc_uk BSC,
+			start_time 时间,
+			count(*) CELL数
+		from pm.o_g_e_r12_h_celtchf  
+		where start_time>=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by bsc_uk,start_time
+		order by bsc_uk
+[2011-07-14 15:13:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了101条记录
+[2011-07-14 15:13:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了201条记录
+[2011-07-14 15:13:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了301条记录
+[2011-07-14 15:13:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了401条记录
+[2011-07-14 15:13:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了501条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了601条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了701条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了801条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了901条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了1001条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了1101条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了1201条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了1301条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了1401条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了1501条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了1601条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了1701条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了1801条记录
+[2011-07-14 15:13:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了1901条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了2001条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了2101条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了2201条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了2301条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了2401条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了2501条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了2601条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了2701条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了2801条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了2901条记录
+[2011-07-14 15:13:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了3001条记录
+[2011-07-14 15:13:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了3101条记录
+[2011-07-14 15:13:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了3201条记录
+[2011-07-14 15:13:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了3301条记录
+[2011-07-14 15:13:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了3401条记录
+[2011-07-14 15:13:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了3501条记录
+[2011-07-14 15:13:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了3601条记录
+[2011-07-14 15:13:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 保存了3701条记录
+[2011-07-14 15:13:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:分BSC性能数据完整性统计 共保存了3746条记录
+[2011-07-14 15:13:59][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----分BSC性能数据完整性统计 生成完成-----
+[2011-07-14 15:13:59][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_151309.xls保存完成=====
+[2011-07-14 15:17:49][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_151749.xls开始创建=====
+[2011-07-14 15:17:50][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----BSC缺失 生成开始-----
+[2011-07-14 15:17:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 sql: select 
+		start_time,
+		t1.city_name,
+		t1.vendor_name,
+		t1.bsc_uk,
+		t1.cell_count,
+		nvl(t0.kpi_count,0) kpi_count,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 kpi_lost_rate
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >='2011-7-13 0:0:0' and start_time < '2011-7-14 0:0:0' --and BSCHE00 is not null
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+[2011-07-14 15:18:23][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_151823.xls开始创建=====
+[2011-07-14 15:18:24][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----BSC缺失 生成开始-----
+[2011-07-14 15:18:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 sql: select 
+		start_time,
+		t1.city_name,
+		t1.vendor_name,
+		t1.bsc_uk,
+		t1.cell_count,
+		nvl(t0.kpi_count,0) kpi_count,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 kpi_lost_rate
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+[2011-07-14 15:18:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:BSC缺失 共保存了9条记录
+[2011-07-14 15:18:34][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----BSC缺失 生成完成-----
+[2011-07-14 15:18:34][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----全省性能数据完整性统计 生成开始-----
+[2011-07-14 15:18:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:全省性能数据完整性统计 sql: select 
+			'山东' 省份,
+			start_time 时间,
+			count(distinct bsc_uk) bsc数,
+			count(*) cell数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2011-07-14 15:18:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:全省性能数据完整性统计 共保存了9条记录
+[2011-07-14 15:18:40][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----全省性能数据完整性统计 生成完成-----
+[2011-07-14 15:18:40][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_151823.xls保存完成=====
+[2011-07-14 15:27:26][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_152726.xls开始创建=====
+[2011-07-14 15:27:27][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 15:27:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		start_time,
+		t1.city_name,
+		t1.vendor_name,
+		t1.bsc_uk,
+		t1.cell_count,
+		nvl(t0.kpi_count,0) kpi_count,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 kpi_lost_rate
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 15:27:33][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 共保存了10条记录
+[2011-07-14 15:27:33][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 15:27:33][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 15:27:33][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd') 时间,
+			count(distinct bsc_uk) bsc数,
+			count(*) cell数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by 2
+[2011-07-14 15:27:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了10条记录
+[2011-07-14 15:27:40][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 15:27:40][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_152726.xls保存完成=====
+[2011-07-14 15:31:02][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_153102.xls开始创建=====
+[2011-07-14 15:31:03][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 15:31:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 sql: select 
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd') 时间,
+			count(distinct bsc_uk) bsc数,
+			count(*) cell数
+		from pm.f_g_c_cell_hour
+		where start_time>=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd') and bsche00 is not null
+		group by start_time
+		order by 2
+[2011-07-14 15:33:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 共保存了13条记录
+[2011-07-14 15:33:10][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 15:33:10][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 15:33:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		start_time,
+		t1.city_name,
+		t1.vendor_name,
+		t1.bsc_uk,
+		t1.cell_count,
+		nvl(t0.kpi_count,0) kpi_count,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 kpi_lost_rate
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 15:33:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 共保存了10条记录
+[2011-07-14 15:33:19][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 15:33:19][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 15:33:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd') 时间,
+			count(distinct bsc_uk) bsc数,
+			count(*) cell数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=to_date(to_char(sysdate-8/24,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by 2
+[2011-07-14 15:33:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了10条记录
+[2011-07-14 15:33:26][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 15:33:26][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_153102.xls保存完成=====
+[2011-07-14 15:43:19][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_154319.xls开始创建=====
+[2011-07-14 15:43:21][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 15:43:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss' 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			vendor_name 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-8/24 and bsche00 is not null
+		group by start_time,vendor_name
+		order by 2
+[2011-07-14 15:43:48][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_154348.xls开始创建=====
+[2011-07-14 15:43:48][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 15:43:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			vendor_name 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-8/24 and bsche00 is not null
+		group by start_time,vendor_name
+		order by 2
+[2011-07-14 15:44:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 共保存了6条记录
+[2011-07-14 15:44:02][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 15:44:02][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 15:44:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) kpi_count 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 kpi_lost_rate 数据缺失率
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-8/24
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 15:46:01][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_154601.xls开始创建=====
+[2011-07-14 15:46:02][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 15:46:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			vendor_name 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-8/24 and bsche00 is not null
+		group by start_time,vendor_name
+		order by 2
+[2011-07-14 15:46:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 共保存了6条记录
+[2011-07-14 15:46:03][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 15:46:03][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 15:46:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-8/24
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 15:46:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 共保存了40条记录
+[2011-07-14 15:46:05][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 15:46:05][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 15:46:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			vendor_name 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=sysdate-8/24
+		group by start_time
+		order by 2
+[2011-07-14 15:47:08][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_154708.xls开始创建=====
+[2011-07-14 15:47:09][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 15:47:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			vendor_name 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-8/24 and bsche00 is not null
+		group by start_time,vendor_name
+		order by 2
+[2011-07-14 15:47:11][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 共保存了6条记录
+[2011-07-14 15:47:11][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 15:47:11][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 15:47:11][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-8/24
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 15:47:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 共保存了32条记录
+[2011-07-14 15:47:12][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 15:47:12][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 15:47:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			vendor_name 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=sysdate-8/24
+		group by start_time,vendor_name
+		order by 2
+[2011-07-14 15:47:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了4条记录
+[2011-07-14 15:47:13][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 15:47:13][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_154708.xls保存完成=====
+[2011-07-14 15:52:46][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_155246.xls开始创建=====
+[2011-07-14 15:52:47][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 15:52:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			vendor_name 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 and bsche00 is not null
+		group by start_time,vendor_name
+		order by 2
+[2011-07-14 15:53:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 共保存了33条记录
+[2011-07-14 15:53:36][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 15:53:36][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 15:53:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 15:53:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 共保存了15条记录
+[2011-07-14 15:53:55][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 15:53:55][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 15:53:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'爱立信' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 15:54:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了12条记录
+[2011-07-14 15:54:04][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 15:54:04][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_155246.xls保存完成=====
+[2011-07-14 15:55:19][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_155519.xls开始创建=====
+[2011-07-14 15:55:23][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 15:55:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 and bsche00 is not null
+		group by start_time
+		order by 3
+[2011-07-14 15:56:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 共保存了21条记录
+[2011-07-14 15:56:03][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 15:56:03][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计-分厂家 生成开始-----
+[2011-07-14 15:56:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计-分厂家 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			vendor_name 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 and bsche00 is not null
+		group by start_time,vendor_name
+		order by 4,3
+[2011-07-14 15:56:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计-分厂家 共保存了33条记录
+[2011-07-14 15:56:27][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计-分厂家 生成完成-----
+[2011-07-14 15:56:27][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 15:56:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 15:56:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 共保存了16条记录
+[2011-07-14 15:56:38][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 15:56:38][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 15:56:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'爱立信' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 15:56:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了12条记录
+[2011-07-14 15:56:47][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 15:56:48][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_155519.xls保存完成=====
+[2011-07-14 16:07:53][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_160753.xls开始创建=====
+[2011-07-14 16:07:54][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 16:07:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 16:08:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 共保存了1条记录
+[2011-07-14 16:08:15][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 16:08:15][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 16:08:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'诺基亚' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_n_s14_h_traffic 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 16:08:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 16:08:16][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 16:08:16][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_160753.xls保存完成=====
+[2011-07-14 16:10:23][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_161023.xls开始创建=====
+[2011-07-14 16:10:24][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 16:10:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 16:10:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 共保存了1条记录
+[2011-07-14 16:10:27][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 16:10:27][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 16:10:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'诺基亚' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_n_s14_h_traffic 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 16:10:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 16:10:28][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 16:10:28][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 16:10:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from 
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 16:11:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 共保存了0条记录
+[2011-07-14 16:11:12][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 16:11:12][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 16:11:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'华为' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.O_G_H_R11_1275071420_3 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 16:11:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 共保存了20条记录
+[2011-07-14 16:11:17][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 16:11:17][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_161023.xls保存完成=====
+[2011-07-14 16:44:27][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_164427.xls开始创建=====
+[2011-07-14 16:44:29][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 16:44:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate
+		order by 1,2,3,4
+[2011-07-14 16:44:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 共保存了18条记录
+[2011-07-14 16:44:38][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 16:44:38][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 16:44:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'诺基亚' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_n_s14_h_traffic 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 16:44:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了22条记录
+[2011-07-14 16:44:39][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 16:44:39][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 16:44:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from time_list t2
+	left jion
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		order by 1,2,3,4
+[2011-07-14 16:46:25][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_164625.xls开始创建=====
+[2011-07-14 16:46:26][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 16:46:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate
+		order by 1,2,3,4
+[2011-07-14 16:46:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 共保存了18条记录
+[2011-07-14 16:46:35][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 16:46:35][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 16:46:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'诺基亚' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_n_s14_h_traffic 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 16:46:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了22条记录
+[2011-07-14 16:46:42][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 16:46:42][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 16:46:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from time_list t2
+	left jion
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate
+		order by 1,2,3,4
+[2011-07-14 16:47:51][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_164751.xls开始创建=====
+[2011-07-14 16:47:51][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 16:47:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate
+		order by 1,2,3,4
+[2011-07-14 16:47:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 共保存了18条记录
+[2011-07-14 16:47:58][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 16:47:58][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 16:47:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'诺基亚' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_n_s14_h_traffic 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 16:47:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了22条记录
+[2011-07-14 16:47:59][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 16:47:59][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 16:47:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk
+		where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate
+		order by 1,2,3,4
+[2011-07-14 16:48:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 共保存了0条记录
+[2011-07-14 16:48:32][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 16:48:32][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 16:48:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'华为' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.O_G_H_R11_1275071420_3 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 16:48:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 16:48:37][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 16:48:37][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_164751.xls保存完成=====
+[2011-07-14 17:02:50][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_170250.xls开始创建=====
+[2011-07-14 17:02:50][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:02:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate
+		order by 1,2,3,4
+[2011-07-14 17:03:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 保存了101条记录
+[2011-07-14 17:03:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 共保存了141条记录
+[2011-07-14 17:03:03][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:03:03][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:03:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'诺基亚' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_n_s14_h_traffic 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 17:03:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:03:04][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:03:04][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:03:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.city_name 地市,
+        t1.vendor_name 厂商,
+        t1.bsc_uk BSC,
+        t1.cell_count 理论小区数,
+        nvl(t0.kpi_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+        group by city_name,vendor_name,bsc_uk) t1 
+    on 1=1
+    left join
+        (select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+        where start_time >=sysdate-1
+        group by city_name,bsc_uk,start_time ) t0
+    on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+        where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+        and
+        t2.time>=sysdate-1 and t2.time<sysdate
+        order by 1,2,3,4
+[2011-07-14 17:03:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 保存了101条记录
+[2011-07-14 17:03:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 保存了201条记录
+[2011-07-14 17:03:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 保存了301条记录
+[2011-07-14 17:03:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 共保存了306条记录
+[2011-07-14 17:03:18][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:03:18][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:03:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'华为' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.O_G_H_R11_1275071420_3 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 17:03:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 共保存了20条记录
+[2011-07-14 17:03:23][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:03:23][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/爱立信-原始性能-完整性-20110714_170250.xls保存完成=====
+[2011-07-14 17:07:00][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_170700.xls开始创建=====
+[2011-07-14 17:07:01][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:07:01][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >15
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:07:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 共保存了21条记录
+[2011-07-14 17:07:09][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:07:09][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:07:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'诺基亚' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_n_s14_h_traffic 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 17:07:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:07:10][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:07:10][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:07:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.city_name 地市,
+        t1.vendor_name 厂商,
+        t1.bsc_uk BSC,
+        t1.cell_count 理论小区数,
+        nvl(t0.kpi_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+        group by city_name,vendor_name,bsc_uk) t1 
+    on 1=1
+    left join
+        (select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+        where start_time >=sysdate-1
+        group by city_name,bsc_uk,start_time ) t0
+    on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+        where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+        and
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 1,2,3,4
+[2011-07-14 17:07:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 共保存了93条记录
+[2011-07-14 17:07:21][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:07:21][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:07:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'华为' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.O_G_H_R11_1275071420_3 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 17:07:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 共保存了20条记录
+[2011-07-14 17:07:25][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:07:25][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_170700.xls保存完成=====
+[2011-07-14 17:13:24][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_171324.xls开始创建=====
+[2011-07-14 17:13:24][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:13:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:14:22][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_171422.xls开始创建=====
+[2011-07-14 17:14:24][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:14:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:15:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了101条记录
+[2011-07-14 17:15:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了201条记录
+[2011-07-14 17:15:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了301条记录
+[2011-07-14 17:15:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了401条记录
+[2011-07-14 17:15:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了501条记录
+[2011-07-14 17:15:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了601条记录
+[2011-07-14 17:15:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了701条记录
+[2011-07-14 17:15:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了801条记录
+[2011-07-14 17:15:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了901条记录
+[2011-07-14 17:15:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1001条记录
+[2011-07-14 17:15:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1101条记录
+[2011-07-14 17:15:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1201条记录
+[2011-07-14 17:15:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1301条记录
+[2011-07-14 17:15:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1401条记录
+[2011-07-14 17:15:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1501条记录
+[2011-07-14 17:15:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1601条记录
+[2011-07-14 17:15:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1701条记录
+[2011-07-14 17:15:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1801条记录
+[2011-07-14 17:15:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1901条记录
+[2011-07-14 17:15:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2001条记录
+[2011-07-14 17:15:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2101条记录
+[2011-07-14 17:15:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2201条记录
+[2011-07-14 17:15:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2301条记录
+[2011-07-14 17:15:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2401条记录
+[2011-07-14 17:15:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2501条记录
+[2011-07-14 17:15:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2601条记录
+[2011-07-14 17:15:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2701条记录
+[2011-07-14 17:15:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2801条记录
+[2011-07-14 17:15:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2901条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3001条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3101条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3201条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3301条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3401条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3501条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3601条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3701条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3801条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3901条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4001条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4101条记录
+[2011-07-14 17:15:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4201条记录
+[2011-07-14 17:15:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4301条记录
+[2011-07-14 17:15:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4401条记录
+[2011-07-14 17:15:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4501条记录
+[2011-07-14 17:15:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4601条记录
+[2011-07-14 17:15:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4701条记录
+[2011-07-14 17:15:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4801条记录
+[2011-07-14 17:15:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 共保存了4887条记录
+[2011-07-14 17:15:43][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:15:43][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:15:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'爱立信' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 17:15:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了13条记录
+[2011-07-14 17:15:53][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:15:54][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_171422.xls保存完成=====
+[2011-07-14 17:19:09][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_171909.xls开始创建=====
+[2011-07-14 17:19:10][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 17:19:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 and bsche00 is not null
+		group by start_time
+		order by 3
+[2011-07-14 17:19:44][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_171944.xls开始创建=====
+[2011-07-14 17:19:44][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 17:19:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 and bsche00 is not null
+		group by start_time
+		order by 3
+[2011-07-14 17:20:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 共保存了20条记录
+[2011-07-14 17:20:34][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 17:20:34][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计-分厂家 生成开始-----
+[2011-07-14 17:20:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计-分厂家 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			vendor_name 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 and bsche00 is not null
+		group by start_time,vendor_name
+		order by 4,3
+[2011-07-14 17:21:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计-分厂家 共保存了32条记录
+[2011-07-14 17:21:29][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计-分厂家 生成完成-----
+[2011-07-14 17:21:29][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:21:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:21:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了101条记录
+[2011-07-14 17:21:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了201条记录
+[2011-07-14 17:21:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了301条记录
+[2011-07-14 17:21:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了401条记录
+[2011-07-14 17:21:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了501条记录
+[2011-07-14 17:21:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了601条记录
+[2011-07-14 17:21:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了701条记录
+[2011-07-14 17:21:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了801条记录
+[2011-07-14 17:21:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了901条记录
+[2011-07-14 17:21:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1001条记录
+[2011-07-14 17:21:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1101条记录
+[2011-07-14 17:21:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1201条记录
+[2011-07-14 17:21:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1301条记录
+[2011-07-14 17:21:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1401条记录
+[2011-07-14 17:21:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1501条记录
+[2011-07-14 17:21:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1601条记录
+[2011-07-14 17:21:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1701条记录
+[2011-07-14 17:21:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1801条记录
+[2011-07-14 17:21:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1901条记录
+[2011-07-14 17:21:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2001条记录
+[2011-07-14 17:21:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2101条记录
+[2011-07-14 17:21:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2201条记录
+[2011-07-14 17:21:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2301条记录
+[2011-07-14 17:21:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2401条记录
+[2011-07-14 17:21:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2501条记录
+[2011-07-14 17:21:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2601条记录
+[2011-07-14 17:21:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2701条记录
+[2011-07-14 17:21:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2801条记录
+[2011-07-14 17:21:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2901条记录
+[2011-07-14 17:21:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3001条记录
+[2011-07-14 17:21:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3101条记录
+[2011-07-14 17:21:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3201条记录
+[2011-07-14 17:21:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3301条记录
+[2011-07-14 17:21:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3401条记录
+[2011-07-14 17:21:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3501条记录
+[2011-07-14 17:21:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3601条记录
+[2011-07-14 17:21:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3701条记录
+[2011-07-14 17:21:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3801条记录
+[2011-07-14 17:21:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3901条记录
+[2011-07-14 17:21:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4001条记录
+[2011-07-14 17:21:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4101条记录
+[2011-07-14 17:21:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4201条记录
+[2011-07-14 17:21:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4301条记录
+[2011-07-14 17:21:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4401条记录
+[2011-07-14 17:21:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4501条记录
+[2011-07-14 17:21:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4601条记录
+[2011-07-14 17:21:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4701条记录
+[2011-07-14 17:21:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4801条记录
+[2011-07-14 17:21:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 共保存了4887条记录
+[2011-07-14 17:21:58][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:21:58][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:21:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'爱立信' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 17:22:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了13条记录
+[2011-07-14 17:22:08][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:22:08][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_171944.xls保存完成=====
+[2011-07-14 17:27:59][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_172759.xls开始创建=====
+[2011-07-14 17:28:00][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 17:28:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 and bsche00 is not null
+		group by start_time
+		order by 3
+[2011-07-14 17:28:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计 共保存了21条记录
+[2011-07-14 17:28:48][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 17:28:48][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计-分厂家 生成开始-----
+[2011-07-14 17:28:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计-分厂家 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			vendor_name 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 and bsche00 is not null
+		group by start_time,vendor_name
+		order by 4,3
+[2011-07-14 17:29:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:归一化性能数据条数统计-分厂家 共保存了32条记录
+[2011-07-14 17:29:30][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----归一化性能数据条数统计-分厂家 生成完成-----
+[2011-07-14 17:29:30][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:29:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'爱立信' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_e_r12_h_celtchf 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 17:29:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了13条记录
+[2011-07-14 17:29:41][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:29:41][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:29:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:30:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了101条记录
+[2011-07-14 17:30:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了201条记录
+[2011-07-14 17:30:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了301条记录
+[2011-07-14 17:30:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了401条记录
+[2011-07-14 17:30:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了501条记录
+[2011-07-14 17:30:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了601条记录
+[2011-07-14 17:30:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了701条记录
+[2011-07-14 17:30:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了801条记录
+[2011-07-14 17:30:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了901条记录
+[2011-07-14 17:30:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1001条记录
+[2011-07-14 17:30:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1101条记录
+[2011-07-14 17:30:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1201条记录
+[2011-07-14 17:30:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1301条记录
+[2011-07-14 17:30:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1401条记录
+[2011-07-14 17:30:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1501条记录
+[2011-07-14 17:30:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1601条记录
+[2011-07-14 17:30:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1701条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1801条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1901条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2001条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2101条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2201条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2301条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2401条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2501条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2601条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2701条记录
+[2011-07-14 17:30:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2801条记录
+[2011-07-14 17:30:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2901条记录
+[2011-07-14 17:30:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3001条记录
+[2011-07-14 17:30:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3101条记录
+[2011-07-14 17:30:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3201条记录
+[2011-07-14 17:30:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3301条记录
+[2011-07-14 17:30:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3401条记录
+[2011-07-14 17:30:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3501条记录
+[2011-07-14 17:30:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3601条记录
+[2011-07-14 17:30:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3701条记录
+[2011-07-14 17:30:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3801条记录
+[2011-07-14 17:30:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3901条记录
+[2011-07-14 17:30:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4001条记录
+[2011-07-14 17:30:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4101条记录
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4201条记录
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4301条记录
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4401条记录
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4501条记录
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4601条记录
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4701条记录
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4801条记录
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 共保存了4887条记录
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:30:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'诺基亚' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.o_g_n_s14_h_traffic 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 17:30:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了22条记录
+[2011-07-14 17:30:15][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:30:15][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:30:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:30:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 共保存了21条记录
+[2011-07-14 17:30:24][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:30:24][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:30:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 sql: select 
+			to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+			'山东' 省份,
+			to_char(start_time,'yyyy-mm-dd hh24') 指标时间,
+			'华为' 厂商,
+			count(distinct bsc_uk) BSC数,
+			count(*) 小区数
+		from pm.O_G_H_R11_1275071420_3 
+		where start_time>=sysdate-1
+		group by start_time
+		order by 3
+[2011-07-14 17:30:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:30:31][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:30:31][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:30:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.city_name 地市,
+        t1.vendor_name 厂商,
+        t1.bsc_uk BSC,
+        t1.cell_count 理论小区数,
+        nvl(t0.kpi_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+        group by city_name,vendor_name,bsc_uk) t1 
+    on 1=1
+    left join
+        (select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+        where start_time >=sysdate-1
+        group by city_name,bsc_uk,start_time ) t0
+    on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+        where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+        and
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 1,2,3,4
+[2011-07-14 17:30:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 共保存了93条记录
+[2011-07-14 17:30:56][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:30:57][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_172759.xls保存完成=====
+[2011-07-14 17:45:43][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_174543.xls开始创建=====
+[2011-07-14 17:45:44][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:45:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=1 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf 
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:46:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:46:02][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:46:02][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:46:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:46:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了101条记录
+[2011-07-14 17:46:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了201条记录
+[2011-07-14 17:46:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了301条记录
+[2011-07-14 17:46:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了401条记录
+[2011-07-14 17:46:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了501条记录
+[2011-07-14 17:46:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了601条记录
+[2011-07-14 17:46:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了701条记录
+[2011-07-14 17:46:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了801条记录
+[2011-07-14 17:46:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了901条记录
+[2011-07-14 17:46:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1001条记录
+[2011-07-14 17:46:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1101条记录
+[2011-07-14 17:46:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1201条记录
+[2011-07-14 17:46:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1301条记录
+[2011-07-14 17:46:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1401条记录
+[2011-07-14 17:46:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1501条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1601条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1701条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1801条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了1901条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2001条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2101条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2201条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2301条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2401条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2501条记录
+[2011-07-14 17:46:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2601条记录
+[2011-07-14 17:46:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2701条记录
+[2011-07-14 17:46:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2801条记录
+[2011-07-14 17:46:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了2901条记录
+[2011-07-14 17:46:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3001条记录
+[2011-07-14 17:46:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3101条记录
+[2011-07-14 17:46:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3201条记录
+[2011-07-14 17:46:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3301条记录
+[2011-07-14 17:46:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3401条记录
+[2011-07-14 17:46:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3501条记录
+[2011-07-14 17:46:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3601条记录
+[2011-07-14 17:46:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3701条记录
+[2011-07-14 17:46:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3801条记录
+[2011-07-14 17:46:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了3901条记录
+[2011-07-14 17:46:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4001条记录
+[2011-07-14 17:46:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4101条记录
+[2011-07-14 17:46:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4201条记录
+[2011-07-14 17:46:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4301条记录
+[2011-07-14 17:46:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4401条记录
+[2011-07-14 17:46:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4501条记录
+[2011-07-14 17:46:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4601条记录
+[2011-07-14 17:46:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4701条记录
+[2011-07-14 17:46:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 保存了4801条记录
+[2011-07-14 17:46:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况 共保存了4887条记录
+[2011-07-14 17:46:29][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:46:29][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:46:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=1 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic  
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:46:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:46:40][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:46:40][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:46:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:46:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况 共保存了21条记录
+[2011-07-14 17:46:49][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:46:49][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:46:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=1 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3  
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:47:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:47:09][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:47:09][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成开始-----
+[2011-07-14 17:47:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.city_name 地市,
+        t1.vendor_name 厂商,
+        t1.bsc_uk BSC,
+        t1.cell_count 理论小区数,
+        nvl(t0.kpi_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+        group by city_name,vendor_name,bsc_uk) t1 
+    on 1=1
+    left join
+        (select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+        where start_time >=sysdate-1
+        group by city_name,bsc_uk,start_time ) t0
+    on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+        where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+        and
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 1,2,3,4
+[2011-07-14 17:47:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况 共保存了93条记录
+[2011-07-14 17:47:21][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况 生成完成-----
+[2011-07-14 17:47:21][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_174543.xls保存完成=====
+[2011-07-14 17:50:09][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_175009.xls开始创建=====
+[2011-07-14 17:50:10][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:50:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=1 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf 
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:50:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:50:27][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:50:27][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况-按BSC统计 生成开始-----
+[2011-07-14 17:50:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:50:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了101条记录
+[2011-07-14 17:50:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了201条记录
+[2011-07-14 17:50:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了301条记录
+[2011-07-14 17:50:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了401条记录
+[2011-07-14 17:50:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了501条记录
+[2011-07-14 17:50:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了601条记录
+[2011-07-14 17:50:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了701条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了801条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了901条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1001条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1101条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1201条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1301条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1401条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1501条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1601条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1701条记录
+[2011-07-14 17:50:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1801条记录
+[2011-07-14 17:50:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1901条记录
+[2011-07-14 17:50:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2001条记录
+[2011-07-14 17:50:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2101条记录
+[2011-07-14 17:50:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2201条记录
+[2011-07-14 17:50:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2301条记录
+[2011-07-14 17:50:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2401条记录
+[2011-07-14 17:50:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2501条记录
+[2011-07-14 17:50:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2601条记录
+[2011-07-14 17:50:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2701条记录
+[2011-07-14 17:50:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2801条记录
+[2011-07-14 17:50:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2901条记录
+[2011-07-14 17:50:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3001条记录
+[2011-07-14 17:50:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3101条记录
+[2011-07-14 17:50:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3201条记录
+[2011-07-14 17:50:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3301条记录
+[2011-07-14 17:50:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3401条记录
+[2011-07-14 17:50:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3501条记录
+[2011-07-14 17:50:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3601条记录
+[2011-07-14 17:50:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3701条记录
+[2011-07-14 17:50:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3801条记录
+[2011-07-14 17:50:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3901条记录
+[2011-07-14 17:50:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4001条记录
+[2011-07-14 17:50:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4101条记录
+[2011-07-14 17:50:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4201条记录
+[2011-07-14 17:50:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4301条记录
+[2011-07-14 17:50:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4401条记录
+[2011-07-14 17:50:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4501条记录
+[2011-07-14 17:50:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4601条记录
+[2011-07-14 17:50:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4701条记录
+[2011-07-14 17:50:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4801条记录
+[2011-07-14 17:50:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 共保存了4887条记录
+[2011-07-14 17:50:54][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况-按BSC统计 生成完成-----
+[2011-07-14 17:50:54][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:50:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=15 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic  
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:51:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:51:00][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:51:00][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况-按BSC统计 生成开始-----
+[2011-07-14 17:51:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况-按BSC统计 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:51:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况-按BSC统计 共保存了21条记录
+[2011-07-14 17:51:08][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况-按BSC统计 生成完成-----
+[2011-07-14 17:51:08][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:51:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=5 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3  
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:51:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:51:17][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:51:17][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况-按BSC统计 生成开始-----
+[2011-07-14 17:51:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况-按BSC统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.city_name 地市,
+        t1.vendor_name 厂商,
+        t1.bsc_uk BSC,
+        t1.cell_count 理论小区数,
+        nvl(t0.kpi_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+        group by city_name,vendor_name,bsc_uk) t1 
+    on 1=1
+    left join
+        (select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+        where start_time >=sysdate-1
+        group by city_name,bsc_uk,start_time ) t0
+    on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+        where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+        and
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 1,2,3,4
+[2011-07-14 17:51:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况-按BSC统计 共保存了93条记录
+[2011-07-14 17:51:29][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况-按BSC统计 生成完成-----
+[2011-07-14 17:51:30][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_175009.xls保存完成=====
+[2011-07-14 17:54:14][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_175414.xls开始创建=====
+[2011-07-14 17:54:15][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:54:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=1 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf 
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:54:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:54:44][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:54:44][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:54:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=15 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic  
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:56:01][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_175601.xls开始创建=====
+[2011-07-14 17:56:02][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:56:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=1 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf 
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:56:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:56:20][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:56:20][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:56:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=15 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic  
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:56:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:56:25][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:56:25][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 17:56:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.cell_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=5 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3  
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 17:56:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 17:56:35][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 17:56:35][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况-按BSC统计 生成开始-----
+[2011-07-14 17:56:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:56:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了101条记录
+[2011-07-14 17:56:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了201条记录
+[2011-07-14 17:56:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了301条记录
+[2011-07-14 17:56:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了401条记录
+[2011-07-14 17:56:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了501条记录
+[2011-07-14 17:56:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了601条记录
+[2011-07-14 17:56:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了701条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了801条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了901条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1001条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1101条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1201条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1301条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1401条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1501条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1601条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1701条记录
+[2011-07-14 17:56:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1801条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1901条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2001条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2101条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2201条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2301条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2401条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2501条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2601条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2701条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2801条记录
+[2011-07-14 17:56:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2901条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3001条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3101条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3201条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3301条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3401条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3501条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3601条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3701条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3801条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3901条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4001条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4101条记录
+[2011-07-14 17:56:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4201条记录
+[2011-07-14 17:57:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4301条记录
+[2011-07-14 17:57:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4401条记录
+[2011-07-14 17:57:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4501条记录
+[2011-07-14 17:57:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4601条记录
+[2011-07-14 17:57:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4701条记录
+[2011-07-14 17:57:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了4801条记录
+[2011-07-14 17:57:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:爱立信-原始COUNTER缺失情况-按BSC统计 共保存了4887条记录
+[2011-07-14 17:57:00][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----爱立信-原始COUNTER缺失情况-按BSC统计 生成完成-----
+[2011-07-14 17:57:00][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况-按BSC统计 生成开始-----
+[2011-07-14 17:57:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况-按BSC统计 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 17:57:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:诺基亚-原始COUNTER缺失情况-按BSC统计 共保存了21条记录
+[2011-07-14 17:57:09][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----诺基亚-原始COUNTER缺失情况-按BSC统计 生成完成-----
+[2011-07-14 17:57:09][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况-按BSC统计 生成开始-----
+[2011-07-14 17:57:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况-按BSC统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.city_name 地市,
+        t1.vendor_name 厂商,
+        t1.bsc_uk BSC,
+        t1.cell_count 理论小区数,
+        nvl(t0.kpi_count,0) 实际小区数,
+        round((t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100,2)||'%' 数据缺失率
+    from time_list t2
+    left join
+        (select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+        group by city_name,vendor_name,bsc_uk) t1 
+    on 1=1
+    left join
+        (select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+        where start_time >=sysdate-1
+        group by city_name,bsc_uk,start_time ) t0
+    on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+        where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+        and
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 1,2,3,4
+[2011-07-14 17:57:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm_f_g_e_r12_h_o.xml:华为-原始COUNTER缺失情况-按BSC统计 共保存了93条记录
+[2011-07-14 17:57:21][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm_f_g_e_r12_h_o.xml:-----华为-原始COUNTER缺失情况-按BSC统计 生成完成-----
+[2011-07-14 17:57:21][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm_f_g_e_r12_h_o.xml:=====Excel文件../excel/f_g_e_r12_h_o/20110714/性能-完整性-20110714_175601.xls保存完成=====
+[2011-07-14 19:50:37][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_195037.xls开始创建=====
+[2011-07-14 19:50:38][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 19:50:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			t0.vendor_name 厂商,
+			to_char(t0.start_time,'yyyy-mm-dd hh24') 指标时间,
+			t0.bsc_count,
+			t1.bsc_count_real,
+			round((t0.bsc_count-t1.bsc_count_real)/t0.bsc_count*100,2) bsc_lost_rate,
+			t0.cell_count,
+			t1.cell_count_real,
+			round((t0.cell_count-t1.cell_count_real)/t0.cell_count*100,2) cell_lost_rate
+		from	 
+		(select 
+			start_time,
+			vendor_name,
+			count(distinct bsc_uk) bsc_count,
+			count(*) cell_count,
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 
+		group by start_time,vendor_name) t0
+		left join
+		(select 
+			start_time,
+			vendor_name,
+			count(distinct bsc_uk) bsc_count_real,
+			count(*) cell_count_real
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 and bsche00 is not null
+		group by start_time,vendor_name) t1
+		on t0.start_time=t1.start_time and t0.vendor_name=t1.vendor_name
+		order by 4,2
+[2011-07-14 19:51:53][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_195153.xls开始创建=====
+[2011-07-14 19:51:53][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 19:51:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			t0.vendor_name 厂商,
+			to_char(t0.start_time,'yyyy-mm-dd hh24') 指标时间,
+			t0.bsc_count,
+			t1.bsc_count_real,
+			round((t0.bsc_count-t1.bsc_count_real)/t0.bsc_count*100,2) bsc_lost_rate,
+			t0.cell_count,
+			t1.cell_count_real,
+			round((t0.cell_count-t1.cell_count_real)/t0.cell_count*100,2) cell_lost_rate
+		from	 
+		(select 
+			start_time,
+			vendor_name,
+			count(distinct bsc_uk) bsc_count,
+			count(*) cell_count
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 
+		group by start_time,vendor_name) t0
+		left join
+		(select 
+			start_time,
+			vendor_name,
+			count(distinct bsc_uk) bsc_count_real,
+			count(*) cell_count_real
+		from pm.f_g_c_cell_hour
+		where start_time>=sysdate-1 and bsche00 is not null
+		group by start_time,vendor_name) t1
+		on t0.start_time=t1.start_time and t0.vendor_name=t1.vendor_name
+		order by 4,2
+[2011-07-14 19:53:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:归一化性能数据条数统计 共保存了39条记录
+[2011-07-14 19:53:31][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 19:53:31][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_195153.xls保存完成=====
+[2011-07-14 20:12:21][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_201221.xls开始创建=====
+[2011-07-14 20:12:32][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 20:12:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t0.start_time,'yyyy-mm-dd hh24') 指标时间,
+			t0.vendor_name 厂商,
+			t0.bsc_count BSC数,
+			t1.bsc_count_real BSC有数,
+			round((t0.bsc_count-t1.bsc_count_real)/t0.bsc_count*100,2)||'%' BSC数据缺失率,
+			t0.cell_count 小区数,
+			t1.cell_count_real 小区有数,
+			round((t0.cell_count-t1.cell_count_real)/t0.cell_count*100,2) ||'%' 小区数据缺失率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count,
+				count(*) cell_count
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-8/24
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-8/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t0.start_time=t2.time
+		where t2.time>=sysdate-8/24 and t2.time<sysdate
+		order by 3，4
+[2011-07-14 20:13:16][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_201316.xls开始创建=====
+[2011-07-14 20:13:17][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 20:13:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t0.start_time,'yyyy-mm-dd hh24') 指标时间,
+			t0.vendor_name 厂商,
+			t0.bsc_count BSC数,
+			t1.bsc_count_real BSC有数,
+			round((t0.bsc_count-t1.bsc_count_real)/t0.bsc_count*100,2)||'%' BSC数据缺失率,
+			t0.cell_count 小区数,
+			t1.cell_count_real 小区有数,
+			round((t0.cell_count-t1.cell_count_real)/t0.cell_count*100,2) ||'%' 小区数据缺失率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count,
+				count(*) cell_count
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-8/24
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-8/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t0.start_time=t2.time
+		where t2.time>=sysdate-8/24 and t2.time<sysdate
+		order by 3,4
+[2011-07-14 20:13:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:归一化性能数据条数统计 共保存了36条记录
+[2011-07-14 20:13:35][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 20:13:35][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_201316.xls保存完成=====
+[2011-07-14 20:17:30][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_201730.xls开始创建=====
+[2011-07-14 20:17:31][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 20:17:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.start_time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t1.bsc_count_real 实际BSC有数,
+			round((t3.bsc_count-t1.bsc_count_real)/t3.bsc_count*100,2)||'%' BSC数据缺失率,
+			t3.cell_count 理论小区数,
+			t1.cell_count_real 实际小区有数,
+			round((t3.cell_count-t1.cell_count_real)/t3.cell_count*100,2) ||'%' 小区数据缺失率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-8/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-8/24 and t2.time<sysdate-3/24
+		order by 3,4
+[2011-07-14 20:17:43][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_201743.xls开始创建=====
+[2011-07-14 20:17:43][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 20:17:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t1.bsc_count_real 实际BSC有数,
+			round((t3.bsc_count-t1.bsc_count_real)/t3.bsc_count*100,2)||'%' BSC数据缺失率,
+			t3.cell_count 理论小区数,
+			t1.cell_count_real 实际小区有数,
+			round((t3.cell_count-t1.cell_count_real)/t3.cell_count*100,2) ||'%' 小区数据缺失率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-8/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-8/24 and t2.time<sysdate-3/24
+		order by 3,4
+[2011-07-14 20:17:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:归一化性能数据条数统计 共保存了15条记录
+[2011-07-14 20:17:48][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 20:17:48][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_201743.xls保存完成=====
+[2011-07-14 20:23:05][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_202305.xls开始创建=====
+[2011-07-14 20:23:06][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 20:23:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round((t3.bsc_count-t1.bsc_count_real)/t3.bsc_count*100,2)||'%' BSC数据缺失率,
+			t3.cell_count 理论小区数,
+			t0.cell_count 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round((t3.cell_count-t1.cell_count_real)/t3.cell_count*100,2) ||'%' 小区数据缺失率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-12/24
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time 
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-12/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-12/24 and t2.time<sysdate-3/24
+		order by 3,4
+[2011-07-14 20:23:21][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_202321.xls开始创建=====
+[2011-07-14 20:23:22][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 20:23:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round((t3.bsc_count-t1.bsc_count_real)/t3.bsc_count*100,2)||'%' BSC数据缺失率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round((t3.cell_count-t1.cell_count_real)/t3.cell_count*100,2) ||'%' 小区数据缺失率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-12/24
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time 
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-12/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-12/24 and t2.time<sysdate-3/24
+		order by 3,4
+[2011-07-14 20:24:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:归一化性能数据条数统计 共保存了27条记录
+[2011-07-14 20:24:35][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 20:24:35][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_202321.xls保存完成=====
+[2011-07-14 20:26:11][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_202611.xls开始创建=====
+[2011-07-14 20:26:12][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 20:26:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round((t3.bsc_count-nvl(t1.bsc_count_real,0))/t3.bsc_count*100,2)||'%' BSC数据缺失率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round((t3.cell_count-nvl(t1.cell_count_real,0))/t3.cell_count*100,2) ||'%' 小区数据缺失率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-12/24
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time 
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-12/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-12/24 and t2.time<sysdate-3/24
+		order by 4,3
+[2011-07-14 20:26:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:归一化性能数据条数统计 共保存了27条记录
+[2011-07-14 20:26:29][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 20:26:29][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_202611.xls保存完成=====
+[2011-07-14 20:27:46][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_202746.xls开始创建=====
+[2011-07-14 20:27:49][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 20:27:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-12/24
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time 
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-12/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-12/24 and t2.time<sysdate-3/24
+		order by 4,3
+[2011-07-14 20:28:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:归一化性能数据条数统计 共保存了27条记录
+[2011-07-14 20:28:06][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 20:28:06][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_202746.xls保存完成=====
+[2011-07-14 20:36:33][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_203633.xls开始创建=====
+[2011-07-14 20:36:34][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成开始-----
+[2011-07-14 20:36:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:归一化性能数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-12/24
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time 
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-12/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-12/24 and t2.time<sysdate-3/24
+		order by 4,3
+[2011-07-14 20:36:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:归一化性能数据条数统计 共保存了27条记录
+[2011-07-14 20:36:57][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----归一化性能数据条数统计 生成完成-----
+[2011-07-14 20:36:57][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----爱立信-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 20:36:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:爱立信-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '爱立信' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 数据完整率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=1 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf 
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 20:37:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:爱立信-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 20:37:46][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----爱立信-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 20:37:46][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----诺基亚-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 20:37:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:诺基亚-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '诺基亚' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 数据完整率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=15 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic  
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 20:38:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:诺基亚-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 20:38:24][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----诺基亚-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 20:38:24][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----华为-原始CONTER数据条数统计 生成开始-----
+[2011-07-14 20:38:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:华为-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        '华为' 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 数据完整率
+    from time_list t2
+    left join
+        (select count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=5 and bsc_uk is not null and state='入网在用') t1 
+    on 1=1
+    left join
+        (select  start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3  
+        where    start_time >=sysdate-1
+        group by start_time ) t0
+    on t2.time=t0.start_time
+        where 
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 2
+[2011-07-14 20:39:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:华为-原始CONTER数据条数统计 共保存了21条记录
+[2011-07-14 20:39:39][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----华为-原始CONTER数据条数统计 生成完成-----
+[2011-07-14 20:39:39][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----爱立信-原始COUNTER缺失情况-按BSC统计 生成开始-----
+[2011-07-14 20:39:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round(nvl(t0.kpi_count,0)/t1.cell_count*100,2)||'%' 数据完整率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=1 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_e_r12_h_celtchf 
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 20:40:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了101条记录
+[2011-07-14 20:40:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了201条记录
+[2011-07-14 20:40:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了301条记录
+[2011-07-14 20:40:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了401条记录
+[2011-07-14 20:40:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了501条记录
+[2011-07-14 20:40:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了601条记录
+[2011-07-14 20:40:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了701条记录
+[2011-07-14 20:40:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了801条记录
+[2011-07-14 20:40:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了901条记录
+[2011-07-14 20:40:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1001条记录
+[2011-07-14 20:40:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1101条记录
+[2011-07-14 20:40:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1201条记录
+[2011-07-14 20:40:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1301条记录
+[2011-07-14 20:40:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1401条记录
+[2011-07-14 20:40:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1501条记录
+[2011-07-14 20:40:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1601条记录
+[2011-07-14 20:40:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1701条记录
+[2011-07-14 20:40:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1801条记录
+[2011-07-14 20:40:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了1901条记录
+[2011-07-14 20:40:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2001条记录
+[2011-07-14 20:40:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2101条记录
+[2011-07-14 20:40:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2201条记录
+[2011-07-14 20:40:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2301条记录
+[2011-07-14 20:40:33][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2401条记录
+[2011-07-14 20:40:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2501条记录
+[2011-07-14 20:40:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2601条记录
+[2011-07-14 20:40:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2701条记录
+[2011-07-14 20:40:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2801条记录
+[2011-07-14 20:40:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了2901条记录
+[2011-07-14 20:40:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3001条记录
+[2011-07-14 20:40:35][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3101条记录
+[2011-07-14 20:40:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3201条记录
+[2011-07-14 20:40:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3301条记录
+[2011-07-14 20:40:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3401条记录
+[2011-07-14 20:40:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 保存了3501条记录
+[2011-07-14 20:40:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:爱立信-原始COUNTER缺失情况-按BSC统计 共保存了3501条记录
+[2011-07-14 20:40:36][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----爱立信-原始COUNTER缺失情况-按BSC统计 生成完成-----
+[2011-07-14 20:40:36][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----诺基亚-原始COUNTER缺失情况-按BSC统计 生成开始-----
+[2011-07-14 20:40:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:诺基亚-原始COUNTER缺失情况-按BSC统计 sql: select 
+		to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+		to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+		t1.city_name 地市,
+		t1.vendor_name 厂商,
+		t1.bsc_uk BSC,
+		t1.cell_count 理论小区数,
+		nvl(t0.kpi_count,0) 实际小区数,
+		round(nvl(t0.kpi_count,0)/t1.cell_count*100,2)||'%' 数据完整率
+	from time_list t2
+	left join
+		(select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+		where vendor_uk=15 and bsc_uk is not null and state='入网在用'
+		group by city_name,vendor_name,bsc_uk) t1 
+	on 1=1
+	left join
+		(select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.o_g_n_s14_h_traffic
+		where 
+		start_time >=sysdate-1
+		group by city_name,bsc_uk,start_time ) t0
+	on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+		where 
+		(t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+		and
+		t2.time>=sysdate-1 and t2.time<sysdate-3/24
+		order by 1,2,3,4
+[2011-07-14 20:40:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:诺基亚-原始COUNTER缺失情况-按BSC统计 共保存了24条记录
+[2011-07-14 20:40:50][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----诺基亚-原始COUNTER缺失情况-按BSC统计 生成完成-----
+[2011-07-14 20:40:50][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-pm.xml:-----华为-原始COUNTER缺失情况-按BSC统计 生成开始-----
+[2011-07-14 20:40:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-pm.xml:华为-原始COUNTER缺失情况-按BSC统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.city_name 地市,
+        t1.vendor_name 厂商,
+        t1.bsc_uk BSC,
+        t1.cell_count 理论小区数,
+        nvl(t0.kpi_count,0) 实际小区数,
+        round(nvl(t0.kpi_count,0)/t1.cell_count*100,2)||'%' 数据完整率
+    from time_list t2
+    left join
+        (select city_name,vendor_name,bsc_uk,count(*) cell_count from cm.f_g_c_cell 
+        where vendor_uk=5 and bsc_uk is not null and state='入网在用'
+        group by city_name,vendor_name,bsc_uk) t1 
+    on 1=1
+    left join
+        (select  city_name,bsc_uk,start_time,count(*) kpi_count from pm.O_G_H_R11_1275071420_3
+        where start_time >=sysdate-1
+        group by city_name,bsc_uk,start_time ) t0
+    on t1.bsc_uk=t0.bsc_uk and t2.time=t0.start_time
+        where (t1.cell_count-nvl(t0.kpi_count,0))/t1.cell_count*100 >10
+        and
+        t2.time>=sysdate-1 and t2.time<sysdate-3/24
+        order by 1,2,3,4
+[2011-07-14 20:41:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-pm.xml:华为-原始COUNTER缺失情况-按BSC统计 共保存了93条记录
+[2011-07-14 20:41:09][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-pm.xml:-----华为-原始COUNTER缺失情况-按BSC统计 生成完成-----
+[2011-07-14 20:41:10][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110714/性能-完整性-20110714_203633.xls保存完成=====

@@ -1,0 +1,1415 @@
+[2011-08-02 21:28:10][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-afos.xml:=====Excel文件../excel/AFOS/20110802/AFOS导入数据-20110802_212810.xls开始创建=====
+[2011-08-02 21:28:12][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----2g小区 生成开始-----
+[2011-08-02 21:28:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:2g小区 sql: select 
+		unique_key UUID,
+		user_label 小区名称,
+		alias 小区中文名,
+		cgi CGI,
+		bts_uk BTS名称,
+		bsc_uk BSC名称,
+		msc MSC名称,
+		bts_uk BTS唯一标识,
+		bsc_uk BSC唯一标识,
+		msc MSC唯一标识,
+		city_id city唯一标识,
+		city_name city名称,
+		longitude 经度,
+		latitude 纬度,
+		direction 小区方位角,
+		--高度
+		--机械下倾角
+		--标注小区是否是室内小区 
+		--小区BCCH发射功率
+		--天线挂高
+		BSIC,
+		BCCH,
+		LAC,
+		CI,
+		tch TCH频点列表,
+		RAC,
+		1 是否激活,
+		sysdate 数据采集时间,
+		'' 馈线损耗,
+		'' cdu损耗
+		from cm.f_g_c_cell where city_id=531
+[2011-08-02 21:28:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了101条记录
+[2011-08-02 21:28:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了201条记录
+[2011-08-02 21:28:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了301条记录
+[2011-08-02 21:28:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了401条记录
+[2011-08-02 21:28:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了501条记录
+[2011-08-02 21:28:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了601条记录
+[2011-08-02 21:28:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了701条记录
+[2011-08-02 21:28:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了801条记录
+[2011-08-02 21:28:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了901条记录
+[2011-08-02 21:28:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1001条记录
+[2011-08-02 21:28:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1101条记录
+[2011-08-02 21:28:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1201条记录
+[2011-08-02 21:28:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1301条记录
+[2011-08-02 21:28:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1401条记录
+[2011-08-02 21:28:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1501条记录
+[2011-08-02 21:28:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1601条记录
+[2011-08-02 21:28:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1701条记录
+[2011-08-02 21:28:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1801条记录
+[2011-08-02 21:28:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1901条记录
+[2011-08-02 21:28:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2001条记录
+[2011-08-02 21:28:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2101条记录
+[2011-08-02 21:28:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2201条记录
+[2011-08-02 21:28:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2301条记录
+[2011-08-02 21:28:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2401条记录
+[2011-08-02 21:28:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2501条记录
+[2011-08-02 21:28:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2601条记录
+[2011-08-02 21:28:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2701条记录
+[2011-08-02 21:28:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2801条记录
+[2011-08-02 21:28:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2901条记录
+[2011-08-02 21:28:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3001条记录
+[2011-08-02 21:28:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3101条记录
+[2011-08-02 21:28:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3201条记录
+[2011-08-02 21:28:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3301条记录
+[2011-08-02 21:28:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3401条记录
+[2011-08-02 21:28:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3501条记录
+[2011-08-02 21:28:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3601条记录
+[2011-08-02 21:28:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3701条记录
+[2011-08-02 21:28:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3801条记录
+[2011-08-02 21:28:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3901条记录
+[2011-08-02 21:28:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4001条记录
+[2011-08-02 21:28:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4101条记录
+[2011-08-02 21:28:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4201条记录
+[2011-08-02 21:28:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4301条记录
+[2011-08-02 21:28:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4401条记录
+[2011-08-02 21:28:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4501条记录
+[2011-08-02 21:28:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4601条记录
+[2011-08-02 21:28:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4701条记录
+[2011-08-02 21:28:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4801条记录
+[2011-08-02 21:28:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4901条记录
+[2011-08-02 21:28:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5001条记录
+[2011-08-02 21:28:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5101条记录
+[2011-08-02 21:28:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5201条记录
+[2011-08-02 21:28:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5301条记录
+[2011-08-02 21:28:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5401条记录
+[2011-08-02 21:28:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5501条记录
+[2011-08-02 21:28:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5601条记录
+[2011-08-02 21:28:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5701条记录
+[2011-08-02 21:28:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5801条记录
+[2011-08-02 21:28:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5901条记录
+[2011-08-02 21:28:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6001条记录
+[2011-08-02 21:28:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6101条记录
+[2011-08-02 21:28:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6201条记录
+[2011-08-02 21:28:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6301条记录
+[2011-08-02 21:28:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6401条记录
+[2011-08-02 21:28:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6501条记录
+[2011-08-02 21:28:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6601条记录
+[2011-08-02 21:28:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6701条记录
+[2011-08-02 21:28:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6801条记录
+[2011-08-02 21:28:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6901条记录
+[2011-08-02 21:28:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7001条记录
+[2011-08-02 21:28:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7101条记录
+[2011-08-02 21:28:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7201条记录
+[2011-08-02 21:28:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7301条记录
+[2011-08-02 21:28:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7401条记录
+[2011-08-02 21:28:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7501条记录
+[2011-08-02 21:28:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7601条记录
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7701条记录
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7801条记录
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7901条记录
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了8001条记录
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了8101条记录
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了8201条记录
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:2g小区 共保存了8259条记录
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----2g小区 生成完成-----
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----3g小区 生成开始-----
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:3g小区 sql: select 
+		unique_key UUID,
+		user_label 小区名称,
+		user_label 小区中文名,
+		nodeb_name nodeb名称,
+		rnc_name rnc名称,
+		msc msc名称,
+		nodeb_uk nodeb唯一标识,
+		rnc_uk rnc唯一标识,
+		msc msc唯一标识,
+		city_id city唯一标识,
+		city_name city名称,
+		CGI,
+		LAC,
+		cell_id CID,
+		longitude 经度,
+		latitude 纬度,
+		direction 小区方位角,
+		--高度
+		--机械下倾角
+		--天线挂高
+		--标注小区是否是室内小区 
+		pccpch_pow "小区P-CCPCH发射功率",
+		uarfcn 小区频点,
+		cellparam_id 小区扰码,
+		RAC,
+		1 是否激活,
+		'' 副频点列表,
+		sysdate 数据采集时间,
+		'' 馈线损耗,
+		'' cdu损耗
+		from cm.f_t_c_utrancell where city_id=531
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了101条记录
+[2011-08-02 21:28:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了201条记录
+[2011-08-02 21:28:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了301条记录
+[2011-08-02 21:28:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了401条记录
+[2011-08-02 21:28:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了501条记录
+[2011-08-02 21:28:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了601条记录
+[2011-08-02 21:28:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了701条记录
+[2011-08-02 21:28:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了801条记录
+[2011-08-02 21:28:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了901条记录
+[2011-08-02 21:28:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1001条记录
+[2011-08-02 21:28:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1101条记录
+[2011-08-02 21:28:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1201条记录
+[2011-08-02 21:28:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1301条记录
+[2011-08-02 21:28:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1401条记录
+[2011-08-02 21:28:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1501条记录
+[2011-08-02 21:28:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1601条记录
+[2011-08-02 21:28:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1701条记录
+[2011-08-02 21:28:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1801条记录
+[2011-08-02 21:28:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1901条记录
+[2011-08-02 21:28:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2001条记录
+[2011-08-02 21:28:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2101条记录
+[2011-08-02 21:28:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2201条记录
+[2011-08-02 21:28:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2301条记录
+[2011-08-02 21:28:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2401条记录
+[2011-08-02 21:28:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2501条记录
+[2011-08-02 21:28:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2601条记录
+[2011-08-02 21:28:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2701条记录
+[2011-08-02 21:28:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2801条记录
+[2011-08-02 21:28:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2901条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3001条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3101条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3201条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3301条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3401条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3501条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3601条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3701条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3801条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3901条记录
+[2011-08-02 21:28:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4001条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4101条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4201条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4301条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4401条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4501条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4601条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4701条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4801条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4901条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5001条记录
+[2011-08-02 21:28:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5101条记录
+[2011-08-02 21:28:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5201条记录
+[2011-08-02 21:28:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5301条记录
+[2011-08-02 21:28:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5401条记录
+[2011-08-02 21:28:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5501条记录
+[2011-08-02 21:28:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5601条记录
+[2011-08-02 21:28:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5701条记录
+[2011-08-02 21:28:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5801条记录
+[2011-08-02 21:28:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5901条记录
+[2011-08-02 21:28:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了6001条记录
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了6101条记录
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了6201条记录
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:3g小区 共保存了6299条记录
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----3g小区 生成完成-----
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----直放站 生成开始-----
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:直放站 sql: select
+t0.unique_key UUID,
+t0.maincell_uk 施主小区唯一标识,
+t0.maincell_zhlabel 施主小区名称,
+t0.user_label 直放站名称,
+t0.city_id 所属城市唯一标识,
+t0.city_name 所属地市名称,
+t0.longitude 安装地点经度,
+t0.latitude 安装地点纬度,
+t1.lac 施主小区的LAC,
+t1.ci 施主小区CI,
+ant_heigh 天线高度,
+t0.pow 发射功率,
+ant_angel 天线方向,
+ant_downangel 天线倾角,
+ant_count 天线数量,
+'' 天线增益,
+'' 馈线长度,
+t1.bcch 频点信息,
+'GSM' 制式,
+sysdate 数据采集时间
+from cm.f_g_c_repeater t0,cm.f_g_c_cell t1
+where
+t0.maincell_uk=t1.unique_key
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了101条记录
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了201条记录
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了301条记录
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了401条记录
+[2011-08-02 21:28:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了501条记录
+[2011-08-02 21:28:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了601条记录
+[2011-08-02 21:28:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了701条记录
+[2011-08-02 21:28:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了801条记录
+[2011-08-02 21:28:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了901条记录
+[2011-08-02 21:28:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了1001条记录
+[2011-08-02 21:28:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:直放站 共保存了1067条记录
+[2011-08-02 21:28:31][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----直放站 生成完成-----
+[2011-08-02 21:28:31][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----2g邻区 生成开始-----
+[2011-08-02 21:28:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:2g邻区 sql: select 
+--'' 邻区关系唯一标识,
+cgi 主小区唯一标识,
+nbr_cgi_01 邻区唯一标识,
+0 邻区方向,
+sysdate 数据采集时间
+ from (
+select 
+cgi,
+nbr_cgi_01
+from cm.f_g_c_gg_relationh where nbr_cgi_01 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531) 
+union
+select 
+cgi,
+nbr_cgi_02
+from cm.f_g_c_gg_relationh where nbr_cgi_02 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_03
+from cm.f_g_c_gg_relationh where nbr_cgi_03 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_04
+from cm.f_g_c_gg_relationh where nbr_cgi_04 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_05
+from cm.f_g_c_gg_relationh where nbr_cgi_05 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_06
+from cm.f_g_c_gg_relationh where nbr_cgi_06 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_07
+from cm.f_g_c_gg_relationh where nbr_cgi_07 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_08
+from cm.f_g_c_gg_relationh where nbr_cgi_08 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_09
+from cm.f_g_c_gg_relationh where nbr_cgi_09 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_10
+from cm.f_g_c_gg_relationh where nbr_cgi_10 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_11
+from cm.f_g_c_gg_relationh where nbr_cgi_11 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_12
+from cm.f_g_c_gg_relationh where nbr_cgi_12 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_13
+from cm.f_g_c_gg_relationh where nbr_cgi_13 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_14
+from cm.f_g_c_gg_relationh where nbr_cgi_14 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_15
+from cm.f_g_c_gg_relationh where nbr_cgi_15 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_16
+from cm.f_g_c_gg_relationh where nbr_cgi_16 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_17
+from cm.f_g_c_gg_relationh where nbr_cgi_17 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_18
+from cm.f_g_c_gg_relationh where nbr_cgi_18 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_19
+from cm.f_g_c_gg_relationh where nbr_cgi_19 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_20
+from cm.f_g_c_gg_relationh where nbr_cgi_20 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_21
+from cm.f_g_c_gg_relationh where nbr_cgi_21 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_22
+from cm.f_g_c_gg_relationh where nbr_cgi_22 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_23
+from cm.f_g_c_gg_relationh where nbr_cgi_23 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_24
+from cm.f_g_c_gg_relationh where nbr_cgi_24 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_25
+from cm.f_g_c_gg_relationh where nbr_cgi_25 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_26
+from cm.f_g_c_gg_relationh where nbr_cgi_26 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_27
+from cm.f_g_c_gg_relationh where nbr_cgi_27 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_28
+from cm.f_g_c_gg_relationh where nbr_cgi_28 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_29
+from cm.f_g_c_gg_relationh where nbr_cgi_29 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_30
+from cm.f_g_c_gg_relationh where nbr_cgi_30 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_31
+from cm.f_g_c_gg_relationh where nbr_cgi_31 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_32
+from cm.f_g_c_gg_relationh where nbr_cgi_32 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+) 
+where rownum<10000
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了101条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了201条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了301条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了401条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了501条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了601条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了701条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了801条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了901条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1001条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1101条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1201条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1301条记录
+[2011-08-02 21:28:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1401条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1501条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1601条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1701条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1801条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1901条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2001条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2101条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2201条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2301条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2401条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2501条记录
+[2011-08-02 21:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2601条记录
+[2011-08-02 21:28:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2701条记录
+[2011-08-02 21:28:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2801条记录
+[2011-08-02 21:28:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2901条记录
+[2011-08-02 21:28:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3001条记录
+[2011-08-02 21:28:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3101条记录
+[2011-08-02 21:28:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3201条记录
+[2011-08-02 21:28:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3301条记录
+[2011-08-02 21:28:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3401条记录
+[2011-08-02 21:28:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3501条记录
+[2011-08-02 21:28:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3601条记录
+[2011-08-02 21:28:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3701条记录
+[2011-08-02 21:28:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3801条记录
+[2011-08-02 21:28:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3901条记录
+[2011-08-02 21:28:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4001条记录
+[2011-08-02 21:28:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4101条记录
+[2011-08-02 21:28:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4201条记录
+[2011-08-02 21:28:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4301条记录
+[2011-08-02 21:28:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4401条记录
+[2011-08-02 21:28:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4501条记录
+[2011-08-02 21:28:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4601条记录
+[2011-08-02 21:28:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4701条记录
+[2011-08-02 21:28:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4801条记录
+[2011-08-02 21:28:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4901条记录
+[2011-08-02 21:28:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5001条记录
+[2011-08-02 21:28:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5101条记录
+[2011-08-02 21:28:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5201条记录
+[2011-08-02 21:28:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5301条记录
+[2011-08-02 21:28:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5401条记录
+[2011-08-02 21:28:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5501条记录
+[2011-08-02 21:28:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5601条记录
+[2011-08-02 21:28:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5701条记录
+[2011-08-02 21:31:35][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-afos.xml:=====Excel文件../excel/AFOS/20110802/AFOS导入数据-20110802_213135.xls开始创建=====
+[2011-08-02 21:31:37][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----2g小区 生成开始-----
+[2011-08-02 21:31:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:2g小区 sql: select 
+		unique_key UUID,
+		user_label 小区名称,
+		alias 小区中文名,
+		cgi CGI,
+		bts_uk BTS名称,
+		bsc_uk BSC名称,
+		msc MSC名称,
+		bts_uk BTS唯一标识,
+		bsc_uk BSC唯一标识,
+		msc MSC唯一标识,
+		city_id city唯一标识,
+		city_name city名称,
+		longitude 经度,
+		latitude 纬度,
+		direction 小区方位角,
+		--高度
+		--机械下倾角
+		--标注小区是否是室内小区 
+		--小区BCCH发射功率
+		--天线挂高
+		BSIC,
+		BCCH,
+		LAC,
+		CI,
+		tch TCH频点列表,
+		RAC,
+		1 是否激活,
+		sysdate 数据采集时间,
+		'' 馈线损耗,
+		'' cdu损耗
+		from cm.f_g_c_cell where city_id=531
+[2011-08-02 21:31:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了101条记录
+[2011-08-02 21:31:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了201条记录
+[2011-08-02 21:31:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了301条记录
+[2011-08-02 21:31:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了401条记录
+[2011-08-02 21:31:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了501条记录
+[2011-08-02 21:31:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了601条记录
+[2011-08-02 21:31:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了701条记录
+[2011-08-02 21:31:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了801条记录
+[2011-08-02 21:31:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了901条记录
+[2011-08-02 21:31:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1001条记录
+[2011-08-02 21:31:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1101条记录
+[2011-08-02 21:31:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1201条记录
+[2011-08-02 21:31:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1301条记录
+[2011-08-02 21:31:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1401条记录
+[2011-08-02 21:31:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1501条记录
+[2011-08-02 21:31:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1601条记录
+[2011-08-02 21:31:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1701条记录
+[2011-08-02 21:31:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1801条记录
+[2011-08-02 21:31:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了1901条记录
+[2011-08-02 21:31:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2001条记录
+[2011-08-02 21:31:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2101条记录
+[2011-08-02 21:31:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2201条记录
+[2011-08-02 21:31:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2301条记录
+[2011-08-02 21:31:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2401条记录
+[2011-08-02 21:31:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2501条记录
+[2011-08-02 21:31:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2601条记录
+[2011-08-02 21:31:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2701条记录
+[2011-08-02 21:31:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2801条记录
+[2011-08-02 21:31:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了2901条记录
+[2011-08-02 21:31:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3001条记录
+[2011-08-02 21:31:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3101条记录
+[2011-08-02 21:31:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3201条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3301条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3401条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3501条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3601条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3701条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3801条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了3901条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4001条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4101条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4201条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4301条记录
+[2011-08-02 21:31:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4401条记录
+[2011-08-02 21:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4501条记录
+[2011-08-02 21:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4601条记录
+[2011-08-02 21:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4701条记录
+[2011-08-02 21:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4801条记录
+[2011-08-02 21:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了4901条记录
+[2011-08-02 21:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5001条记录
+[2011-08-02 21:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5101条记录
+[2011-08-02 21:31:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5201条记录
+[2011-08-02 21:31:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5301条记录
+[2011-08-02 21:31:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5401条记录
+[2011-08-02 21:31:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5501条记录
+[2011-08-02 21:31:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5601条记录
+[2011-08-02 21:31:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5701条记录
+[2011-08-02 21:31:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5801条记录
+[2011-08-02 21:31:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了5901条记录
+[2011-08-02 21:31:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6001条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6101条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6201条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6301条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6401条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6501条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6601条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6701条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6801条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了6901条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7001条记录
+[2011-08-02 21:31:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7101条记录
+[2011-08-02 21:31:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7201条记录
+[2011-08-02 21:31:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7301条记录
+[2011-08-02 21:31:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7401条记录
+[2011-08-02 21:31:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7501条记录
+[2011-08-02 21:31:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7601条记录
+[2011-08-02 21:31:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7701条记录
+[2011-08-02 21:31:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7801条记录
+[2011-08-02 21:31:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了7901条记录
+[2011-08-02 21:31:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了8001条记录
+[2011-08-02 21:31:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了8101条记录
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g小区 保存了8201条记录
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:2g小区 共保存了8259条记录
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----2g小区 生成完成-----
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----3g小区 生成开始-----
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:3g小区 sql: select 
+		unique_key UUID,
+		user_label 小区名称,
+		user_label 小区中文名,
+		nodeb_name nodeb名称,
+		rnc_name rnc名称,
+		msc msc名称,
+		nodeb_uk nodeb唯一标识,
+		rnc_uk rnc唯一标识,
+		msc msc唯一标识,
+		city_id city唯一标识,
+		city_name city名称,
+		CGI,
+		LAC,
+		cell_id CID,
+		longitude 经度,
+		latitude 纬度,
+		direction 小区方位角,
+		--高度
+		--机械下倾角
+		--天线挂高
+		--标注小区是否是室内小区 
+		pccpch_pow "小区P-CCPCH发射功率",
+		uarfcn 小区频点,
+		cellparam_id 小区扰码,
+		RAC,
+		1 是否激活,
+		'' 副频点列表,
+		sysdate 数据采集时间,
+		'' 馈线损耗,
+		'' cdu损耗
+		from cm.f_t_c_utrancell where city_id=531
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了101条记录
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了201条记录
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了301条记录
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了401条记录
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了501条记录
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了601条记录
+[2011-08-02 21:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了701条记录
+[2011-08-02 21:31:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了801条记录
+[2011-08-02 21:31:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了901条记录
+[2011-08-02 21:31:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1001条记录
+[2011-08-02 21:31:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1101条记录
+[2011-08-02 21:31:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1201条记录
+[2011-08-02 21:31:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1301条记录
+[2011-08-02 21:31:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1401条记录
+[2011-08-02 21:31:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1501条记录
+[2011-08-02 21:31:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1601条记录
+[2011-08-02 21:31:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1701条记录
+[2011-08-02 21:31:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1801条记录
+[2011-08-02 21:31:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了1901条记录
+[2011-08-02 21:31:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2001条记录
+[2011-08-02 21:31:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2101条记录
+[2011-08-02 21:31:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2201条记录
+[2011-08-02 21:31:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2301条记录
+[2011-08-02 21:31:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2401条记录
+[2011-08-02 21:31:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2501条记录
+[2011-08-02 21:31:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2601条记录
+[2011-08-02 21:31:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2701条记录
+[2011-08-02 21:31:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2801条记录
+[2011-08-02 21:31:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了2901条记录
+[2011-08-02 21:31:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3001条记录
+[2011-08-02 21:31:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3101条记录
+[2011-08-02 21:31:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3201条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3301条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3401条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3501条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3601条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3701条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3801条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了3901条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4001条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4101条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4201条记录
+[2011-08-02 21:31:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4301条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4401条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4501条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4601条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4701条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4801条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了4901条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5001条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5101条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5201条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5301条记录
+[2011-08-02 21:31:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5401条记录
+[2011-08-02 21:31:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5501条记录
+[2011-08-02 21:31:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5601条记录
+[2011-08-02 21:31:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5701条记录
+[2011-08-02 21:31:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5801条记录
+[2011-08-02 21:31:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了5901条记录
+[2011-08-02 21:31:54][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了6001条记录
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了6101条记录
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g小区 保存了6201条记录
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:3g小区 共保存了6299条记录
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----3g小区 生成完成-----
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----直放站 生成开始-----
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:直放站 sql: select
+t0.unique_key UUID,
+t0.maincell_uk 施主小区唯一标识,
+t0.maincell_zhlabel 施主小区名称,
+t0.user_label 直放站名称,
+t0.city_id 所属城市唯一标识,
+t0.city_name 所属地市名称,
+t0.longitude 安装地点经度,
+t0.latitude 安装地点纬度,
+t1.lac 施主小区的LAC,
+t1.ci 施主小区CI,
+ant_heigh 天线高度,
+t0.pow 发射功率,
+ant_angel 天线方向,
+ant_downangel 天线倾角,
+ant_count 天线数量,
+'' 天线增益,
+'' 馈线长度,
+t1.bcch 频点信息,
+'GSM' 制式,
+sysdate 数据采集时间
+from cm.f_g_c_repeater t0,cm.f_g_c_cell t1
+where
+t0.maincell_uk=t1.unique_key
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了101条记录
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了201条记录
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了301条记录
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了401条记录
+[2011-08-02 21:31:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了501条记录
+[2011-08-02 21:31:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了601条记录
+[2011-08-02 21:31:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了701条记录
+[2011-08-02 21:31:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了801条记录
+[2011-08-02 21:31:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了901条记录
+[2011-08-02 21:31:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:直放站 保存了1001条记录
+[2011-08-02 21:31:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:直放站 共保存了1067条记录
+[2011-08-02 21:31:56][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----直放站 生成完成-----
+[2011-08-02 21:31:56][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----2g邻区 生成开始-----
+[2011-08-02 21:31:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:2g邻区 sql: select 
+--'' 邻区关系唯一标识,
+cgi 主小区唯一标识,
+nbr_cgi_01 邻区唯一标识,
+0 邻区方向,
+sysdate 数据采集时间
+ from (
+select 
+cgi,
+nbr_cgi_01
+from cm.f_g_c_gg_relationh where nbr_cgi_01 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531) 
+union
+select 
+cgi,
+nbr_cgi_02
+from cm.f_g_c_gg_relationh where nbr_cgi_02 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_03
+from cm.f_g_c_gg_relationh where nbr_cgi_03 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_04
+from cm.f_g_c_gg_relationh where nbr_cgi_04 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_05
+from cm.f_g_c_gg_relationh where nbr_cgi_05 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_06
+from cm.f_g_c_gg_relationh where nbr_cgi_06 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_07
+from cm.f_g_c_gg_relationh where nbr_cgi_07 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_08
+from cm.f_g_c_gg_relationh where nbr_cgi_08 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_09
+from cm.f_g_c_gg_relationh where nbr_cgi_09 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_10
+from cm.f_g_c_gg_relationh where nbr_cgi_10 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_11
+from cm.f_g_c_gg_relationh where nbr_cgi_11 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_12
+from cm.f_g_c_gg_relationh where nbr_cgi_12 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_13
+from cm.f_g_c_gg_relationh where nbr_cgi_13 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_14
+from cm.f_g_c_gg_relationh where nbr_cgi_14 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_15
+from cm.f_g_c_gg_relationh where nbr_cgi_15 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_16
+from cm.f_g_c_gg_relationh where nbr_cgi_16 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_17
+from cm.f_g_c_gg_relationh where nbr_cgi_17 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_18
+from cm.f_g_c_gg_relationh where nbr_cgi_18 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_19
+from cm.f_g_c_gg_relationh where nbr_cgi_19 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_20
+from cm.f_g_c_gg_relationh where nbr_cgi_20 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_21
+from cm.f_g_c_gg_relationh where nbr_cgi_21 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_22
+from cm.f_g_c_gg_relationh where nbr_cgi_22 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_23
+from cm.f_g_c_gg_relationh where nbr_cgi_23 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_24
+from cm.f_g_c_gg_relationh where nbr_cgi_24 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_25
+from cm.f_g_c_gg_relationh where nbr_cgi_25 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_26
+from cm.f_g_c_gg_relationh where nbr_cgi_26 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_27
+from cm.f_g_c_gg_relationh where nbr_cgi_27 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_28
+from cm.f_g_c_gg_relationh where nbr_cgi_28 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_29
+from cm.f_g_c_gg_relationh where nbr_cgi_29 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_30
+from cm.f_g_c_gg_relationh where nbr_cgi_30 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_31
+from cm.f_g_c_gg_relationh where nbr_cgi_31 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+union
+select 
+cgi,
+nbr_cgi_32
+from cm.f_g_c_gg_relationh where nbr_cgi_32 is not null and unique_key in (select unique_key from cm.f_g_c_cell where city_id=531)
+) 
+where rownum<10000
+[2011-08-02 21:32:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了101条记录
+[2011-08-02 21:32:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了201条记录
+[2011-08-02 21:32:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了301条记录
+[2011-08-02 21:32:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了401条记录
+[2011-08-02 21:32:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了501条记录
+[2011-08-02 21:32:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了601条记录
+[2011-08-02 21:32:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了701条记录
+[2011-08-02 21:32:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了801条记录
+[2011-08-02 21:32:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了901条记录
+[2011-08-02 21:32:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1001条记录
+[2011-08-02 21:32:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1101条记录
+[2011-08-02 21:32:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1201条记录
+[2011-08-02 21:32:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1301条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1401条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1501条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1601条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1701条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1801条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了1901条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2001条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2101条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2201条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2301条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2401条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2501条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2601条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2701条记录
+[2011-08-02 21:32:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2801条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了2901条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3001条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3101条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3201条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3301条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3401条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3501条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3601条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3701条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3801条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了3901条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4001条记录
+[2011-08-02 21:32:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4101条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4201条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4301条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4401条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4501条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4601条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4701条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4801条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了4901条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5001条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5101条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5201条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5301条记录
+[2011-08-02 21:32:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5401条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5501条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5601条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5701条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5801条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了5901条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了6001条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了6101条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了6201条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了6301条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了6401条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了6501条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了6601条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了6701条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了6801条记录
+[2011-08-02 21:32:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了6901条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了7001条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了7101条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了7201条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了7301条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了7401条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了7501条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了7601条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了7701条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了7801条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了7901条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了8001条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了8101条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了8201条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了8301条记录
+[2011-08-02 21:32:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了8401条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了8501条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了8601条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了8701条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了8801条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了8901条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了9001条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了9101条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了9201条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了9301条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了9401条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了9501条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了9601条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了9701条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了9801条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:2g邻区 保存了9901条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:2g邻区 共保存了9999条记录
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----2g邻区 生成完成-----
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----3g邻区 生成开始-----
+[2011-08-02 21:32:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:3g邻区 sql: select 
+--'' 邻区关系唯一标识,
+unique_key 主小区唯一标识,
+nbr_cgi_01 邻区唯一标识,
+0 邻区方向,
+sysdate 数据采集时间
+ from (
+select 
+unique_key,
+nbr_cgi_01
+from cm.f_t_c_tt_relationh where nbr_cgi_01 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531) 
+union
+select 
+unique_key,
+nbr_cgi_02
+from cm.f_t_c_tt_relationh where nbr_cgi_02 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_03
+from cm.f_t_c_tt_relationh where nbr_cgi_03 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_04
+from cm.f_t_c_tt_relationh where nbr_cgi_04 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_05
+from cm.f_t_c_tt_relationh where nbr_cgi_05 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_06
+from cm.f_t_c_tt_relationh where nbr_cgi_06 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_07
+from cm.f_t_c_tt_relationh where nbr_cgi_07 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_08
+from cm.f_t_c_tt_relationh where nbr_cgi_08 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_09
+from cm.f_t_c_tt_relationh where nbr_cgi_09 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_10
+from cm.f_t_c_tt_relationh where nbr_cgi_10 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_11
+from cm.f_t_c_tt_relationh where nbr_cgi_11 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_12
+from cm.f_t_c_tt_relationh where nbr_cgi_12 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_13
+from cm.f_t_c_tt_relationh where nbr_cgi_13 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_14
+from cm.f_t_c_tt_relationh where nbr_cgi_14 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_15
+from cm.f_t_c_tt_relationh where nbr_cgi_15 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_16
+from cm.f_t_c_tt_relationh where nbr_cgi_16 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_17
+from cm.f_t_c_tt_relationh where nbr_cgi_17 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_18
+from cm.f_t_c_tt_relationh where nbr_cgi_18 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_19
+from cm.f_t_c_tt_relationh where nbr_cgi_19 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_20
+from cm.f_t_c_tt_relationh where nbr_cgi_20 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_21
+from cm.f_t_c_tt_relationh where nbr_cgi_21 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_22
+from cm.f_t_c_tt_relationh where nbr_cgi_22 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_23
+from cm.f_t_c_tt_relationh where nbr_cgi_23 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_24
+from cm.f_t_c_tt_relationh where nbr_cgi_24 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_25
+from cm.f_t_c_tt_relationh where nbr_cgi_25 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_26
+from cm.f_t_c_tt_relationh where nbr_cgi_26 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_27
+from cm.f_t_c_tt_relationh where nbr_cgi_27 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_28
+from cm.f_t_c_tt_relationh where nbr_cgi_28 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_29
+from cm.f_t_c_tt_relationh where nbr_cgi_29 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_30
+from cm.f_t_c_tt_relationh where nbr_cgi_30 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_31
+from cm.f_t_c_tt_relationh where nbr_cgi_31 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+union
+select 
+unique_key,
+nbr_cgi_32
+from cm.f_t_c_tt_relationh where nbr_cgi_32 is not null and unique_key in (select unique_key from cm.f_t_c_utrancell where city_id=531)
+) 
+where rownum<10000
+[2011-08-02 21:32:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了101条记录
+[2011-08-02 21:32:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了201条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了301条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了401条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了501条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了601条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了701条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了801条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了901条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了1001条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了1101条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了1201条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了1301条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了1401条记录
+[2011-08-02 21:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了1501条记录
+[2011-08-02 21:32:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了1601条记录
+[2011-08-02 21:32:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了1701条记录
+[2011-08-02 21:32:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了1801条记录
+[2011-08-02 21:32:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了1901条记录
+[2011-08-02 21:32:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了2001条记录
+[2011-08-02 21:32:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了2101条记录
+[2011-08-02 21:32:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了2201条记录
+[2011-08-02 21:32:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了2301条记录
+[2011-08-02 21:32:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了2401条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了2501条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了2601条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了2701条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了2801条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了2901条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了3001条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了3101条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了3201条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了3301条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了3401条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了3501条记录
+[2011-08-02 21:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了3601条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了3701条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了3801条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了3901条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了4001条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了4101条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了4201条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了4301条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了4401条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了4501条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了4601条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了4701条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了4801条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了4901条记录
+[2011-08-02 21:32:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了5001条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了5101条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了5201条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了5301条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了5401条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了5501条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了5601条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了5701条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了5801条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了5901条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了6001条记录
+[2011-08-02 21:32:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了6101条记录
+[2011-08-02 21:32:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了6201条记录
+[2011-08-02 21:32:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了6301条记录
+[2011-08-02 21:32:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了6401条记录
+[2011-08-02 21:32:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了6501条记录
+[2011-08-02 21:32:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了6601条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了6701条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了6801条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了6901条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了7001条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了7101条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了7201条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了7301条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了7401条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了7501条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了7601条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了7701条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了7801条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了7901条记录
+[2011-08-02 21:32:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了8001条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了8101条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了8201条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了8301条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了8401条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了8501条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了8601条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了8701条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了8801条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了8901条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了9001条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了9101条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了9201条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了9301条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了9401条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了9501条记录
+[2011-08-02 21:32:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了9601条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了9701条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了9801条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:3g邻区 保存了9901条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:3g邻区 共保存了9999条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----3g邻区 生成完成-----
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----msc 生成开始-----
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:msc sql: select distinct 
+msc UUID,
+msc msc名称,
+'' msc局号,
+vendor_name msc设备厂家名称,
+city_id 网元所属城市唯一标识,
+city_name city名称,
+sysdate 数据采集时间 
+from cm.f_g_c_bsc
+where city_id=531
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:msc 共保存了20条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----msc 生成完成-----
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----bsc 生成开始-----
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:bsc sql: select  
+unique_key UUID,
+unique_key bsc名称,
+msc mss唯一标识,
+msc mss名称,
+city_id 所属城市唯一标识,
+city_name 网元所属城市名称,
+vendor_name 设备厂家名称,
+sysdate 数据采集时间 
+from cm.f_g_c_bsc
+where city_id=531
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:bsc 共保存了62条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----bsc 生成完成-----
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----bts 生成开始-----
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:bts sql: select
+unique_key UUID,
+alias bts名称,
+bsc_uk 所属bsc唯一标识,
+bsc_name 所属bsc名称,
+msc 所属msc唯一标识,
+msc 所属msc名称,
+city_id 所属city唯一标识,
+city_name 所属city名称,
+vendor_name 设备厂家名称,
+longitude 纬度,
+latitude 经度,
+sysdate 数据采集时间,
+freq_band 频段
+from cm.f_g_c_bts
+where city_id=531
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了101条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了201条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了301条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了401条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了501条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了601条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了701条记录
+[2011-08-02 21:32:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了801条记录
+[2011-08-02 21:32:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了901条记录
+[2011-08-02 21:32:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了1001条记录
+[2011-08-02 21:32:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了1101条记录
+[2011-08-02 21:32:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了1201条记录
+[2011-08-02 21:32:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了1301条记录
+[2011-08-02 21:32:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了1401条记录
+[2011-08-02 21:32:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了1501条记录
+[2011-08-02 21:32:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了1601条记录
+[2011-08-02 21:32:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了1701条记录
+[2011-08-02 21:32:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了1801条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了1901条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了2001条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了2101条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了2201条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了2301条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了2401条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了2501条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了2601条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了2701条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了2801条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了2901条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了3001条记录
+[2011-08-02 21:32:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了3101条记录
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了3201条记录
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了3301条记录
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:bts 保存了3401条记录
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:bts 共保存了3457条记录
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----bts 生成完成-----
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----nodeb 生成开始-----
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:nodeb sql: select 
+unique_key UUID,
+user_label NodeB名称,
+rnc_uk 所属rnc唯一标识,
+rnc_name 所属rnc名称,
+'' 所属msc唯一标识,
+'' 所属msc名称,
+city_id 所属city唯一标识,
+city_name 所属city名称,
+vendor_name 厂家名称,
+sysdate 数据采集时间,
+longitude 纬度,
+latitude 经度
+from cm.f_t_c_nodeb
+where city_id=531
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了101条记录
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了201条记录
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了301条记录
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了401条记录
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了501条记录
+[2011-08-02 21:32:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了601条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了701条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了801条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了901条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了1001条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了1101条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了1201条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了1301条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了1401条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了1501条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了1601条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了1701条记录
+[2011-08-02 21:32:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了1801条记录
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了1901条记录
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了2001条记录
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了2101条记录
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:nodeb 保存了2201条记录
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:nodeb 共保存了2209条记录
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----nodeb 生成完成-----
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----rnc 生成开始-----
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:rnc sql: select 
+unique_key UUID,
+user_label rnc名称 ,
+msc 所属msc唯一标识,
+msc 所属msc名称,
+city_id 所属城市唯一标识,
+city_name 网元所属城市名称,
+vendor_name 设备厂家名称,
+sysdate 数据采集时间
+from cm.f_t_c_rnc
+where city_id=531
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:rnc 共保存了29条记录
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----rnc 生成完成-----
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-afos.xml:-----city 生成开始-----
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-afos.xml:city sql: select 
+city_id UUID,
+city_name 城市名称 ,
+city_id region_uuid,
+city_name 区域名称 
+from cm.city
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:222)][INFO][main]-afos.xml:city 保存了101条记录
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:225)][INFO][main]-afos.xml:city 共保存了181条记录
+[2011-08-02 21:32:26][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-afos.xml:-----city 生成完成-----
+[2011-08-02 21:32:28][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-afos.xml:=====Excel文件../excel/AFOS/20110802/AFOS导入数据-20110802_213135.xls保存完成=====

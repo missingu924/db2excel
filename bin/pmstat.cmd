@@ -1,0 +1,1 @@
+db2excel pm_stat_ericsson.xml;pm_stat_alcatel.xml;pm_stat_huawei.xml;pm_stat_ztev2.xml;pm_stat_ztev3.xml

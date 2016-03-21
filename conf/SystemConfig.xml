@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Config>
+	<!-- 短信发送相关配置信息 -->
+	<sms>
+		<!-- 用于发送短信的服务地址 -->
+		<smsRmiAddress>rmi://10.238.73.81:8333/SmsRmiAdapter</smsRmiAddress>>
+		<!-- 用于接收短信的手机号码 -->
+		<mobiles>13919308179,13893479067,13919023583</mobiles>
+	</sms>
+</Config>

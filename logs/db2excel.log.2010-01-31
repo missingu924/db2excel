@@ -1,0 +1,742 @@
+[2010-01-31 08:35:38][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_ericsson_bsc_h.xml:=====Excel文件../excel/pm_stat//爱立信-性能(LACBSC)-完整性-20100131_083538.xls开始创建=====
+[2010-01-31 08:35:39][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----CITY-H-全省 生成开始-----
+[2010-01-31 08:35:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_ericsson_bsc_h.xml:CITY-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数,
+			wmsys.wm_concat(city_name) 地市
+		from pm_omc_ericity
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:35:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_ericsson_bsc_h.xml:CITY-H-全省 共保存了31条记录
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----CITY-H-全省 生成完成-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----CITY900-H-全省 生成开始-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_ericsson_bsc_h.xml:CITY900-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数,
+			wmsys.wm_concat(city_name) 地市
+		from pm_omc_ericity900
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_ericsson_bsc_h.xml:CITY900-H-全省 共保存了31条记录
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----CITY900-H-全省 生成完成-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----CITY1800-H-全省 生成开始-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_ericsson_bsc_h.xml:CITY1800-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数,
+			wmsys.wm_concat(city_name) 地市
+		from pm_omc_ericity1800
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_ericsson_bsc_h.xml:CITY1800-H-全省 共保存了31条记录
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----CITY1800-H-全省 生成完成-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----FREQ900-H-全省 生成开始-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_ericsson_bsc_h.xml:FREQ900-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) BSC数
+		from pm_omc_erifreq900
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_ericsson_bsc_h.xml:FREQ900-H-全省 共保存了31条记录
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----FREQ900-H-全省 生成完成-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----FREQ900-H-分地市 生成开始-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_ericsson_bsc_h.xml:FREQ900-H-分地市 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) BSC数
+		from pm_omc_erifreq1800
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_ericsson_bsc_h.xml:FREQ900-H-分地市 共保存了93条记录
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----FREQ900-H-分地市 生成完成-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----FREQ1800-H-全省 生成开始-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_ericsson_bsc_h.xml:FREQ1800-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) BSC数
+		from pm_omc_erifreq900
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_ericsson_bsc_h.xml:FREQ1800-H-全省 共保存了31条记录
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----FREQ1800-H-全省 生成完成-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----FREQ1800-H-分地市 生成开始-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_ericsson_bsc_h.xml:FREQ1800-H-分地市 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) BSC数
+		from pm_omc_erifreq1800
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_ericsson_bsc_h.xml:FREQ1800-H-分地市 共保存了93条记录
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----FREQ1800-H-分地市 生成完成-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----BSC-H-全省 生成开始-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_ericsson_bsc_h.xml:BSC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) bsc数
+		from pm_omc_eribsc
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_ericsson_bsc_h.xml:BSC-H-全省 共保存了31条记录
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----BSC-H-全省 生成完成-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----BSC-H-分地市 生成开始-----
+[2010-01-31 08:35:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_ericsson_bsc_h.xml:BSC-H-分地市 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) bsc数
+			from pm_omc_eribsc
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+[2010-01-31 08:35:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_ericsson_bsc_h.xml:BSC-H-分地市 共保存了93条记录
+[2010-01-31 08:35:41][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----BSC-H-分地市 生成完成-----
+[2010-01-31 08:35:41][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----LAC-H-全省 生成开始-----
+[2010-01-31 08:35:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_ericsson_bsc_h.xml:LAC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) lac数
+		from pm_omc_ericlac
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:35:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_ericsson_bsc_h.xml:LAC-H-全省 共保存了31条记录
+[2010-01-31 08:35:42][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_ericsson_bsc_h.xml:-----LAC-H-全省 生成完成-----
+[2010-01-31 08:35:42][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_stat_ericsson_bsc_h.xml:=====Excel文件../excel/pm_stat//爱立信-性能(LACBSC)-完整性-20100131_083538.xls保存完成=====
+[2010-01-31 08:41:18][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_huawei_bsc.xml:=====Excel文件../excel/pm_stat//爱立信-性能(LACBSC)-完整性-20100131_084118.xls开始创建=====
+[2010-01-31 08:41:18][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----CITY-H-全省 生成开始-----
+[2010-01-31 08:41:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:CITY-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数,
+			wmsys.wm_concat(city_name) 地市
+		from pm_omc_hwcity
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:41:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:CITY-H-全省 共保存了31条记录
+[2010-01-31 08:41:19][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----CITY-H-全省 生成完成-----
+[2010-01-31 08:41:19][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-全省 生成开始-----
+[2010-01-31 08:41:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) bsc数
+		from pm_omc_hwbsc
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:41:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-全省 共保存了31条记录
+[2010-01-31 08:41:19][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-全省 生成完成-----
+[2010-01-31 08:41:19][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-分地市 生成开始-----
+[2010-01-31 08:41:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) bsc数
+			from pm_omc_hwbsc
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+[2010-01-31 08:41:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 保存了101条记录
+[2010-01-31 08:41:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 保存了201条记录
+[2010-01-31 08:41:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 共保存了204条记录
+[2010-01-31 08:41:20][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-分地市 生成完成-----
+[2010-01-31 08:41:20][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----LAC-H-全省 生成开始-----
+[2010-01-31 08:41:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:LAC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) lac数
+		from pm_omc_hwclac
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:41:36][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_huawei_bsc.xml:=====Excel文件../excel/pm_stat//爱立信-性能(LACBSC)-完整性-20100131_084136.xls开始创建=====
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----CITY-H-全省 生成开始-----
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:CITY-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数,
+			wmsys.wm_concat(city_name) 地市
+		from pm_omc_hwcity
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:CITY-H-全省 共保存了31条记录
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----CITY-H-全省 生成完成-----
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-全省 生成开始-----
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) bsc数
+		from pm_omc_hwbsc
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-全省 共保存了31条记录
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-全省 生成完成-----
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-分地市 生成开始-----
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) bsc数
+			from pm_omc_hwbsc
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 保存了101条记录
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 保存了201条记录
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 共保存了204条记录
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-分地市 生成完成-----
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----LAC-H-全省 生成开始-----
+[2010-01-31 08:41:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:LAC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) lac数
+		from pm_omc_hwlac
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:41:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:LAC-H-全省 共保存了31条记录
+[2010-01-31 08:41:38][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----LAC-H-全省 生成完成-----
+[2010-01-31 08:41:38][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_stat_huawei_bsc.xml:=====Excel文件../excel/pm_stat//爱立信-性能(LACBSC)-完整性-20100131_084136.xls保存完成=====
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_huawei_bsc.xml:=====Excel文件../excel/pm_stat//华为-性能(LACBSC)-完整性-20100131_084237.xls开始创建=====
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----CITY-H-全省 生成开始-----
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:CITY-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数
+		from pm_omc_hwcity
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:CITY-H-全省 共保存了31条记录
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----CITY-H-全省 生成完成-----
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-全省 生成开始-----
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) bsc数
+		from pm_omc_hwbsc
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-全省 共保存了31条记录
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-全省 生成完成-----
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-分地市 生成开始-----
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) bsc数
+			from pm_omc_hwbsc
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+[2010-01-31 08:42:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 保存了101条记录
+[2010-01-31 08:42:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 保存了201条记录
+[2010-01-31 08:42:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:BSC-H-分地市 共保存了204条记录
+[2010-01-31 08:42:38][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----BSC-H-分地市 生成完成-----
+[2010-01-31 08:42:38][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_huawei_bsc.xml:-----LAC-H-全省 生成开始-----
+[2010-01-31 08:42:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_huawei_bsc.xml:LAC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) lac数
+		from pm_omc_hwlac
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:42:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_huawei_bsc.xml:LAC-H-全省 共保存了31条记录
+[2010-01-31 08:42:38][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_huawei_bsc.xml:-----LAC-H-全省 生成完成-----
+[2010-01-31 08:42:38][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_stat_huawei_bsc.xml:=====Excel文件../excel/pm_stat//华为-性能(LACBSC)-完整性-20100131_084237.xls保存完成=====
+[2010-01-31 08:47:16][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_alcatel_bsc.xml:=====Excel文件../excel/pm_stat/20100131/华为-性能(LACBSC)-完整性-20100131_084716.xls开始创建=====
+[2010-01-31 08:47:16][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel_bsc.xml:-----CITY-H-全省 生成开始-----
+[2010-01-31 08:47:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel_bsc.xml:CITY-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数
+		from pm_omc_alcatel_city_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:47:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel_bsc.xml:CITY-H-全省 共保存了25条记录
+[2010-01-31 08:47:17][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel_bsc.xml:-----CITY-H-全省 生成完成-----
+[2010-01-31 08:47:17][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel_bsc.xml:-----BSC-H-全省 生成开始-----
+[2010-01-31 08:47:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel_bsc.xml:BSC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) bsc数
+		from pm_omc_alcatel_bsc_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:47:42][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_alcatel_bsc.xml:=====Excel文件../excel/pm_stat/20100131/华为-性能(LACBSC)-完整性-20100131_084742.xls开始创建=====
+[2010-01-31 08:47:43][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel_bsc.xml:-----CITY-H-全省 生成开始-----
+[2010-01-31 08:47:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel_bsc.xml:CITY-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数
+		from pm_omc_alcatel_city_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:47:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel_bsc.xml:CITY-H-全省 共保存了25条记录
+[2010-01-31 08:47:43][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel_bsc.xml:-----CITY-H-全省 生成完成-----
+[2010-01-31 08:47:43][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel_bsc.xml:-----BSC-H-全省 生成开始-----
+[2010-01-31 08:47:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel_bsc.xml:BSC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) bsc数
+		from pm_omc_alc_bsc_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 08:47:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel_bsc.xml:BSC-H-全省 共保存了26条记录
+[2010-01-31 08:47:44][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel_bsc.xml:-----BSC-H-全省 生成完成-----
+[2010-01-31 08:47:44][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel_bsc.xml:-----BSC-H-分地市 生成开始-----
+[2010-01-31 08:47:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel_bsc.xml:BSC-H-分地市 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) bsc数
+			from pm_omc_alc_bsc_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+[2010-01-31 10:00:45][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_alcatel_bsc.xml:=====Excel文件../excel/pm_stat/20100131/华为-性能(LACBSC)-完整性-20100131_100045.xls开始创建=====
+[2010-01-31 10:00:45][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel_bsc.xml:-----CITY-H-全省 生成开始-----
+[2010-01-31 10:00:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel_bsc.xml:CITY-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数
+		from pm_omc_alcatel_city_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 10:00:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel_bsc.xml:CITY-H-全省 共保存了27条记录
+[2010-01-31 10:00:45][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel_bsc.xml:-----CITY-H-全省 生成完成-----
+[2010-01-31 10:00:45][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel_bsc.xml:-----BSC-H-全省 生成开始-----
+[2010-01-31 10:00:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel_bsc.xml:BSC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) bsc数
+		from pm_omc_alc_bsc_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 10:00:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel_bsc.xml:BSC-H-全省 共保存了27条记录
+[2010-01-31 10:00:46][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel_bsc.xml:-----BSC-H-全省 生成完成-----
+[2010-01-31 10:00:46][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel_bsc.xml:-----BSC-H-分地市 生成开始-----
+[2010-01-31 10:00:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel_bsc.xml:BSC-H-分地市 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) bsc数
+			from pm_omc_alc_bsc_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+[2010-01-31 10:08:47][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_alcatel_bsc.xml:=====Excel文件../excel/pm_stat/20100131/华为-性能(LACBSC)-完整性-20100131_100847.xls开始创建=====
+[2010-01-31 10:08:47][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel_bsc.xml:-----CITY-H-全省 生成开始-----
+[2010-01-31 10:08:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel_bsc.xml:CITY-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数
+		from pm_omc_alcatel_city_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 10:08:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel_bsc.xml:CITY-H-全省 共保存了27条记录
+[2010-01-31 10:08:47][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel_bsc.xml:-----CITY-H-全省 生成完成-----
+[2010-01-31 10:08:47][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel_bsc.xml:-----BSC-H-全省 生成开始-----
+[2010-01-31 10:08:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel_bsc.xml:BSC-H-全省 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) bsc数
+		from pm_omc_alc_bsc_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+[2010-01-31 10:08:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel_bsc.xml:BSC-H-全省 共保存了27条记录
+[2010-01-31 10:08:48][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel_bsc.xml:-----BSC-H-全省 生成完成-----
+[2010-01-31 10:08:48][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_stat_alcatel_bsc.xml:=====Excel文件../excel/pm_stat/20100131/华为-性能(LACBSC)-完整性-20100131_100847.xls保存完成=====
+[2010-01-31 16:52:40][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_alcatel.xml:=====Excel文件../excel/pm_stat/20100131/阿尔卡特-性能-完整性-20100131_165240.xls开始创建=====
+[2010-01-31 16:52:41][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----BSC缺失 生成开始-----
+[2010-01-31 16:52:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:BSC缺失 sql: select  
+		'甘肃' 省份,
+		to_char(sysdate-3/24,'yyyy-mm-dd hh24') start_time,
+		user_label BSC
+		from 
+		gsrms.bsc where vendor_name='阿尔卡特'
+		and 
+		(
+			 select count(*) from pm_omc_alcatel t2 where bsc.user_label=t2.ne and t2.start_time=to_date(to_char(sysdate-3/24,'yyyy-mm-dd hh24'),'yyyy-mm-dd hh24:mi:ss')
+		)=0
+[2010-01-31 16:58:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:BSC缺失 共保存了5条记录
+[2010-01-31 16:58:07][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----BSC缺失 生成完成-----
+[2010-01-31 16:58:07][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----全省性能数据完整性统计 生成开始-----
+[2010-01-31 16:58:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:全省性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) cell数
+		from pm_omc_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2010-01-31 16:59:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:全省性能数据完整性统计 共保存了37条记录
+[2010-01-31 16:59:03][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----全省性能数据完整性统计 生成完成-----
+[2010-01-31 16:59:03][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----分地市性能数据完整性统计 生成开始-----
+[2010-01-31 16:59:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) 小区数
+			from pm_omc_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name
+[2010-01-31 16:59:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 保存了101条记录
+[2010-01-31 16:59:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 共保存了185条记录
+[2010-01-31 16:59:09][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----分地市性能数据完整性统计 生成完成-----
+[2010-01-31 16:59:09][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----分BSC性能数据完整性统计 生成开始-----
+[2010-01-31 16:59:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			ne BSC,
+			start_time 时间,
+			count(*) CELL数
+		from pm_omc_alcatel where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,ne,start_time
+		order by city_name,ne
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了101条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了201条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了301条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了401条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了501条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了601条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了701条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了801条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了901条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1001条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1101条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1201条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1301条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1401条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1501条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1601条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1701条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1801条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1901条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2001条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2101条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2201条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2301条记录
+[2010-01-31 16:59:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 共保存了2387条记录
+[2010-01-31 16:59:15][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----分BSC性能数据完整性统计 生成完成-----
+[2010-01-31 16:59:15][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----GPRS BSC缺失 生成开始-----
+[2010-01-31 16:59:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:GPRS BSC缺失 sql: select  
+		'甘肃' 省份,
+		to_char(sysdate-3/24,'yyyy-mm-dd hh24') start_time,
+		user_label BSC
+		from 
+		gsrms.bsc where vendor_name='阿尔卡特'
+		and 
+		(
+			 select count(*) from pm_grps_alcatel t2 where bsc.user_label=t2.ne and t2.start_time=to_date(to_char(sysdate-3/24,'yyyy-mm-dd hh24'),'yyyy-mm-dd hh24:mi:ss')
+		)=0
+[2010-01-31 17:03:48][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_alcatel.xml:=====Excel文件../excel/pm_stat/20100131/阿尔卡特-性能-完整性-20100131_170348.xls开始创建=====
+[2010-01-31 17:03:48][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----BSC缺失 生成开始-----
+[2010-01-31 17:03:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:BSC缺失 sql: select  
+		'甘肃' 省份,
+		to_char(sysdate-3/24,'yyyy-mm-dd hh24') start_time,
+		user_label BSC
+		from 
+		gsrms.bsc where vendor_name='阿尔卡特'
+		and 
+		(
+			 select count(*) from pm_omc_alcatel t2 where bsc.user_label=t2.ne and t2.start_time=to_date(to_char(sysdate-3/24,'yyyy-mm-dd hh24'),'yyyy-mm-dd hh24:mi:ss')
+		)=0
+[2010-01-31 17:04:19][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_alcatel.xml:=====Excel文件../excel/pm_stat/20100131/阿尔卡特-性能-完整性-20100131_170419.xls开始创建=====
+[2010-01-31 17:04:20][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----全省性能数据完整性统计 生成开始-----
+[2010-01-31 17:04:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:全省性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) cell数
+		from pm_omc_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2010-01-31 17:05:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:全省性能数据完整性统计 共保存了37条记录
+[2010-01-31 17:05:16][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----全省性能数据完整性统计 生成完成-----
+[2010-01-31 17:05:16][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----分地市性能数据完整性统计 生成开始-----
+[2010-01-31 17:05:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) 小区数
+			from pm_omc_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name
+[2010-01-31 17:05:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 保存了101条记录
+[2010-01-31 17:05:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 共保存了185条记录
+[2010-01-31 17:05:22][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----分地市性能数据完整性统计 生成完成-----
+[2010-01-31 17:05:22][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----分BSC性能数据完整性统计 生成开始-----
+[2010-01-31 17:05:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			ne BSC,
+			start_time 时间,
+			count(*) CELL数
+		from pm_omc_alcatel where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,ne,start_time
+		order by city_name,ne
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了101条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了201条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了301条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了401条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了501条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了601条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了701条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了801条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了901条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1001条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1101条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1201条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1301条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1401条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1501条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1601条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1701条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1801条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1901条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2001条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2101条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2201条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2301条记录
+[2010-01-31 17:05:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 共保存了2387条记录
+[2010-01-31 17:05:28][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----分BSC性能数据完整性统计 生成完成-----
+[2010-01-31 17:05:28][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 全省性能数据完整性统计 生成开始-----
+[2010-01-31 17:05:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:GPRS 全省性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) cell数
+		from pm_gprs_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2010-01-31 17:10:32][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_alcatel.xml:=====Excel文件../excel/pm_stat/20100131/阿尔卡特-性能-完整性-20100131_171032.xls开始创建=====
+[2010-01-31 17:10:33][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----全省性能数据完整性统计 生成开始-----
+[2010-01-31 17:10:33][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:全省性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) cell数
+		from pm_omc_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2010-01-31 17:11:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:全省性能数据完整性统计 共保存了37条记录
+[2010-01-31 17:11:29][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----全省性能数据完整性统计 生成完成-----
+[2010-01-31 17:11:29][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----分地市性能数据完整性统计 生成开始-----
+[2010-01-31 17:11:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) 小区数
+			from pm_omc_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name
+[2010-01-31 17:11:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 保存了101条记录
+[2010-01-31 17:11:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 共保存了185条记录
+[2010-01-31 17:11:34][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----分地市性能数据完整性统计 生成完成-----
+[2010-01-31 17:11:34][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----分BSC性能数据完整性统计 生成开始-----
+[2010-01-31 17:11:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			ne BSC,
+			start_time 时间,
+			count(*) CELL数
+		from pm_omc_alcatel where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,ne,start_time
+		order by city_name,ne
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了101条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了201条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了301条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了401条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了501条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了601条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了701条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了801条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了901条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1001条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1101条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1201条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1301条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1401条记录
+[2010-01-31 17:11:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1501条记录
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1601条记录
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1701条记录
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1801条记录
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1901条记录
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2001条记录
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2101条记录
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2201条记录
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2301条记录
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 共保存了2387条记录
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----分BSC性能数据完整性统计 生成完成-----
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 全省性能数据完整性统计 生成开始-----
+[2010-01-31 17:11:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:GPRS 全省性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(distinct bss) bsc数,
+			count(*) cell数
+		from pm_gprs_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2010-01-31 17:19:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:GPRS 全省性能数据完整性统计 共保存了28条记录
+[2010-01-31 17:19:20][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 全省性能数据完整性统计 生成完成-----
+[2010-01-31 17:19:20][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 分地市性能数据完整性统计 生成开始-----
+[2010-01-31 17:19:20][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:GPRS 分地市性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(distinct bss) bsc数,
+			count(*) 小区数
+			from pm_gprs_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name
+[2010-01-31 17:22:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:GPRS 分地市性能数据完整性统计 共保存了98条记录
+[2010-01-31 17:22:59][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 分地市性能数据完整性统计 生成完成-----
+[2010-01-31 17:22:59][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 分BSC性能数据完整性统计 生成开始-----
+[2010-01-31 17:22:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:GPRS 分BSC性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			bss BSC,
+			start_time 时间,
+			count(*) CELL数
+		from pm_gprs_alcatel where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,bss,start_time
+		order by city_name,ne
+[2010-01-31 17:25:41][com.inspur.db2excel.Main.db2excel(Main.java:70)][INFO][main]-pm_stat_alcatel.xml:=====Excel文件../excel/pm_stat/20100131/阿尔卡特-性能-完整性-20100131_172541.xls开始创建=====
+[2010-01-31 17:25:42][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----全省性能数据完整性统计 生成开始-----
+[2010-01-31 17:25:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:全省性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) cell数
+		from pm_omc_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2010-01-31 17:26:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:全省性能数据完整性统计 共保存了38条记录
+[2010-01-31 17:26:37][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----全省性能数据完整性统计 生成完成-----
+[2010-01-31 17:26:37][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----分地市性能数据完整性统计 生成开始-----
+[2010-01-31 17:26:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(distinct ne) bsc数,
+			count(*) 小区数
+			from pm_omc_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name
+[2010-01-31 17:26:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 保存了101条记录
+[2010-01-31 17:26:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:分地市性能数据完整性统计 共保存了190条记录
+[2010-01-31 17:26:44][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----分地市性能数据完整性统计 生成完成-----
+[2010-01-31 17:26:44][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----分BSC性能数据完整性统计 生成开始-----
+[2010-01-31 17:26:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			ne BSC,
+			start_time 时间,
+			count(*) CELL数
+		from pm_omc_alcatel where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,ne,start_time
+		order by city_name,ne
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了101条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了201条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了301条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了401条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了501条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了601条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了701条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了801条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了901条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1001条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1101条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1201条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1301条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1401条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1501条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1601条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1701条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1801条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了1901条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2001条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2101条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2201条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2301条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 保存了2401条记录
+[2010-01-31 17:26:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:分BSC性能数据完整性统计 共保存了2453条记录
+[2010-01-31 17:26:50][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----分BSC性能数据完整性统计 生成完成-----
+[2010-01-31 17:26:50][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 全省性能数据完整性统计 生成开始-----
+[2010-01-31 17:26:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:GPRS 全省性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(distinct bss) bsc数,
+			count(*) cell数
+		from pm_gprs_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+[2010-01-31 17:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:GPRS 全省性能数据完整性统计 共保存了28条记录
+[2010-01-31 17:28:40][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 全省性能数据完整性统计 生成完成-----
+[2010-01-31 17:28:40][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 分地市性能数据完整性统计 生成开始-----
+[2010-01-31 17:28:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:GPRS 分地市性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(distinct bss) bsc数,
+			count(*) 小区数
+			from pm_gprs_alcatel 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name
+[2010-01-31 17:31:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:GPRS 分地市性能数据完整性统计 共保存了98条记录
+[2010-01-31 17:31:36][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 分地市性能数据完整性统计 生成完成-----
+[2010-01-31 17:31:36][com.inspur.db2excel.Main.db2excel(Main.java:83)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 分BSC性能数据完整性统计 生成开始-----
+[2010-01-31 17:31:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:117)][INFO][main]-pm_stat_alcatel.xml:GPRS 分BSC性能数据完整性统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			bss BSC,
+			start_time 时间,
+			count(*) CELL数
+		from pm_gprs_alcatel where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,bss,start_time
+		order by city_name,bss
+[2010-01-31 17:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:GPRS 分BSC性能数据完整性统计 保存了101条记录
+[2010-01-31 17:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:GPRS 分BSC性能数据完整性统计 保存了201条记录
+[2010-01-31 17:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:GPRS 分BSC性能数据完整性统计 保存了301条记录
+[2010-01-31 17:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:GPRS 分BSC性能数据完整性统计 保存了401条记录
+[2010-01-31 17:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:GPRS 分BSC性能数据完整性统计 保存了501条记录
+[2010-01-31 17:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:158)][INFO][main]-pm_stat_alcatel.xml:GPRS 分BSC性能数据完整性统计 保存了601条记录
+[2010-01-31 17:31:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:161)][INFO][main]-pm_stat_alcatel.xml:GPRS 分BSC性能数据完整性统计 共保存了688条记录
+[2010-01-31 17:31:43][com.inspur.db2excel.Main.db2excel(Main.java:89)][INFO][main]-pm_stat_alcatel.xml:-----GPRS 分BSC性能数据完整性统计 生成完成-----
+[2010-01-31 17:31:43][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-pm_stat_alcatel.xml:=====Excel文件../excel/pm_stat/20100131/阿尔卡特-性能-完整性-20100131_172541.xls保存完成=====

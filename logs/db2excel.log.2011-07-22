@@ -1,0 +1,2459 @@
+[2011-07-22 09:47:14][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_094714.xls开始创建=====
+[2011-07-22 09:47:16][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 09:47:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24
+		order by 4,3
+[2011-07-22 09:47:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了101条记录
+[2011-07-22 09:47:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了201条记录
+[2011-07-22 09:47:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了301条记录
+[2011-07-22 09:47:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了401条记录
+[2011-07-22 09:47:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了501条记录
+[2011-07-22 09:47:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了601条记录
+[2011-07-22 09:47:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了672条记录
+[2011-07-22 09:47:25][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 09:47:25][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_094714.xls保存完成=====
+[2011-07-22 09:48:17][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_094817.xls开始创建=====
+[2011-07-22 09:48:17][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 09:48:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.city_name,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24
+		order by 4,3
+[2011-07-22 09:48:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了101条记录
+[2011-07-22 09:48:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了201条记录
+[2011-07-22 09:48:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了301条记录
+[2011-07-22 09:48:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了401条记录
+[2011-07-22 09:48:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了501条记录
+[2011-07-22 09:48:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:213)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了601条记录
+[2011-07-22 09:48:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了672条记录
+[2011-07-22 09:48:26][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 09:48:26][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_094817.xls保存完成=====
+[2011-07-22 10:01:51][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_100151.xls开始创建=====
+[2011-07-22 10:01:52][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 10:01:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.city_name,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24
+		order by 4,3
+[2011-07-22 10:01:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:215)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了101条记录
+[2011-07-22 10:01:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:215)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了201条记录
+[2011-07-22 10:01:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:215)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了301条记录
+[2011-07-22 10:01:59][com.inspur.db2excel.Main.oneTable2Excel(Main.java:215)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了401条记录
+[2011-07-22 10:02:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:215)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了501条记录
+[2011-07-22 10:02:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:215)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了601条记录
+[2011-07-22 10:02:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:218)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了672条记录
+[2011-07-22 10:02:00][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 10:02:00][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_100151.xls保存完成=====
+[2011-07-22 10:04:24][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_100424.xls开始创建=====
+[2011-07-22 10:04:24][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 10:04:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.city_name,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24
+		order by 4,3
+[2011-07-22 10:04:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:217)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了101条记录
+[2011-07-22 10:04:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:217)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了201条记录
+[2011-07-22 10:04:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:217)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了301条记录
+[2011-07-22 10:04:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:217)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了401条记录
+[2011-07-22 10:04:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:217)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了501条记录
+[2011-07-22 10:04:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:217)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了601条记录
+[2011-07-22 10:04:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:220)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了672条记录
+[2011-07-22 10:04:32][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 10:04:32][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_100424.xls保存完成=====
+[2011-07-22 10:08:17][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_100817.xls开始创建=====
+[2011-07-22 10:08:17][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 10:08:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.city_name,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24 and round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)<95
+		order by 4,3
+[2011-07-22 10:08:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了14条记录
+[2011-07-22 10:08:24][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 10:08:24][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_100817.xls保存完成=====
+[2011-07-22 10:09:15][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_100915.xls开始创建=====
+[2011-07-22 10:09:16][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 10:09:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.city_name,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24 and round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)<95
+		order by 5,4
+[2011-07-22 10:09:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了14条记录
+[2011-07-22 10:09:23][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 10:09:23][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_100915.xls保存完成=====
+[2011-07-22 10:10:16][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101016.xls开始创建=====
+[2011-07-22 10:10:16][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 10:10:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.city_name 地市,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24 and round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)<95
+		order by 2,3,4
+[2011-07-22 10:10:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了14条记录
+[2011-07-22 10:10:25][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 10:10:25][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101016.xls保存完成=====
+[2011-07-22 10:11:04][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101104.xls开始创建=====
+[2011-07-22 10:11:04][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 10:11:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.city_name 地市,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24 and round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)<95
+		order by 4,3,2
+[2011-07-22 10:11:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了14条记录
+[2011-07-22 10:11:13][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 10:11:13][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101104.xls保存完成=====
+[2011-07-22 10:13:07][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101307.xls开始创建=====
+[2011-07-22 10:13:07][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 10:13:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			t3.vendor_name 厂商,
+			t3.city_name 地市,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24 and round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)<100
+		order by 1,2,3
+[2011-07-22 10:13:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了30条记录
+[2011-07-22 10:13:15][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 10:13:15][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101307.xls保存完成=====
+[2011-07-22 10:14:29][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101429.xls开始创建=====
+[2011-07-22 10:14:29][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 10:14:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			t3.city_name 地市,
+			t3.vendor_name 厂商,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24 and round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)<100
+		order by 1,2,3
+[2011-07-22 10:14:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了30条记录
+[2011-07-22 10:14:36][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 10:14:36][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101429.xls保存完成=====
+[2011-07-22 10:18:46][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101846.xls开始创建=====
+[2011-07-22 10:18:47][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 10:18:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.vendor_name 厂商,
+        t2.city_name 地市,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and state='入网在用' group by vendor_name,city_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1 group by start_time,city_name,
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1 group by start_time,city_name,
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24
+        order by 3,2
+[2011-07-22 10:19:19][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101919.xls开始创建=====
+[2011-07-22 10:19:19][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 10:19:19][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.vendor_name 厂商,
+        t2.city_name 地市,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and state='入网在用' group by vendor_name,city_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24
+        order by 3,2
+[2011-07-22 10:19:30][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101930.xls开始创建=====
+[2011-07-22 10:19:30][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 10:19:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.vendor_name 厂商,
+        t1.city_name 地市,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and state='入网在用' group by vendor_name,city_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24
+        order by 3,2
+[2011-07-22 10:19:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了101条记录
+[2011-07-22 10:19:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了201条记录
+[2011-07-22 10:19:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了301条记录
+[2011-07-22 10:19:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了401条记录
+[2011-07-22 10:19:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了501条记录
+[2011-07-22 10:19:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了601条记录
+[2011-07-22 10:19:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 共保存了672条记录
+[2011-07-22 10:19:36][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 10:19:36][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_101930.xls保存完成=====
+[2011-07-22 10:20:39][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_102039.xls开始创建=====
+[2011-07-22 10:20:40][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 10:20:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.vendor_name 厂商,
+        t1.city_name 地市,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and state='入网在用' group by vendor_name,city_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24
+        order by 3,2
+[2011-07-22 10:20:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了101条记录
+[2011-07-22 10:20:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了201条记录
+[2011-07-22 10:20:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了301条记录
+[2011-07-22 10:20:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了401条记录
+[2011-07-22 10:20:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了501条记录
+[2011-07-22 10:20:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了601条记录
+[2011-07-22 10:20:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 共保存了672条记录
+[2011-07-22 10:20:46][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 10:20:46][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_102039.xls保存完成=====
+[2011-07-22 10:21:55][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_102155.xls开始创建=====
+[2011-07-22 10:21:56][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 10:21:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+		t1.city_name 地市,
+        t1.vendor_name 厂商,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and state='入网在用' group by vendor_name,city_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24
+        order by 1,2,3
+[2011-07-22 10:22:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了101条记录
+[2011-07-22 10:22:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了201条记录
+[2011-07-22 10:22:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了301条记录
+[2011-07-22 10:22:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了401条记录
+[2011-07-22 10:22:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了501条记录
+[2011-07-22 10:22:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 保存了601条记录
+[2011-07-22 10:22:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 共保存了672条记录
+[2011-07-22 10:22:00][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 10:22:00][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_102155.xls保存完成=====
+[2011-07-22 10:22:57][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_102257.xls开始创建=====
+[2011-07-22 10:22:58][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 10:22:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+		t1.city_name 地市,
+        t1.vendor_name 厂商,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and state='入网在用' group by vendor_name,city_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24 and  round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)<100
+        order by 1,2,3
+[2011-07-22 10:23:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 共保存了66条记录
+[2011-07-22 10:23:02][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 10:23:02][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_102257.xls保存完成=====
+[2011-07-22 10:55:29][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_105529.xls开始创建=====
+[2011-07-22 10:55:31][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 10:55:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+		t1.city_name 地市,
+        t1.vendor_name 厂商,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and state='入网在用' group by vendor_name,city_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24 and  round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)<100
+        order by 1,2,3
+[2011-07-22 10:55:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 共保存了66条记录
+[2011-07-22 10:55:38][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 10:55:38][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_105529.xls保存完成=====
+[2011-07-22 11:04:11][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_110411.xls开始创建=====
+[2011-07-22 11:04:12][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 11:04:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+		t1.city_name 地市,
+        t1.vendor_name 厂商,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc) and state='入网在用' group by vendor_name,city_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24 and  round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)<100
+        order by 1,2,3
+[2011-07-22 11:04:21][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 共保存了62条记录
+[2011-07-22 11:04:21][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 11:04:21][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_110411.xls保存完成=====
+[2011-07-22 11:05:11][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_110511.xls开始创建=====
+[2011-07-22 11:05:12][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 11:05:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+		t1.city_name 地市,
+        t1.vendor_name 厂商,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc and state='入网在用') and state='入网在用' group by vendor_name,city_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24 and  round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)<100
+        order by 1,2,3
+[2011-07-22 11:05:39][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_110539.xls开始创建=====
+[2011-07-22 11:05:39][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 11:05:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+		t1.city_name 地市,
+        t1.vendor_name 厂商,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (
+        select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where 
+        bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+        and state='入网在用' group by vendor_name,city_name
+        ) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24 and  round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)<100
+        order by 1,2,3
+[2011-07-22 11:05:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 共保存了13条记录
+[2011-07-22 11:05:47][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 11:05:47][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_110539.xls保存完成=====
+[2011-07-22 11:06:52][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_110652.xls开始创建=====
+[2011-07-22 11:06:52][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 11:06:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			t3.city_name 地市,
+			t3.vendor_name 厂商,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+			and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24 and round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)<100
+		order by 1,2,3
+[2011-07-22 11:07:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了24条记录
+[2011-07-22 11:07:13][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 11:07:13][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 11:07:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+		t1.city_name 地市,
+        t1.vendor_name 厂商,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (
+        select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where 
+        bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+        and state='入网在用' group by vendor_name,city_name
+        ) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24 and  round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)<100
+        order by 1,2,3
+[2011-07-22 11:07:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 共保存了13条记录
+[2011-07-22 11:07:18][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 11:07:18][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_110652.xls保存完成=====
+[2011-07-22 11:11:58][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_111158.xls开始创建=====
+[2011-07-22 11:11:58][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 11:11:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time 
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24
+		order by 4,3
+[2011-07-22 11:12:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-性能-归一化数据条数统计 共保存了72条记录
+[2011-07-22 11:12:24][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 11:12:24][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 11:12:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.vendor_name 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time
+        union
+        select  '华为' vendor_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time 
+        union
+        select  '爱立信' vendor_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time 
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24
+        order by 3,2
+[2011-07-22 11:12:33][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-性能-原始CONTER数据条数统计 共保存了72条记录
+[2011-07-22 11:12:33][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 11:12:33][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-MR数据条数统计 生成开始-----
+[2011-07-22 11:12:33][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-MR数据条数统计 sql: select 
+            sysdate 检测时间,
+            '山东' 省份,
+            to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+            t3.vendor_name 厂商,
+            t3.bsc_count 理论BSC数,
+            nvl(t0.bsc_count_real,0) 实际BSC数,
+            round(nvl(t0.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+            t3.cell_count 理论小区数,
+            nvl(t0.cell_count_real,0) 实际小区数,
+            round(nvl(t0.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+        from time_list t2
+        left join
+        (
+            select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name    
+        ) t3
+        on 1=1
+        left join
+        (    select 
+                starttime,
+                vendor_name,
+                count(distinct bscid) bsc_count_real,
+                count(*) cell_count_real
+            from nwom.v_cell_mr_h
+            where starttime>=sysdate-1
+            group by starttime,vendor_name) t0
+        on t0.vendor_name=t3.vendor_name and t0.starttime=t2.time 
+        where t2.time>=sysdate-1 and t2.time<sysdate-2/24
+        order by 4,3
+[2011-07-22 11:13:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-MR数据条数统计 共保存了66条记录
+[2011-07-22 11:13:32][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-MR数据条数统计 生成完成-----
+[2011-07-22 11:13:32][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-参数数据条数统计 生成开始-----
+[2011-07-22 11:13:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-参数数据条数统计 sql: select 
+		t2.start_time 时间,
+		t1.vendor_name 厂商,
+		t1.bsc_count BSC理论数量,
+		t0.bsc_real_count BSC实际数量,
+		round(nvl(t0.bsc_real_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+		t1.cell_count 小区理论数量,
+		t0.cell_real_count 小区实际数量,
+		round(nvl(t0.cell_real_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+		from 
+		(select count(distinct bsc_name) bsc_count,count(*) cell_count,vendor_name from cm.f_g_c_cell  where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name) 
+		t1
+		left join
+		(
+		select trunc(sysdate) start_time from dual
+		union
+		select trunc(sysdate-1) start_time from dual
+		union
+		select trunc(sysdate-2) start_time from dual
+		union
+		select trunc(sysdate-3) start_time from dual
+		union
+		select trunc(sysdate-4) start_time from dual
+		) t2
+		on 1=1
+		left join
+		(
+		select start_time,'爱立信' vendor_name,count(distinct bsc) bsc_real_count,count(*) cell_real_count from cm.g_e_c_internal_cell where start_time>sysdate-5 and cell not like 'B%' and cell not like '%TEST%' group by start_time
+		union
+		select start_time,'华为' vendor_name,count(distinct lac) bsc_real_count,count(*) cell_real_count from cm.g_h_c_cell where start_time>sysdate-5 and cell_uk not like 'B%' and cell_uk not like '%TEST%' group by start_time
+		union
+		select start_time,'诺基亚' vendor_name,count(distinct bsc_uk) bsc_real_count,count(*) cell_real_count from cm.g_n_c_bts where start_time>sysdate-5 and cell_uk not like 'B%' and cell_uk not like '%TEST%' group by start_time)
+		t0
+		on t0.start_time=t2.start_time and t1.vendor_name=t0.vendor_name
+		order by 1 desc,2
+[2011-07-22 11:13:33][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-参数数据条数统计 共保存了15条记录
+[2011-07-22 11:13:33][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-参数数据条数统计 生成完成-----
+[2011-07-22 11:13:33][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----TD-参数数据条数统计 生成开始-----
+[2011-07-22 11:13:33][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:TD-参数数据条数统计 sql: select
+		t2.start_time 时间,
+		t1.vendor_name 厂商,
+		nvl(t0.rnc_real_count,0) RNC实际数,
+		t1.rnc_count RNC理论数,
+		round(nvl(t0.rnc_real_count,0)/t1.rnc_count*100,2)||'%' RNC数据完整率,
+		nvl(t0.utrancell_real_count,0) 小区实际数,
+		t1.utrancell_count 小区理论数,
+		round(nvl(t0.utrancell_real_count,0)/t1.utrancell_count*100,2)||'%' 小区数据完整率
+		from 
+		(select vendor_name,count(distinct rnc_uk) rnc_count,count(*) utrancell_count from cm.f_t_c_utrancell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') status='入网在用' group by vendor_name) 
+		t1
+		left join
+		(
+		select trunc(sysdate+1) start_time from dual
+		union
+		select trunc(sysdate) start_time from dual
+		union
+		select trunc(sysdate-1) start_time from dual
+		) t2
+		on 1=1
+		left join
+		(
+		select '中兴' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_z_utrancell where start_time>sysdate-3 group by start_time
+		union
+		select '华为' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_h_utrancell where start_time>sysdate-3 group by start_time
+		union
+		select '大唐' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_d_utrancell where start_time>sysdate-3 group by start_time
+		union
+		select '烽火' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_f_utrancell where start_time>sysdate-3 group by start_time
+		) t0
+		on t0.vendor_name=t1.vendor_name and t0.start_time=t2.start_time
+		order by 1 desc,2
+[2011-07-22 11:13:52][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_111352.xls开始创建=====
+[2011-07-22 11:13:53][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 11:13:53][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time 
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24
+		order by 4,3
+[2011-07-22 11:14:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-性能-归一化数据条数统计 共保存了72条记录
+[2011-07-22 11:14:06][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 11:14:06][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 11:14:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.vendor_name 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time
+        union
+        select  '华为' vendor_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time 
+        union
+        select  '爱立信' vendor_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time 
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24
+        order by 3,2
+[2011-07-22 11:14:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-性能-原始CONTER数据条数统计 共保存了72条记录
+[2011-07-22 11:14:12][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 11:14:12][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-MR数据条数统计 生成开始-----
+[2011-07-22 11:14:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-MR数据条数统计 sql: select 
+            sysdate 检测时间,
+            '山东' 省份,
+            to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+            t3.vendor_name 厂商,
+            t3.bsc_count 理论BSC数,
+            nvl(t0.bsc_count_real,0) 实际BSC数,
+            round(nvl(t0.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+            t3.cell_count 理论小区数,
+            nvl(t0.cell_count_real,0) 实际小区数,
+            round(nvl(t0.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+        from time_list t2
+        left join
+        (
+            select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name    
+        ) t3
+        on 1=1
+        left join
+        (    select 
+                starttime,
+                vendor_name,
+                count(distinct bscid) bsc_count_real,
+                count(*) cell_count_real
+            from nwom.v_cell_mr_h
+            where starttime>=sysdate-1
+            group by starttime,vendor_name) t0
+        on t0.vendor_name=t3.vendor_name and t0.starttime=t2.time 
+        where t2.time>=sysdate-1 and t2.time<sysdate-2/24
+        order by 4,3
+[2011-07-22 11:14:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-MR数据条数统计 共保存了66条记录
+[2011-07-22 11:14:22][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-MR数据条数统计 生成完成-----
+[2011-07-22 11:14:22][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-参数数据条数统计 生成开始-----
+[2011-07-22 11:14:22][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-参数数据条数统计 sql: select 
+		t2.start_time 时间,
+		t1.vendor_name 厂商,
+		t1.bsc_count BSC理论数量,
+		t0.bsc_real_count BSC实际数量,
+		round(nvl(t0.bsc_real_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+		t1.cell_count 小区理论数量,
+		t0.cell_real_count 小区实际数量,
+		round(nvl(t0.cell_real_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+		from 
+		(select count(distinct bsc_name) bsc_count,count(*) cell_count,vendor_name from cm.f_g_c_cell  where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name) 
+		t1
+		left join
+		(
+		select trunc(sysdate) start_time from dual
+		union
+		select trunc(sysdate-1) start_time from dual
+		union
+		select trunc(sysdate-2) start_time from dual
+		union
+		select trunc(sysdate-3) start_time from dual
+		union
+		select trunc(sysdate-4) start_time from dual
+		) t2
+		on 1=1
+		left join
+		(
+		select start_time,'爱立信' vendor_name,count(distinct bsc) bsc_real_count,count(*) cell_real_count from cm.g_e_c_internal_cell where start_time>sysdate-5 and cell not like 'B%' and cell not like '%TEST%' group by start_time
+		union
+		select start_time,'华为' vendor_name,count(distinct lac) bsc_real_count,count(*) cell_real_count from cm.g_h_c_cell where start_time>sysdate-5 and cell_uk not like 'B%' and cell_uk not like '%TEST%' group by start_time
+		union
+		select start_time,'诺基亚' vendor_name,count(distinct bsc_uk) bsc_real_count,count(*) cell_real_count from cm.g_n_c_bts where start_time>sysdate-5 and cell_uk not like 'B%' and cell_uk not like '%TEST%' group by start_time)
+		t0
+		on t0.start_time=t2.start_time and t1.vendor_name=t0.vendor_name
+		order by 1 desc,2
+[2011-07-22 11:14:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-参数数据条数统计 共保存了15条记录
+[2011-07-22 11:14:23][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-参数数据条数统计 生成完成-----
+[2011-07-22 11:14:23][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----TD-参数数据条数统计 生成开始-----
+[2011-07-22 11:14:23][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:TD-参数数据条数统计 sql: select
+		t2.start_time 时间,
+		t1.vendor_name 厂商,
+		nvl(t0.rnc_real_count,0) RNC实际数,
+		t1.rnc_count RNC理论数,
+		round(nvl(t0.rnc_real_count,0)/t1.rnc_count*100,2)||'%' RNC数据完整率,
+		nvl(t0.utrancell_real_count,0) 小区实际数,
+		t1.utrancell_count 小区理论数,
+		round(nvl(t0.utrancell_real_count,0)/t1.utrancell_count*100,2)||'%' 小区数据完整率
+		from 
+		(select vendor_name,count(distinct rnc_uk) rnc_count,count(*) utrancell_count from cm.f_t_c_utrancell where status='入网在用' group by vendor_name) 
+		t1
+		left join
+		(
+		select trunc(sysdate+1) start_time from dual
+		union
+		select trunc(sysdate) start_time from dual
+		union
+		select trunc(sysdate-1) start_time from dual
+		) t2
+		on 1=1
+		left join
+		(
+		select '中兴' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_z_utrancell where start_time>sysdate-3 group by start_time
+		union
+		select '华为' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_h_utrancell where start_time>sysdate-3 group by start_time
+		union
+		select '大唐' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_d_utrancell where start_time>sysdate-3 group by start_time
+		union
+		select '烽火' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_f_utrancell where start_time>sysdate-3 group by start_time
+		) t0
+		on t0.vendor_name=t1.vendor_name and t0.start_time=t2.start_time
+		order by 1 desc,2
+[2011-07-22 11:14:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:TD-参数数据条数统计 共保存了15条记录
+[2011-07-22 11:14:24][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----TD-参数数据条数统计 生成完成-----
+[2011-07-22 11:14:24][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_111352.xls保存完成=====
+[2011-07-22 11:17:04][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_111704.xls开始创建=====
+[2011-07-22 11:17:04][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计1 生成开始-----
+[2011-07-22 11:17:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计1 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用'）
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time 
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24
+		order by 4,3
+[2011-07-22 11:17:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计1 共保存了72条记录
+[2011-07-22 11:17:16][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计1 生成完成-----
+[2011-07-22 11:17:16][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 11:17:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			t3.city_name 地市,
+			t3.vendor_name 厂商,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+			and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24 and round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)<100
+		order by 1,2,3
+[2011-07-22 11:17:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了24条记录
+[2011-07-22 11:17:26][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 11:17:26][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 11:17:26][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+		t1.city_name 地市,
+        t1.vendor_name 厂商,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (
+        select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where 
+        bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+        and state='入网在用' group by vendor_name,city_name
+        ) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24 and  round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)<100
+        order by 1,2,3
+[2011-07-22 11:17:31][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 共保存了13条记录
+[2011-07-22 11:17:31][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 11:17:31][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_111704.xls保存完成=====
+[2011-07-22 11:18:01][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_111801.xls开始创建=====
+[2011-07-22 11:18:02][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计1 生成开始-----
+[2011-07-22 11:18:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计1 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用'）
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time 
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用'）
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24
+		order by 4,3
+[2011-07-22 11:18:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计1 共保存了72条记录
+[2011-07-22 11:18:17][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计1 生成完成-----
+[2011-07-22 11:18:17][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 11:18:17][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			t3.city_name 地市,
+			t3.vendor_name 厂商,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+			and state='入网在用' group by vendor_name,city_name
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24
+			group by start_time,vendor_name,city_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time and t0.city_name=t3.city_name
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time and t1.city_name=t3.city_name
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24 and round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)<100
+		order by 1,2,3
+[2011-07-22 11:18:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了24条记录
+[2011-07-22 11:18:28][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 11:18:28][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 11:18:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+		t1.city_name 地市,
+        t1.vendor_name 厂商,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (
+        select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where 
+        bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+        and state='入网在用' group by vendor_name,city_name
+        ) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name and t0.city_name=t1.city_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24 and  round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)<100
+        order by 1,2,3
+[2011-07-22 11:18:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-原始CONTER数据条数统计 共保存了13条记录
+[2011-07-22 11:18:34][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 11:18:34][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_111801.xls保存完成=====
+[2011-07-22 11:28:46][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_112846.xls开始创建=====
+[2011-07-22 11:28:47][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 11:28:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+			t1.city_name 地市,
+			t1.vendor_name 厂商,
+			to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+			t1.bsc_count 理论BSC数,
+			t3.bsc_count_real COUNTER数据正常BSC数,
+			round(nvl(t3.bsc_count_real,0)/t1.bsc_count*100,2)||'%' COUNTER-BSC数据完整率,
+			t2.bsc_count_real KPI数据正常BSC数,
+			round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPI-BSC数据完整率,
+			t1.cell_count 理论小区数,
+			t3.cell_count_real CONTER数据正常小区数,
+			round(nvl(t3.cell_count_real,0)/t1.cell_count*100,2) ||'%' COUNTER小区数据完整率
+			t2.cell_count_real KPI数据正常小区数,
+			round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI小区数据完整率
+		from time_list t0 
+		where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 
+		left join
+		(
+			select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+			and state='入网在用' group by vendor_name,city_name
+		) t1
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				city_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name,city_name
+		) t2
+		on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+		left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t3
+		on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+		where round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)<100
+		order by 1,2,3
+[2011-07-22 11:50:49][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_115049.xls开始创建=====
+[2011-07-22 11:50:50][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 11:50:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER数据正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTERBSC数据完整率,
+            t2.bsc_count_real KPI数据正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPIBSC数据完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER数据正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER小区数据完整率,
+            t2.cell_count_real KPI数据正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI小区数据完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 and (round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)<100 or round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)<100)
+        order by 1,2,3
+[2011-07-22 11:50:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了53条记录
+[2011-07-22 11:50:57][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 11:50:57][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_115049.xls保存完成=====
+[2011-07-22 11:59:36][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_115936.xls开始创建=====
+[2011-07-22 11:59:37][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 11:59:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER数据正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTERBSC数据完整率,
+            t2.bsc_count_real KPI数据正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPIBSC数据完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER数据正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER小区数据完整率,
+            t2.cell_count_real KPI数据正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI小区数据完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 
+        order by 1,2,3
+[2011-07-22 11:59:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了101条记录
+[2011-07-22 11:59:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了201条记录
+[2011-07-22 11:59:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了301条记录
+[2011-07-22 11:59:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了401条记录
+[2011-07-22 11:59:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了501条记录
+[2011-07-22 11:59:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了601条记录
+[2011-07-22 11:59:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了672条记录
+[2011-07-22 11:59:46][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 11:59:46][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_115936.xls保存完成=====
+[2011-07-22 12:40:39][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_124039.xls开始创建=====
+[2011-07-22 12:40:40][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 12:40:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER数据正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTERBSC数据完整率,
+            t2.bsc_count_real KPI数据正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPIBSC数据完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER数据正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER小区数据完整率,
+            t2.cell_count_real KPI数据正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI小区数据完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 
+        order by 1,2,3
+[2011-07-22 12:40:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了101条记录
+[2011-07-22 12:40:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了201条记录
+[2011-07-22 12:40:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了301条记录
+[2011-07-22 12:40:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了401条记录
+[2011-07-22 12:40:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了501条记录
+[2011-07-22 12:40:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了601条记录
+[2011-07-22 12:40:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了672条记录
+[2011-07-22 12:40:51][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 12:40:51][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_124039.xls保存完成=====
+[2011-07-22 12:44:33][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_124433.xls开始创建=====
+[2011-07-22 12:44:34][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 12:44:34][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER数据正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTERBSC数据完整率,
+            t2.bsc_count_real KPI数据正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPIBSC数据完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER数据正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER小区数据完整率,
+            t2.cell_count_real KPI数据正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI小区数据完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 
+        order by 1,2,3
+[2011-07-22 12:45:00][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_124500.xls开始创建=====
+[2011-07-22 12:45:01][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 12:45:01][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER数据正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTERBSC数据完整率,
+            t2.bsc_count_real KPI数据正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPIBSC数据完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER数据正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER小区数据完整率,
+            t2.cell_count_real KPI数据正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI小区数据完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 
+        order by 1,2,3
+[2011-07-22 12:45:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了101条记录
+[2011-07-22 12:45:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了201条记录
+[2011-07-22 12:45:11][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了301条记录
+[2011-07-22 12:45:11][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了401条记录
+[2011-07-22 12:45:11][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了501条记录
+[2011-07-22 12:45:11][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了601条记录
+[2011-07-22 12:45:11][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了672条记录
+[2011-07-22 12:45:11][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 12:45:11][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_124500.xls保存完成=====
+[2011-07-22 12:46:40][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_124640.xls开始创建=====
+[2011-07-22 12:46:41][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 12:46:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER数据正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTERBSC数据完整率,
+            t2.bsc_count_real KPI数据正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPIBSC数据完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER数据正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER小区数据完整率,
+            t2.cell_count_real KPI数据正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI小区数据完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用')
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 
+        order by 1,2,3
+[2011-07-22 12:46:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了101条记录
+[2011-07-22 12:46:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了201条记录
+[2011-07-22 12:46:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了301条记录
+[2011-07-22 12:46:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了401条记录
+[2011-07-22 12:46:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了501条记录
+[2011-07-22 12:46:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了601条记录
+[2011-07-22 12:46:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了672条记录
+[2011-07-22 12:46:51][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 12:46:51][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_124640.xls保存完成=====
+[2011-07-22 12:51:39][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_125139.xls开始创建=====
+[2011-07-22 12:51:39][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 12:51:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTER正常BSC完整率,
+            t2.bsc_count_real KPI正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPI正常BSC完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER正常小区完整率,
+            t2.cell_count_real KPI正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI正常小区完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用')
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 
+        order by 1,2,3
+[2011-07-22 12:51:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了101条记录
+[2011-07-22 12:51:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了201条记录
+[2011-07-22 12:51:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了301条记录
+[2011-07-22 12:51:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了401条记录
+[2011-07-22 12:51:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了501条记录
+[2011-07-22 12:51:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了601条记录
+[2011-07-22 12:51:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了672条记录
+[2011-07-22 12:51:50][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 12:51:50][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_125139.xls保存完成=====
+[2011-07-22 12:53:31][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_125331.xls开始创建=====
+[2011-07-22 12:53:32][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 12:53:32][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTER正常BSC完整率,
+            t2.bsc_count_real KPI正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPI正常BSC完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER正常小区完整率,
+            t2.cell_count_real KPI正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI正常小区完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用')
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') and bsc_uk is not null group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') and bsc_uk is not null group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') and bsc_uk is not null group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 
+        order by 1,2,3
+[2011-07-22 12:53:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了101条记录
+[2011-07-22 12:53:55][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了201条记录
+[2011-07-22 12:53:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了301条记录
+[2011-07-22 12:53:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了401条记录
+[2011-07-22 12:53:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了501条记录
+[2011-07-22 12:53:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:216)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 保存了601条记录
+[2011-07-22 12:53:56][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了672条记录
+[2011-07-22 12:53:56][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 12:53:56][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_125331.xls保存完成=====
+[2011-07-22 13:16:54][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_131654.xls开始创建=====
+[2011-07-22 13:17:08][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 13:17:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTER正常BSC完整率,
+            t2.bsc_count_real KPI正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPI正常BSC完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER正常小区完整率,
+            t2.cell_count_real KPI正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI正常小区完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用')
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') and bsc_uk is not null group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') and bsc_uk is not null group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') and bsc_uk is not null group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 and round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)<100
+        order by 1,2,3
+[2011-07-22 13:18:01][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_131801.xls开始创建=====
+[2011-07-22 13:18:02][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 13:18:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTER正常BSC完整率,
+            t2.bsc_count_real KPI正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPI正常BSC完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER正常小区完整率,
+            t2.cell_count_real KPI正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI正常小区完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用')
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 and round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)<>100
+        order by 1,2,3
+[2011-07-22 13:19:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了36条记录
+[2011-07-22 13:19:09][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 13:19:09][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_131801.xls保存完成=====
+[2011-07-22 13:22:47][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_132247.xls开始创建=====
+[2011-07-22 13:22:47][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 13:22:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTER正常BSC完整率,
+            t2.bsc_count_real KPI正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPI正常BSC完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER正常小区完整率,
+            t2.cell_count_real KPI正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI正常小区完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用')
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 and round(nvl(t2.bsc_count,0)/t1.bsc_count*100,2)<>100
+        order by 1,2,3
+[2011-07-22 13:22:56][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_132256.xls开始创建=====
+[2011-07-22 13:22:57][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 13:22:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTER正常BSC完整率,
+            t2.bsc_count_real KPI正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPI正常BSC完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER正常小区完整率,
+            t2.cell_count_real KPI正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI正常小区完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用')
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 and round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)<>100
+        order by 1,2,3
+[2011-07-22 13:24:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-test.xml:GSM-性能-归一化数据条数统计 共保存了32条记录
+[2011-07-22 13:24:06][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-test.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 13:24:06][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-test.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_132256.xls保存完成=====
+[2011-07-22 13:29:24][com.inspur.db2excel.Main.db2excel(Main.java:95)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_132924.xls开始创建=====
+[2011-07-22 13:29:24][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-性能-分地市异常数据统计 生成开始-----
+[2011-07-22 13:29:24][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-性能-分地市异常数据统计 sql: select 
+            t1.city_name 地市,
+            t1.vendor_name 厂商,
+            to_char(t0.time,'yyyy-mm-dd hh24') 指标时间,
+            t1.bsc_count 理论BSC数,
+            t3.bsc_count COUNTER正常BSC数,
+            round(nvl(t3.bsc_count,0)/t1.bsc_count*100,2)||'%' COUNTER正常BSC完整率,
+            t2.bsc_count_real KPI正常BSC数,
+            round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)||'%' KPI正常BSC完整率,
+            t1.cell_count 理论小区数,
+            t3.cell_count CONTER正常小区数,
+            round(nvl(t3.cell_count,0)/t1.cell_count*100,2) ||'%' COUNTER正常小区完整率,
+            t2.cell_count_real KPI正常小区数,
+            round(nvl(t2.cell_count_real,0)/t1.cell_count*100,2) ||'%' KPI正常小区完整率
+        from time_list t0 
+        left join
+        (
+            select vendor_name,city_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') 
+            and state='入网在用' group by vendor_name,city_name
+        ) t1
+        on 1=1
+        left join
+        (    select 
+                start_time,
+                vendor_name,
+                city_name,
+                count(distinct bsc_uk) bsc_count_real,
+                count(*) cell_count_real
+            from pm.f_g_c_cell_hour
+            where start_time>=sysdate-1-4/24 and bsche00 is not null and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用')
+            group by start_time,vendor_name,city_name
+        ) t2
+        on t2.vendor_name=t1.vendor_name and t2.start_time=t0.time and t2.city_name=t1.city_name
+        left join
+        (
+        select  '诺基亚' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '华为' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        union
+        select  '爱立信' vendor_name,city_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用') group by start_time,city_name
+        ) t3
+        on t3.start_time=t0.time and t3.vendor_name=t1.vendor_name and t3.city_name=t1.city_name
+        where t0.time>=sysdate-1-4/24 and t0.time<sysdate-4/24 and round(nvl(t2.bsc_count_real,0)/t1.bsc_count*100,2)<>100
+        order by 1,2,3
+[2011-07-22 13:30:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-性能-分地市异常数据统计 共保存了32条记录
+[2011-07-22 13:30:30][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-性能-分地市异常数据统计 生成完成-----
+[2011-07-22 13:30:30][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-性能-归一化数据条数统计 生成开始-----
+[2011-07-22 13:30:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-性能-归一化数据条数统计 sql: select 
+			sysdate 检测时间,
+			'山东' 省份,
+			to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+			t3.vendor_name 厂商,
+			t3.bsc_count 理论BSC数,
+			t0.bsc_count_real 实际BSC数,
+			t1.bsc_count_real 数据正常BSC数,
+			round(nvl(t1.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+			t3.cell_count 理论小区数,
+			t0.cell_count_real 实际小区数,
+			t1.cell_count_real 数据正常小区数,
+			round(nvl(t1.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+		from time_list t2
+		left join
+		(
+			select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+			where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name	
+		) t3
+		on 1=1
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and cell_uk in (select unique_key from cm.f_g_c_cell where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用'）
+			group by start_time,vendor_name) t0
+		on t0.vendor_name=t3.vendor_name and t0.start_time=t2.time 
+		left join
+		(	select 
+				start_time,
+				vendor_name,
+				count(distinct bsc_uk) bsc_count_real,
+				count(*) cell_count_real
+			from pm.f_g_c_cell_hour
+			where start_time>=sysdate-1-4/24 and bsche00 is not null
+			group by start_time,vendor_name) t1
+		on t1.vendor_name=t3.vendor_name and t1.start_time=t2.time
+		where t2.time>=sysdate-1-4/24 and t2.time<sysdate-4/24
+		order by 4,3
+[2011-07-22 13:31:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-性能-归一化数据条数统计 共保存了72条记录
+[2011-07-22 13:31:44][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-性能-归一化数据条数统计 生成完成-----
+[2011-07-22 13:31:44][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-性能-原始CONTER数据条数统计 生成开始-----
+[2011-07-22 13:31:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-性能-原始CONTER数据条数统计 sql: select 
+        to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') 检测时间,
+        to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+        t1.vendor_name 厂商,
+        t1.bsc_count 理论BSC数,
+        nvl(t0.bsc_count,0) 实际BSC数,
+        round(nvl(t0.bsc_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+        t1.cell_count 理论小区数,
+        nvl(t0.cell_count,0) 实际小区数,
+        round(nvl(t0.cell_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+    from time_list t2
+    left join
+        (select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+        where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name) t1 
+    on 1=1
+    left join
+        (
+        select  '诺基亚' vendor_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_n_s14_h_traffic    where start_time >=sysdate-1-3/24 group by start_time
+        union
+        select  '华为' vendor_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.O_G_H_R11_1275071420_3 where start_time >=sysdate-1-3/24 group by start_time 
+        union
+        select  '爱立信' vendor_name,start_time,count(distinct bsc_uk) bsc_count,count(*) cell_count from pm.o_g_e_r12_h_celtchf    where start_time >=sysdate-1-3/24 group by start_time 
+        ) t0
+    on t2.time=t0.start_time and t0.vendor_name=t1.vendor_name
+        where 
+        t2.time>=sysdate-1-3/24 and t2.time<sysdate-3/24
+        order by 3,2
+[2011-07-22 13:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-性能-原始CONTER数据条数统计 共保存了72条记录
+[2011-07-22 13:31:48][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-性能-原始CONTER数据条数统计 生成完成-----
+[2011-07-22 13:31:48][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-MR数据条数统计 生成开始-----
+[2011-07-22 13:31:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-MR数据条数统计 sql: select 
+            sysdate 检测时间,
+            '山东' 省份,
+            to_char(t2.time,'yyyy-mm-dd hh24') 指标时间,
+            t3.vendor_name 厂商,
+            t3.bsc_count 理论BSC数,
+            nvl(t0.bsc_count_real,0) 实际BSC数,
+            round(nvl(t0.bsc_count_real,0)/t3.bsc_count*100,2)||'%' BSC数据完整率,
+            t3.cell_count 理论小区数,
+            nvl(t0.cell_count_real,0) 实际小区数,
+            round(nvl(t0.cell_count_real,0)/t3.cell_count*100,2) ||'%' 小区数据完整率
+        from time_list t2
+        left join
+        (
+            select vendor_name,count(distinct bsc_uk) bsc_count,count(*) cell_count from cm.f_g_c_cell 
+            where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name    
+        ) t3
+        on 1=1
+        left join
+        (    select 
+                starttime,
+                vendor_name,
+                count(distinct bscid) bsc_count_real,
+                count(*) cell_count_real
+            from nwom.v_cell_mr_h
+            where starttime>=sysdate-1
+            group by starttime,vendor_name) t0
+        on t0.vendor_name=t3.vendor_name and t0.starttime=t2.time 
+        where t2.time>=sysdate-1 and t2.time<sysdate-2/24
+        order by 4,3
+[2011-07-22 13:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-MR数据条数统计 共保存了66条记录
+[2011-07-22 13:32:13][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-MR数据条数统计 生成完成-----
+[2011-07-22 13:32:13][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----GSM-参数数据条数统计 生成开始-----
+[2011-07-22 13:32:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:GSM-参数数据条数统计 sql: select 
+		t2.start_time 时间,
+		t1.vendor_name 厂商,
+		t1.bsc_count BSC理论数量,
+		t0.bsc_real_count BSC实际数量,
+		round(nvl(t0.bsc_real_count,0)/t1.bsc_count*100,2)||'%' BSC数据完整率,
+		t1.cell_count 小区理论数量,
+		t0.cell_real_count 小区实际数量,
+		round(nvl(t0.cell_real_count,0)/t1.cell_count*100,2)||'%' 小区数据完整率
+		from 
+		(select count(distinct bsc_name) bsc_count,count(*) cell_count,vendor_name from cm.f_g_c_cell  where bsc_uk is not null and bsc_uk in (select unique_key from cm.f_g_c_bsc where state='入网在用') and state='入网在用' group by vendor_name) 
+		t1
+		left join
+		(
+		select trunc(sysdate) start_time from dual
+		union
+		select trunc(sysdate-1) start_time from dual
+		union
+		select trunc(sysdate-2) start_time from dual
+		union
+		select trunc(sysdate-3) start_time from dual
+		union
+		select trunc(sysdate-4) start_time from dual
+		) t2
+		on 1=1
+		left join
+		(
+		select start_time,'爱立信' vendor_name,count(distinct bsc) bsc_real_count,count(*) cell_real_count from cm.g_e_c_internal_cell where start_time>sysdate-5 and cell not like 'B%' and cell not like '%TEST%' group by start_time
+		union
+		select start_time,'华为' vendor_name,count(distinct lac) bsc_real_count,count(*) cell_real_count from cm.g_h_c_cell where start_time>sysdate-5 and cell_uk not like 'B%' and cell_uk not like '%TEST%' group by start_time
+		union
+		select start_time,'诺基亚' vendor_name,count(distinct bsc_uk) bsc_real_count,count(*) cell_real_count from cm.g_n_c_bts where start_time>sysdate-5 and cell_uk not like 'B%' and cell_uk not like '%TEST%' group by start_time)
+		t0
+		on t0.start_time=t2.start_time and t1.vendor_name=t0.vendor_name
+		order by 1 desc,2
+[2011-07-22 13:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:GSM-参数数据条数统计 共保存了15条记录
+[2011-07-22 13:32:15][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----GSM-参数数据条数统计 生成完成-----
+[2011-07-22 13:32:15][com.inspur.db2excel.Main.db2excel(Main.java:107)][INFO][main]-pm.xml:-----TD-参数数据条数统计 生成开始-----
+[2011-07-22 13:32:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:141)][INFO][main]-pm.xml:TD-参数数据条数统计 sql: select
+		t2.start_time 时间,
+		t1.vendor_name 厂商,
+		nvl(t0.rnc_real_count,0) RNC实际数,
+		t1.rnc_count RNC理论数,
+		round(nvl(t0.rnc_real_count,0)/t1.rnc_count*100,2)||'%' RNC数据完整率,
+		nvl(t0.utrancell_real_count,0) 小区实际数,
+		t1.utrancell_count 小区理论数,
+		round(nvl(t0.utrancell_real_count,0)/t1.utrancell_count*100,2)||'%' 小区数据完整率
+		from 
+		(select vendor_name,count(distinct rnc_uk) rnc_count,count(*) utrancell_count from cm.f_t_c_utrancell where status='入网在用' group by vendor_name) 
+		t1
+		left join
+		(
+		select trunc(sysdate+1) start_time from dual
+		union
+		select trunc(sysdate) start_time from dual
+		union
+		select trunc(sysdate-1) start_time from dual
+		) t2
+		on 1=1
+		left join
+		(
+		select '中兴' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_z_utrancell where start_time>sysdate-3 group by start_time
+		union
+		select '华为' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_h_utrancell where start_time>sysdate-3 group by start_time
+		union
+		select '大唐' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_d_utrancell where start_time>sysdate-3 group by start_time
+		union
+		select '烽火' vendor_name,count(distinct rnc_name) rnc_real_count,count(*) utrancell_real_count,start_time from cm.o_t_f_utrancell where start_time>sysdate-3 group by start_time
+		) t0
+		on t0.vendor_name=t1.vendor_name and t0.start_time=t2.start_time
+		order by 1 desc,2
+[2011-07-22 13:32:18][com.inspur.db2excel.Main.oneTable2Excel(Main.java:219)][INFO][main]-pm.xml:TD-参数数据条数统计 共保存了15条记录
+[2011-07-22 13:32:18][com.inspur.db2excel.Main.db2excel(Main.java:113)][INFO][main]-pm.xml:-----TD-参数数据条数统计 生成完成-----
+[2011-07-22 13:32:18][com.inspur.db2excel.Main.db2excel(Main.java:118)][INFO][main]-pm.xml:=====Excel文件../excel/pm/20110722/数据完整性-20110722_132924.xls保存完成=====

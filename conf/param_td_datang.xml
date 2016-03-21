@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="sdyd" dir="TEMPLET" subDirType="DAY" name="TD-DATANG-PARAM">
+	<Db2Excel name="统计">
+		<sql><![CDATA[select  'TD' 制式,'DATANG' 厂商,网元类型 分类,count(*) 参数数量 from(
+select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where
+cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name group by enname order by 5)
+group by 网元类型]]></sql>
+	</Db2Excel>
+	<Db2Excel name="ANTENNAFUNCTION">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='ANTENNAFUNCTION' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='CARRIER' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="DLMUXTRAFFIC">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='DLMUXTRAFFIC' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="DLRAB">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='DLRAB' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GSMRELATION">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='GSMRELATION' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="INTERFREQMEAS">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='INTERFREQMEAS' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="INTERRATMEAS">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='INTERRATMEAS' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="INTRAFREQMEAS">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='INTRAFREQMEAS' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="LCCSTRATEGY">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='LCCSTRATEGY' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="RNC">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='RNC' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="TNODEB">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='TNODEB' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="ULMUXTRAFFIC">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='ULMUXTRAFFIC' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="ULRAB">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='ULRAB' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='UTRANCELL' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_INTEREVENT">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='UTRANCELL_INTEREVENT' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_INTERFREQ">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='UTRANCELL_INTERFREQ' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL_INTRAFREQ">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='UTRANCELL_INTRAFREQ' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANRELATION">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.O_T_D_','')) 网元类型,max(upper(t0.cnname)) 中文名,max(replace(t1.table_related,'CM.O_T_D_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.O_T_D_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_td_datang t0,dataset_info t1 where cnname is not null and netype is not null and vendor='DATANG' and datatype='参数'and upper(enname) =param_name and replace(t1.table_related,'CM.O_T_D_','')='UTRANRELATION' group by enname order by 5]]></sql>
+	</Db2Excel>
+	<Db2Excel name="同一网元类型出现多次的参数">
+		<sql><![CDATA[select id 规范中所在行,netype 网元类型, cnname 中文名,enname 英文名 from wuyg_param_td_datang where
+enname in
+(
+select enname from wuyg_param_td_datang group by netype,enname,cnname having count(*)>1
+)
+order by 2,3]]></sql>
+	</Db2Excel>
+	<Db2Excel name="无网元类型或参数中文名">
+		<sql><![CDATA[select id 规范中所在行,netype 网元类型, cnname 中文名,enname 英文名 from wuyg_param_td_datang where cnname is null or netype is null ]]></sql>
+	</Db2Excel>
+	<Db2Excel name="待处理">
+		<sql><![CDATA[select id 规范中所在行,netype 网元类型, cnname 中文名,enname 英文名 from wuyg_param_td_datang 
+where
+upper(enname)
+not in
+(
+select param_name from dataset_info where vendor='DATANG' and datatype='参数'
+)
+and cnname is not null and netype is not null]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

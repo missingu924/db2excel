@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="bbw" dir="bbw" subDirType="" name="本本平台">
+	<Db2Excel name="接收消息明细">
+		<sql><![CDATA[
+		select nick_name "名字",date_time "时间",content "内容" from wx_rev_msg order by id desc
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="注册用户明细">
+		<sql><![CDATA[
+		select 
+		t0.name "姓名",
+		t0.telphone "电话",
+		t0.recommendTelpnone "推荐人电话",
+		t0.province "省份",
+		t0.city "地市",
+		t0.district "区县",
+		t0.address "详细地址",
+		t0.business "从事行业",
+		t0.identity "用户身份",
+		t0.modifyTime "注册时间", 
+		t1.nick_name "微信账号"
+		from crm_customer t0 
+		left join wx_contact t1 on t0.wxFakeId=t1.fake_id 
+		order by registertime desc
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="关注用户明细">
+		<sql><![CDATA[
+select 
+t1.name "分组",
+t0.nick_name "微信账号",
+t0.remark_name "备注名",
+t0.signature "签名",
+t0.country "国家",
+t0.province "省份",
+t0.city "地市"
+from wx_contact t0 
+left join wx_group t1 
+on t0.group_id=t1.id
+order by t0.group_id desc,t0.city
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

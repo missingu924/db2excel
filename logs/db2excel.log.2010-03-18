@@ -1,0 +1,942 @@
+[2010-03-18 09:40:48][com.inspur.db2excel.Main.db2excel(Main.java:82)][INFO][main]-cm_stat_all.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-各厂商-无线资源-数据完整性统计-20100318_094048.xls开始创建，使用模板../excel/cm_stat/templet.xls=====
+[2010-03-18 09:40:50][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:40:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			count(distinct vendor_name) 厂商数,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1
+[2010-03-18 09:40:57][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:40:58][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:40:58][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----全省分厂商资源统计 生成开始-----
+[2010-03-18 09:40:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省分厂商资源统计 sql: select 
+			'甘肃' as 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by vendor_name
+[2010-03-18 09:40:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省分厂商资源统计 共保存了4条记录
+[2010-03-18 09:40:58][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----全省分厂商资源统计 生成完成-----
+[2010-03-18 09:40:58][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:40:58][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:41:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了13条记录
+[2010-03-18 09:41:00][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:41:00][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分厂商资源统计 生成开始-----
+[2010-03-18 09:41:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分厂商资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name,vendor_name
+		order by city_id
+[2010-03-18 09:41:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分厂商资源统计 共保存了20条记录
+[2010-03-18 09:41:00][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市分厂商资源统计 生成完成-----
+[2010-03-18 09:41:00][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:41:00][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:41:01][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 保存了101条记录
+[2010-03-18 09:41:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了143条记录
+[2010-03-18 09:41:02][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:41:02][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:41:02][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:41:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 保存了101条记录
+[2010-03-18 09:41:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 共保存了140条记录
+[2010-03-18 09:41:03][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市分BSC资源统计 生成完成-----
+[2010-03-18 09:41:03][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分LAC分BSC资源统计 生成开始-----
+[2010-03-18 09:41:03][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+[2010-03-18 09:41:04][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 保存了101条记录
+[2010-03-18 09:41:05][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 共保存了171条记录
+[2010-03-18 09:41:05][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市分LAC分BSC资源统计 生成完成-----
+[2010-03-18 09:41:05][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-cm_stat_all.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-各厂商-无线资源-数据完整性统计-20100318_094048.xls保存完成=====
+[2010-03-18 09:41:05][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-cm_stat_ericsson.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-爱立信-无线资源-数据完整性统计-20100318_094105.xls开始创建=====
+[2010-03-18 09:41:06][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_ericsson.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:41:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1 and vendor_name='爱立信'
+		group by vendor_name
+[2010-03-18 09:41:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:41:06][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_ericsson.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:41:06][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_ericsson.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:41:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='爱立信'
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:41:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了3条记录
+[2010-03-18 09:41:06][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_ericsson.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:41:06][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_ericsson.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:41:06][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='爱立信'
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:41:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了38条记录
+[2010-03-18 09:41:07][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_ericsson.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:41:07][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_ericsson.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:41:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='爱立信'
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:41:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 共保存了37条记录
+[2010-03-18 09:41:07][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_ericsson.xml:-----分地市分BSC资源统计 生成完成-----
+[2010-03-18 09:41:07][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_ericsson.xml:-----分地市分LAC分BSC资源统计 生成开始-----
+[2010-03-18 09:41:07][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='爱立信'
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+[2010-03-18 09:41:08][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 共保存了39条记录
+[2010-03-18 09:41:08][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_ericsson.xml:-----分地市分LAC分BSC资源统计 生成完成-----
+[2010-03-18 09:41:08][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-cm_stat_ericsson.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-爱立信-无线资源-数据完整性统计-20100318_094105.xls保存完成=====
+[2010-03-18 09:41:08][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-cm_stat_alcatel.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-阿尔卡特-无线资源-数据完整性统计-20100318_094108.xls开始创建=====
+[2010-03-18 09:41:09][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_alcatel.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:41:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by vendor_name
+[2010-03-18 09:41:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:41:09][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_alcatel.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:41:09][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_alcatel.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:41:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:41:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了5条记录
+[2010-03-18 09:41:09][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_alcatel.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:41:09][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_alcatel.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:41:09][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:41:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了57条记录
+[2010-03-18 09:41:10][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_alcatel.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:41:10][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_alcatel.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:41:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:41:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 共保存了67条记录
+[2010-03-18 09:41:10][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_alcatel.xml:-----分地市分BSC资源统计 生成完成-----
+[2010-03-18 09:41:10][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_alcatel.xml:-----分地市分LAC分BSC资源统计 生成开始-----
+[2010-03-18 09:41:10][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+[2010-03-18 09:41:11][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 共保存了76条记录
+[2010-03-18 09:41:11][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_alcatel.xml:-----分地市分LAC分BSC资源统计 生成完成-----
+[2010-03-18 09:41:11][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-cm_stat_alcatel.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-阿尔卡特-无线资源-数据完整性统计-20100318_094108.xls保存完成=====
+[2010-03-18 09:41:11][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-cm_stat_huawei.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-华为-无线资源-数据完整性统计-20100318_094111.xls开始创建=====
+[2010-03-18 09:41:12][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_huawei.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:41:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1 and vendor_name='华为'
+		group by vendor_name
+[2010-03-18 09:41:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:41:12][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_huawei.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:41:12][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_huawei.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:41:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='华为'
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:41:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了7条记录
+[2010-03-18 09:41:12][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_huawei.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:41:12][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_huawei.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:41:12][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='华为'
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:41:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了38条记录
+[2010-03-18 09:41:13][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_huawei.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:41:13][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_huawei.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:41:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='华为'
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:41:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 共保存了29条记录
+[2010-03-18 09:41:13][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_huawei.xml:-----分地市分BSC资源统计 生成完成-----
+[2010-03-18 09:41:13][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_huawei.xml:-----分地市分LAC分BSC资源统计 生成开始-----
+[2010-03-18 09:41:13][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='华为'
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+[2010-03-18 09:41:14][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 共保存了44条记录
+[2010-03-18 09:41:14][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_huawei.xml:-----分地市分LAC分BSC资源统计 生成完成-----
+[2010-03-18 09:41:14][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-cm_stat_huawei.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-华为-无线资源-数据完整性统计-20100318_094111.xls保存完成=====
+[2010-03-18 09:41:14][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-cm_stat_zte.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-中兴-无线资源-数据完整性统计-20100318_094114.xls开始创建=====
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_zte.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1 and vendor_name='中兴'
+		group by vendor_name
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_zte.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_zte.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='中兴'
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了5条记录
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_zte.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_zte.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='中兴'
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了10条记录
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_zte.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_zte.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:41:15][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='中兴'
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:41:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 共保存了7条记录
+[2010-03-18 09:41:16][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_zte.xml:-----分地市分BSC资源统计 生成完成-----
+[2010-03-18 09:41:16][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_zte.xml:-----分地市分LAC分BSC资源统计 生成开始-----
+[2010-03-18 09:41:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='中兴'
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+[2010-03-18 09:41:16][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 共保存了12条记录
+[2010-03-18 09:41:16][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_zte.xml:-----分地市分LAC分BSC资源统计 生成完成-----
+[2010-03-18 09:41:16][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-cm_stat_zte.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-中兴-无线资源-数据完整性统计-20100318_094114.xls保存完成=====
+[2010-03-18 09:45:23][com.inspur.db2excel.Main.db2excel(Main.java:82)][INFO][main]-cm_stat_all.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-各厂商-无线资源-数据完整性统计-20100318_094523.xls开始创建，使用模板../excel/cm_stat/templet.xls=====
+[2010-03-18 09:45:25][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:45:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			count(distinct vendor_name) 厂商数,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1
+[2010-03-18 09:45:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:45:25][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:45:25][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----全省分厂商资源统计 生成开始-----
+[2010-03-18 09:45:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省分厂商资源统计 sql: select 
+			'甘肃' as 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by vendor_name
+[2010-03-18 09:45:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省分厂商资源统计 共保存了4条记录
+[2010-03-18 09:45:25][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----全省分厂商资源统计 生成完成-----
+[2010-03-18 09:45:25][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:45:25][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:45:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了13条记录
+[2010-03-18 09:45:27][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:45:27][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分厂商资源统计 生成开始-----
+[2010-03-18 09:45:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分厂商资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name,vendor_name
+		order by city_id
+[2010-03-18 09:45:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分厂商资源统计 共保存了20条记录
+[2010-03-18 09:45:27][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市分厂商资源统计 生成完成-----
+[2010-03-18 09:45:27][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:45:27][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:45:28][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 保存了101条记录
+[2010-03-18 09:45:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了143条记录
+[2010-03-18 09:45:29][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:45:29][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:45:29][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:45:30][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 保存了101条记录
+[2010-03-18 09:45:35][com.inspur.db2excel.Main.db2excel(Main.java:82)][INFO][main]-cm_stat_all.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-各厂商-无线资源-数据完整性统计-20100318_094535.xls开始创建，使用模板../excel/cm_stat/templet.xls=====
+[2010-03-18 09:45:36][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:45:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			count(distinct vendor_name) 厂商数,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1
+[2010-03-18 09:45:36][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----全省分厂商资源统计 生成开始-----
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省分厂商资源统计 sql: select 
+			'甘肃' as 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by vendor_name
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省分厂商资源统计 共保存了4条记录
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----全省分厂商资源统计 生成完成-----
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了13条记录
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分厂商资源统计 生成开始-----
+[2010-03-18 09:45:37][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分厂商资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name,vendor_name
+		order by city_id
+[2010-03-18 09:45:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分厂商资源统计 共保存了20条记录
+[2010-03-18 09:45:38][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市分厂商资源统计 生成完成-----
+[2010-03-18 09:45:38][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:45:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:45:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 保存了101条记录
+[2010-03-18 09:45:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了143条记录
+[2010-03-18 09:45:40][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:45:40][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:45:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:45:40][com.inspur.db2excel.Main.oneTable2Excel(Main.java:195)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 保存了101条记录
+[2010-03-18 09:45:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 共保存了140条记录
+[2010-03-18 09:45:41][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_all.xml:-----分地市分BSC资源统计 生成完成-----
+[2010-03-18 09:45:41][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_all.xml:-----分地市分LAC分BSC资源统计 生成开始-----
+[2010-03-18 09:45:41][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+[2010-03-18 09:45:41][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-cm_stat_ericsson.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-爱立信-无线资源-数据完整性统计-20100318_094541.xls开始创建=====
+[2010-03-18 09:45:42][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_ericsson.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:45:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1 and vendor_name='爱立信'
+		group by vendor_name
+[2010-03-18 09:45:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:45:42][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_ericsson.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:45:42][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_ericsson.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:45:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='爱立信'
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:45:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了3条记录
+[2010-03-18 09:45:42][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_ericsson.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:45:42][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_ericsson.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:45:42][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='爱立信'
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:45:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了38条记录
+[2010-03-18 09:45:43][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_ericsson.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:45:43][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_ericsson.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:45:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='爱立信'
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:45:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 共保存了37条记录
+[2010-03-18 09:45:43][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_ericsson.xml:-----分地市分BSC资源统计 生成完成-----
+[2010-03-18 09:45:43][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_ericsson.xml:-----分地市分LAC分BSC资源统计 生成开始-----
+[2010-03-18 09:45:43][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='爱立信'
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+[2010-03-18 09:45:44][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 共保存了39条记录
+[2010-03-18 09:45:44][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_ericsson.xml:-----分地市分LAC分BSC资源统计 生成完成-----
+[2010-03-18 09:45:44][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-cm_stat_ericsson.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-爱立信-无线资源-数据完整性统计-20100318_094541.xls保存完成=====
+[2010-03-18 09:45:44][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-cm_stat_alcatel.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-阿尔卡特-无线资源-数据完整性统计-20100318_094544.xls开始创建=====
+[2010-03-18 09:45:45][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_alcatel.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:45:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by vendor_name
+[2010-03-18 09:45:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:45:45][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_alcatel.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:45:45][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_alcatel.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:45:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:45:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了5条记录
+[2010-03-18 09:45:45][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_alcatel.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:45:45][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_alcatel.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:45:45][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:45:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了57条记录
+[2010-03-18 09:45:46][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_alcatel.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:45:46][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_alcatel.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:45:46][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:45:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 共保存了67条记录
+[2010-03-18 09:45:47][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_alcatel.xml:-----分地市分BSC资源统计 生成完成-----
+[2010-03-18 09:45:47][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_alcatel.xml:-----分地市分LAC分BSC资源统计 生成开始-----
+[2010-03-18 09:45:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+[2010-03-18 09:45:47][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 共保存了76条记录
+[2010-03-18 09:45:47][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_alcatel.xml:-----分地市分LAC分BSC资源统计 生成完成-----
+[2010-03-18 09:45:47][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-cm_stat_alcatel.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-阿尔卡特-无线资源-数据完整性统计-20100318_094544.xls保存完成=====
+[2010-03-18 09:45:47][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-cm_stat_huawei.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-华为-无线资源-数据完整性统计-20100318_094547.xls开始创建=====
+[2010-03-18 09:45:48][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_huawei.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:45:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1 and vendor_name='华为'
+		group by vendor_name
+[2010-03-18 09:45:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:45:48][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_huawei.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:45:48][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_huawei.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:45:48][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='华为'
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:45:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了7条记录
+[2010-03-18 09:45:49][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_huawei.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:45:49][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_huawei.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:45:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='华为'
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:45:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了38条记录
+[2010-03-18 09:45:49][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_huawei.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:45:49][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_huawei.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:45:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='华为'
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:45:49][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 共保存了29条记录
+[2010-03-18 09:45:50][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_huawei.xml:-----分地市分BSC资源统计 生成完成-----
+[2010-03-18 09:45:50][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_huawei.xml:-----分地市分LAC分BSC资源统计 生成开始-----
+[2010-03-18 09:45:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='华为'
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+[2010-03-18 09:45:50][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 共保存了44条记录
+[2010-03-18 09:45:50][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_huawei.xml:-----分地市分LAC分BSC资源统计 生成完成-----
+[2010-03-18 09:45:50][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-cm_stat_huawei.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-华为-无线资源-数据完整性统计-20100318_094547.xls保存完成=====
+[2010-03-18 09:45:50][com.inspur.db2excel.Main.db2excel(Main.java:94)][INFO][main]-cm_stat_zte.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-中兴-无线资源-数据完整性统计-20100318_094550.xls开始创建=====
+[2010-03-18 09:45:51][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_zte.xml:-----全省资源统计 生成开始-----
+[2010-03-18 09:45:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 sql: select 
+			'甘肃' 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1 and vendor_name='中兴'
+		group by vendor_name
+[2010-03-18 09:45:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:全省资源统计 共保存了1条记录
+[2010-03-18 09:45:51][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_zte.xml:-----全省资源统计 生成完成-----
+[2010-03-18 09:45:51][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_zte.xml:-----分地市资源统计 生成开始-----
+[2010-03-18 09:45:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='中兴'
+		group by city_id,city_name
+		order by city_id
+[2010-03-18 09:45:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市资源统计 共保存了5条记录
+[2010-03-18 09:45:51][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_zte.xml:-----分地市资源统计 生成完成-----
+[2010-03-18 09:45:51][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_zte.xml:-----分地市分LAC资源统计 生成开始-----
+[2010-03-18 09:45:51][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='中兴'
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC资源统计 共保存了10条记录
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_zte.xml:-----分地市分LAC资源统计 生成完成-----
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_zte.xml:-----分地市分BSC资源统计 生成开始-----
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='中兴'
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分BSC资源统计 共保存了7条记录
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_zte.xml:-----分地市分BSC资源统计 生成完成-----
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.db2excel(Main.java:106)][INFO][main]-cm_stat_zte.xml:-----分地市分LAC分BSC资源统计 生成开始-----
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:140)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 sql: select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='中兴'
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.oneTable2Excel(Main.java:198)][INFO][main]-cm_stat_all.xml;cm_stat_ericsson.xml;cm_stat_alcatel.xml;cm_stat_huawei.xml;cm_stat_zte.xml;:分地市分LAC分BSC资源统计 共保存了12条记录
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.db2excel(Main.java:112)][INFO][main]-cm_stat_zte.xml:-----分地市分LAC分BSC资源统计 生成完成-----
+[2010-03-18 09:45:52][com.inspur.db2excel.Main.db2excel(Main.java:117)][INFO][main]-cm_stat_zte.xml:=====Excel文件../excel/cm_stat/201003/甘肃省-中兴-无线资源-数据完整性统计-20100318_094550.xls保存完成=====

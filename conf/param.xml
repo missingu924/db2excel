@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="hnyd_param" dir="param" subDirType="DAY" name="CELL参数普查" fromSheetNum="0">
+	<Db2Excel name="全省CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="常德CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'CD%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="长沙CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'CS%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="郴州CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'CZ%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="怀化CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'HH%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="衡阳CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'HY%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="吉首CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'JS%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="娄底CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'LD%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="邵阳CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'SY%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="岳阳CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'UY%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="湘潭CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'XT%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="益阳CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'YY%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="永州CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'YZ%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="张家界CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'ZJ%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="株洲CELL参数普查">
+		<sql><![CDATA[
+select p.vendorparameter,d.pvalue,count(*) num from vendorparametermap p ,necelldatamap d 
+where p.vpkey=d.vpkey and d.cnkey in (select cnkey from necellmap where nodename like 'ZZ%')
+group by p.vendorparameter,d.pvalue
+order by p.vendorparameter
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

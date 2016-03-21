@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="sdyd" dir="指标完备性检查" subDirType="" name="TD小时粒度性能指标完备性">
+	<Db2Excel name="RNC">
+		<sql><![CDATA[ 
+		select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='RNCFUNCTION'
+		and 
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='RNC' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao
+				]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANCELL">
+		<sql><![CDATA[
+		select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where
+		upper(kongjianlidu)='UTRANCELL'
+		and 
+		zhongwenming is not null 
+		and
+		trim(replace(zhongwenming,'.','。')) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='UTRANCELL' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao   
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CARRIER">
+		<sql><![CDATA[    
+		select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='CARRIER'
+		and
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='CARRIER' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao      
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="IUCSLINKRNC">
+		<sql><![CDATA[    
+		select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='IUCSLINKRNC'
+		and
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='IUCSLINKRNC' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao  
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="IUPSLINKRNC">
+		<sql><![CDATA[  
+		select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='IUPSLINKRNC'
+		and
+		zhongwenming is not null
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='IUPSLINKRNC' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao     
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="IUBLINK">
+		<sql><![CDATA[  
+		select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='IUBLINK'
+		and
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='IUBLINK' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao     
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRANRELATION">
+		<sql><![CDATA[  
+		select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='UTRANRELATION'
+		and
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='UTRANRELATION' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao     
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GSMRELATION">
+		<sql><![CDATA[  
+		select
+tongJiBianHao 统计编号,
+zhongYaoChengDu 重要程度,
+yingWenMing 英文名,
+zhongWenMing 中文名,
+dingYi 定义,
+chuFaDian 触发点,
+caiJiFangShi 采集方式,
+shuJuLeiXing 数据类型,
+danWei 单位,
+kongJianLiDu 空间粒度,
+shiJianLiDu 时间粒度,
+shangBaoZhouQi 上报周期,
+beiZhu 备注
+		from wuyg_td_kpi 
+		where 
+		upper(kongjianlidu)='GSMRELATION'
+		and
+		zhongwenming is not null 
+		and
+		trim(zhongwenming) not in (
+		select trim(pm_kpi_name) from dataset_info 
+		where 
+		datatype='性能' 
+		and ne_type='GSMRELATION' 
+		and ne_mode='TD'
+		and pm_time_type='HOUR' 
+		and vendor='COMMON' 
+		and pm_kpi_name is not null
+		and pm_business_type not like '%类' 
+		)
+		order by tongJiBianHao     
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

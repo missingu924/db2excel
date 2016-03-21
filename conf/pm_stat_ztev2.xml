@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="wydb_gspm" dir="pm_stat" subDirType="DAY" name="中兴V2-性能-完整性">
+	<Db2Excel name="全省性能数据完整性统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(distinct bsc_user_lable) bsc数,
+			count(*) cell数
+		from pm_omc_ztev2 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分地市性能数据完整性统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(distinct bsc_user_lable) bsc数,
+			count(*) 小区数
+			from pm_omc_ztev2 
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分BSC性能数据完整性统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			bsc_user_lable BSC,
+			start_time 时间,
+			count(*) CELL数
+		from pm_omc_ztev2 where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,bsc_user_lable,start_time
+		order by city_name,bsc_user_lable
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

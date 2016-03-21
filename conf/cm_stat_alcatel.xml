@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="wydb_gsrms" dir="cm_stat" subDirType="MONTH" name="甘肃省-阿尔卡特-无线资源-数据完整性统计">
+	<Db2Excel name="全省资源统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			vendor_name 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) as cell数,
+			sum(trx_num) trx数 
+		from cell 
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by vendor_name
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分地市资源统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			wmsys.wm_concat(distinct vendor_name) 厂商,
+			count(distinct lac) lac数,
+			count(distinct bsc_name) bsc数,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name
+		order by city_id
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分地市分LAC资源统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,
+			wmsys.wm_concat(distinct bsc_name) bsc,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name,vendor_name,lac
+		order by city_id,vendor_name,lac
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分地市分BSC资源统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			bsc_name,
+			wmsys.wm_concat(distinct lac) lac,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name,vendor_name,bsc_name
+		order by city_id,vendor_name,bsc_name
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="分地市分LAC分BSC资源统计">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			vendor_name 厂商,
+			lac,bsc_name,
+			count(distinct bts_name) bts数,
+			count(*) cell数,
+			sum(trx_num) trx数 
+		from cell
+		where timestamp>sysdate-1 and vendor_name='阿尔卡特'
+		group by city_id,city_name, vendor_name ,lac,bsc_name
+		order by city_id,vendor_name ,lac,bsc_name
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

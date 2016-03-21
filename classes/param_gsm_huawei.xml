@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="sdyd" dir="TEMPLET" subDirType="DAY" name="GSM-HUAWEI-PARAM">
+	<Db2Excel name="统计">
+		<sql><![CDATA[select 'GSM' 制式,'华为' 厂商,upper(replace(tabname,'BSC6900GSM','')) 分类,count(*) 参数个数 from nwom.wuyg_param_gsm_huawei
+where 
+tabname!='不支持'
+and
+(upper(replace(tabname,'BSC6900GSM','')),upper(colname))
+in
+(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数')
+group by upper(replace(tabname,'BSC6900GSM',''))
+order by 1]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CELL">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='CELL' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="G2GNCELL">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='G2GNCELL' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="G3GNCELL">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='G3GNCELL' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELL2GBA1">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELL2GBA1' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLBASICPARA">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLBASICPARA' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLCCACCESS">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLCCACCESS' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLCCAD">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLCCAD' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLCCAMR">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLCCAMR' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLCCBASIC">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLCCBASIC' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLCCCH">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLCCCH' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLCCTMR">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLCCTMR' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLCCUTRANSYS">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLCCUTRANSYS' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLCHMGAD">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLCHMGAD' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLCHMGBASIC">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLCHMGBASIC' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLFREQ">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLFREQ' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLGPRS">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLGPRS' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLHOAD">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLHOAD' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLHOBASIC">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLHOBASIC' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLHOCTRL">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLHOCTRL' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLHOEDBPARA">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLHOEDBPARA' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLHOEMG">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLHOEMG' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLHOFITPEN">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLHOFITPEN' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLHOIUO">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLHOIUO' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLHOPANT">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLHOPANT' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLHOPTP">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLHOPTP' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLHOUTRANFDD">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLHOUTRANFDD' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLIDLEAD">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLIDLEAD' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLIDLEBASIC">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLIDLEBASIC' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLLCS">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLLCS' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLMAGRP">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLMAGRP' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLNWCTRLMSRPARA">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLNWCTRLMSRPARA' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLOTHBASIC">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLOTHBASIC' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLOTHEXT">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLOTHEXT' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLPWR2">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLPWR2' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLPWR3">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLPWR3' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLPWRBASIC">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLPWRBASIC' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLSBC">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLSBC' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLSOFT">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLSOFT' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GCELLTMR">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GCELLTMR' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GEXT2GCELL">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GEXT2GCELL' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GEXT3GCELL">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GEXT3GCELL' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GTRX">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GTRX' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GTRXCHAN">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GTRXCHAN' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GTRXCHANHOP">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GTRXCHANHOP' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GTRXDEV">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GTRXDEV' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="GTRXIUO">
+		<sql><![CDATA[	select id 规范中所在行,netype 网元类型,cnname 中文名,upper(replace(tabname,'BSC6900GSM','')) 平台对应类型,upper(colname) 平台对应字段,tabname 厂家对应表名,colname 厂家对应字段名 from nwom.wuyg_param_gsm_huawei where(upper(replace(tabname,'BSC6900GSM','')),upper(colname)) in(select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') and upper(replace(tabname,'BSC6900GSM',''))='GTRXIUO' order by tabname,colname	]]></sql>
+	</Db2Excel>
+	<Db2Excel name="厂家不支持">
+		<sql><![CDATA[select id 规范中所在行,netype 网元类型,cnname 中文名,colname 英文名,'不支持' 厂家支持情况 from nwom.wuyg_param_gsm_huawei where tabname='不支持']]></sql>
+	</Db2Excel>
+	<Db2Excel name="网优平台未采集">
+		<sql><![CDATA[select id 规范中所在行,netype 网元类型,cnname 中文名,tabname 厂家对应表名,colname 厂家对应字段名  from nwom.wuyg_param_gsm_huawei where tabname!='不支持'and (upper(replace(tabname,'BSC6900GSM','')),upper(colname)) not in (select replace(table_related,'CM.G_H_C_',''),param_name from nwom.dataset_info where ne_mode='GSM' and vendor='HUAWEI' and datatype='参数') order by tabname,colname]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

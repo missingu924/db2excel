@@ -1,0 +1,29 @@
+[2013-12-04 12:15:37][com.inspur.db2excel.Main.db2excel(Main.java:133)][INFO][main]-bbw.xml:=====Excel文件../excel/bbw//本本平台-20131204_121537.xls开始创建=====
+[2013-12-04 12:16:20][com.inspur.db2excel.Main.db2excel(Main.java:133)][INFO][main]-bbw.xml:=====Excel文件../excel/bbw//本本平台-20131204_121620.xls开始创建=====
+[2013-12-04 12:16:48][com.inspur.db2excel.Main.db2excel(Main.java:133)][INFO][main]-bbw.xml:=====Excel文件../excel/bbw//本本平台-20131204_121648.xls开始创建=====
+[2013-12-04 12:17:38][com.inspur.db2excel.Main.db2excel(Main.java:133)][INFO][main]-bbw.xml:=====Excel文件../excel/bbw//本本平台-20131204_121738.xls开始创建=====
+[2013-12-04 12:17:38][com.inspur.db2excel.Main.db2excel(Main.java:145)][INFO][main]-bbw.xml:-----接收消息明细 生成开始-----
+[2013-12-04 12:17:38][com.inspur.db2excel.Main.oneTable2Excel(Main.java:179)][INFO][main]-bbw.xml:接收消息明细 sql: select nick_name "名字",date_time "时间",content "内容" from wx_rev_msg
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:189)][INFO][main]-columnLabel名字
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:189)][INFO][main]-columnLabel时间
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:189)][INFO][main]-columnLabel内容
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了101条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了201条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了301条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了401条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了501条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了601条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了701条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了801条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了901条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了1001条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了1101条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了1201条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了1301条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了1401条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了1501条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了1601条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:258)][INFO][main]-bbw.xml:接收消息明细 保存了1701条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.oneTable2Excel(Main.java:267)][INFO][main]-bbw.xml:接收消息明细 共保存了1782条记录
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.db2excel(Main.java:151)][INFO][main]-bbw.xml:-----接收消息明细 生成完成-----
+[2013-12-04 12:17:39][com.inspur.db2excel.Main.db2excel(Main.java:156)][INFO][main]-bbw.xml:=====Excel文件../excel/bbw//本本平台-20131204_121738.xls保存完成=====

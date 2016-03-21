@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/bin
+END
+db2excel.sh
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/develop/iNOS/!svn/ver/30114/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/bin/db2excel.sh
+END
+check_pm.sh
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/develop/iNOS/!svn/ver/30114/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/bin/check_pm.sh
+END
+pm.sh
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/develop/iNOS/!svn/ver/30114/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/bin/pm.sh
+END
+dailyReport.sh
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/develop/iNOS/!svn/ver/30114/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/bin/dailyReport.sh
+END
+db2excel.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/develop/iNOS/!svn/ver/30112/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/bin/db2excel.cmd
+END
+pmstat.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/bin/pmstat.cmd
+END
+cmstat.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/develop/iNOS/!svn/ver/12617/branch/210_%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/db2excel/bin/cmstat.cmd
+END

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="sdyd" dir="TEMPLET" subDirType="DAY" name="GSM-ERICSSON-PARAM">
+	<Db2Excel name="统计">
+		<sql><![CDATA[select 'GSM' 制式,'ERICSSON' 厂商,平台对应类型 分类,count(*) 参数数量 from(
+select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name group by t1.table_related,upper(t0.colname) order by upper(t0.colname)
+)
+group by 平台对应类型
+order by 1,2,3]]></sql>
+	</Db2Excel>
+	<Db2Excel name="BSC">
+		<sql><![CDATA[select t0.id 规范中所在行,replace(t1.table_related,'CM.G_E_C_','') 网元类型,upper(t0.colname) 中文名,replace(t1.table_related,'CM.G_E_C_','') 平台对应类型,t1.param_name 平台对应字段,replace(t1.table_related,'CM.G_E_C_','') 厂家对应表名,t1.param_name 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_BSC' order by table_related,param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CHANNEL_GROUP">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_CHANNEL_GROUP' group by upper(t0.colname) order by upper(t0.colname)]]></sql>
+	</Db2Excel>
+	<Db2Excel name="EXTERNAL_CELL">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_EXTERNAL_CELL' group by upper(t0.colname) order by upper(t0.colname)]]></sql>
+	</Db2Excel>
+	<Db2Excel name="INTERNAL_CELL">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_INTERNAL_CELL' group by upper(t0.colname) order by upper(t0.colname)]]></sql>
+	</Db2Excel>
+	<Db2Excel name="MSC">
+		<sql><![CDATA[select t0.id 规范中所在行,t0.netype 网元类型,upper(t0.colname) 中文名,replace(t1.table_related,'CM.G_E_C_','') 平台对应类型,t1.param_name 平台对应字段,replace(t1.table_related,'CM.G_E_C_','') 厂家对应表名,t1.param_name 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_MSC' order by table_related,param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="NREL">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_NREL' group by upper(t0.colname) order by upper(t0.colname)]]></sql>
+	</Db2Excel>
+	<Db2Excel name="OVERLAID_SUBCELL">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_OVERLAID_SUBCELL' group by upper(t0.colname) order by upper(t0.colname)]]></sql>
+	</Db2Excel>
+	<Db2Excel name="PRIORITY_PROFILE">
+		<sql><![CDATA[select t0.id 规范中所在行,replace(t1.table_related,'CM.G_E_C_','') 网元类型,upper(t0.colname) 中文名,replace(t1.table_related,'CM.G_E_C_','') 平台对应类型,t1.param_name 平台对应字段,replace(t1.table_related,'CM.G_E_C_','') 厂家对应表名,t1.param_name 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_PRIORITY_PROFILE' order by table_related,param_name]]></sql>
+	</Db2Excel>
+	<Db2Excel name="UTRAN_EXTERNAL_CELL">
+		<sql><![CDATA[select max(t0.id) 规范中所在行,max(replace(t1.table_related,'CM.G_E_C_','')) 网元类型,max(upper(t0.colname)) 中文名,max(replace(t1.table_related,'CM.G_E_C_','')) 平台对应类型,max(t1.param_name) 平台对应字段,max(replace(t1.table_related,'CM.G_E_C_','')) 厂家对应表名,max(t1.param_name) 厂家对应字段名 from wuyg_param_gsm_ericsson t0,dataset_info t1 where colname not like '%无%'
+and vendor='ERICSSON' and datatype='参数'and upper(colname) =param_name and table_related='CM.G_E_C_UTRAN_EXTERNAL_CELL' group by upper(t0.colname) order by upper(t0.colname)]]></sql>
+	</Db2Excel>
+	<Db2Excel name="拆分参数">
+		<sql><![CDATA[select id 规范中所在行,netype 网元类型,cnname 规范参数名,upper(colname) 拆分参数  from wuyg_param_gsm_ericsson where id in (select id from wuyg_param_gsm_ericsson group by id having count(*)>1) order by id]]></sql>
+	</Db2Excel>
+	<Db2Excel name="厂家不支持">
+		<sql><![CDATA[select id 规范中所在行,netype 网元类型,upper(cnname) 参数名,colname 厂家不支持原因 from wuyg_param_gsm_ericsson where colname like '%无%']]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

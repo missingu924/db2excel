@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- <!DOCTYPE digester-rules PUBLIC "-//Jakarta Apache //DTD digester-rules XML V1.0//EN" "digester-rules.dtd"> -->
+<digester-rules>
+	<pattern value="DbConfig">
+		<object-create-rule classname="com.inspur.db2excel.obj.DbConfig" />
+		<set-properties-rule />
+		<pattern value="dbInfo">
+			<object-create-rule classname="com.inspur.db2excel.obj.DbInfo" />
+			<set-properties-rule />
+			<set-next-rule methodname="addDbInfoList" paramtype="com.inspur.db2excel.obj.DbInfo" />
+		</pattern>
+	</pattern>
+</digester-rules>

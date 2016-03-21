@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="wydb_gspm" dir="pm_stat" name="爱立信-性能(LACBSC)-完整性">
+	<Db2Excel name="CITY-H-全省">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数,
+			wmsys.wm_concat(city_name) 地市
+		from pm_omc_ericity
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CITY900-H-全省">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数,
+			wmsys.wm_concat(city_name) 地市
+		from pm_omc_ericity900
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="CITY1800-H-全省">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数,
+			wmsys.wm_concat(city_name) 地市
+		from pm_omc_ericity1800
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="FREQ900-H-全省">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) BSC数
+		from pm_omc_erifreq900
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="FREQ900-H-分地市">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) BSC数
+		from pm_omc_erifreq1800
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="FREQ1800-H-全省">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) BSC数
+		from pm_omc_erifreq900
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="FREQ1800-H-分地市">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) BSC数
+		from pm_omc_erifreq1800
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="BSC-H-全省">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) bsc数
+		from pm_omc_eribsc
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="BSC-H-分地市">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			city_name 地市,
+			start_time 时间,
+			count(*) bsc数
+			from pm_omc_eribsc
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by city_name,start_time
+		order by city_name,start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="LAC-H-全省">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) lac数
+		from pm_omc_ericlac
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

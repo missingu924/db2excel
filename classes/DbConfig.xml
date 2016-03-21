@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DbConfig version="V1.0">
+	<dbInfo id="wydb_gsrms" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@10.212.63.87:1521:wydb2" username="gsrms" password="gsrms"/>
+	<dbInfo id="wydb_gspm" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@10.212.63.87:1521:wydb2" username="gspm" password="gspm"/>
+	<dbInfo id="hnyd_param" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@(description=(address_list=(load_balance=on)(failover=on)(address=(protocol=tcp)(host=nwomdb-pn)(port=1521))(address=(protocol=tcp)(host=nwomdb-sn)(port=1521)))(connect_data=(service_name=datasafe)(failover_mode=(type=select)(method=basic))))" username="datasafe" password="I4tvwDx1"/>
+
+	<dbInfo id="sdyd" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@10.213.10.10:1521:nwom22" username="nwom" password="nwom"/>
+	<dbInfo id="localhost" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@127.0.0.1:1521:orcl" username="nwom" password="nwom"/>
+</DbConfig>

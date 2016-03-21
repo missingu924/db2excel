@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="wydb_gspm" dir="pm_stat" subDirType="DAY" name="华为-性能(LACBSC)-完整性">
+	<Db2Excel name="CITY-H-全省">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) 地市数
+		from pm_omc_alcatel_city_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+		]]></sql>
+	</Db2Excel>
+	<Db2Excel name="BSC-H-全省">
+		<sql><![CDATA[
+		select 
+			'甘肃' 省份,
+			start_time 时间,
+			count(*) bsc数
+		from pm_omc_alc_bsc_hour
+		where start_time>=to_date(to_char(sysdate-1,'yyyy-mm-dd'),'yyyy-mm-dd')
+		group by start_time
+		order by start_time
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>

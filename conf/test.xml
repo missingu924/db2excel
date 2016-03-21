@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db2ExcelConfig version="V1.0" dbId="sdyd" dir="data" subDirType="DAY" name="数据质量">
+	<Db2Excel name="GSM-性能-归一化数据条数统计">
+		<sql><![CDATA[
+		select sysdate "日期" from dual       
+		]]></sql>
+	</Db2Excel>
+</Db2ExcelConfig>
